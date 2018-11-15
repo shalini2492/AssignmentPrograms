@@ -1,7 +1,0 @@
-package Utility;
-
-public class Utility {
-String username;
-String s1 = username.replace("Username", +username);
-
-}

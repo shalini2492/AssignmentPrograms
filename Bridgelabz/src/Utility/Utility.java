@@ -4,7 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Utility {
-	Utility utility= new Utility();
+	
+	Utility utility = new Utility();
 			  Scanner scanner= new Scanner(System.in);
 		  /* Scanner is used to obtain input of primitive types like int, double, long etc.
 		   * 
@@ -24,7 +25,7 @@ public class Utility {
 	  /****This method will return input of string type to a specified method ***/ 
 	  
 	  
-	  public String replaceString(String template,String username)
+	  public String replaceString(String template, String username)
 	  {
 		  System.out.println("Enter username");
 		  if(username.length() < 3)
@@ -128,7 +129,7 @@ public void LeapYear(int yearno)
 
 public void checkLeapYear(int yearno)
 {
-	if(yearno%4 == 0) /**This method will check if given year is a lea[ year.*/
+	if(yearno%4 == 0) /**This method will check if given year is a leap year.*/
  {
 	if(yearno%100 == 0) /*when all these conditions will be true the we can say
 	given year is a leap year.*/ 
@@ -150,18 +151,18 @@ public int power(int pow, int base)
 {
 	System.out.println("Enter the power"); 
 	if(pow > 31) /*The input taken by the user should not exceed beyond 31. If
-	it is more than 31 then user isn requested to reenter new and valid input.*/
+	it is more than 31 then user is requested to reenter new and valid input.*/
 	{
 		System.out.println("Please enter valid power");
 		pow = scanner.nextInt();
-	   utility.power(pow, base);
+	   power(pow, base);
 	}
 	else
-		utility.calculate(i);
+		utility.calculat(i);
 	 
 }
 
-private int calculate(int i)
+private int calculat(int i)
 {
 	int base=2, pow=1;
 	for(i=0; pow<i; i++)
@@ -210,27 +211,28 @@ public int factors(int n)
 
 /************************Gambler*************************************/
 
-public void gambling()
-{
-	for(int t=0; t < trials; t++) /*for loop to iterate till the no. of trials */
+public void gambling(int stake, int trials, int target)
+{	
+	/*for loop to iterate till the no. of trials */
+	int won=0, bet=0;
+	int cash;
+	for(int t=0; t < trials; t++) 
 	{
-		public int stake, target, bet, won, trials;
-		int cash = stake;    
-	 while(cash > 0 && cash <= target)
+		cash = stake;  
+		while(cash > 0 && cash <= target)
 		{
 			bet++;
 			if(Math.random() < 0.5)
-			cash++;
+				cash++;
 			else
-				cash--;
-			
+				cash--;			
 		}
-		if(cash == target)
-			won++;			
+		if(cash == target)		
+			won++;		
 	}
 	
 	System.out.println(won+ "wins of" +trials);
-	System.out.println("Percentage of win over trails "  +100 * won/trials);
+	System.out.println("Percentage of win over trials "  +100 * won/trials);
 	System.out.println("Average # bet       " +1.0 *bet/trials);
 }
 
@@ -253,33 +255,39 @@ public int dist_coupon(int n)
 }
 
 /***********************2D array*****************************************/
+/*This method will return input of type boolean*/
 
-public void twodarr()
+public boolean InputBoolean()
 {
-	int a= scanner.nextInt();
-	double b = scanner.nextDouble();
-	boolean c = scanner.nextBoolean();
-	for(int i=0; i<2; i++)
+	return scanner.nextBoolean();
+}
+
+/*This method will return input of type double.*/
+
+public double InputDouble()
+{
+	return scanner.nextDouble();
+}
+
+public void twodarr(int row, int column)
+{
+	int[][] a= new int[row][column];
+	for(int i=0; i<row; i++)
 	{
-		for(int j=0; j<2; j++)
+		for(int j=0; j<column; j++)
 		{
-		System.out.println(a[i][j]);
+		a[i][j]= scanner.nextInt();
+		}
 	}
-  }
-	for(int i=0; i<2; i++)
+	for(int i=0; i<row; i++)
 	{
-		for(int j=0; j<2; j++)
+		for(int j=0; j<column; j++)
 		{
-		System.out.println(b[i][j]);
+			System.out.print(a[i][j]+ "");
+		}
+	System.out.println(" ");
 	}
-  }
-	for(int i=0; i<2; i++)
-	{
-		for(int j=0; j<2; j++)
-		{
-		System.out.println(c[i][j]);
-	}
-  }
+	
 }
 
 /********************Sum of Three integers************************/
@@ -298,10 +306,52 @@ public int triplets(int a[])
 				if(a[i]+a[j]+a[k] == 0)
 				{
 					
-					flag = 0;
+					flag = false;;
 				}
 			}
 		}
 	}
 }
+
+
+
+/*************************Distance calculation*************************/
+
+public void dist()
+{
+	int x = 0, y=0;
+	int i = 0, j = 0;
+  double c = Math.pow(x, 2);
+  double d = Math.pow(y, 2);
+  double dn = c * d;
+  double diff = (c-i) * (d-j);
+  
 }
+
+/**********************String Permutation******************************/
+
+public void swap(String[] ch, int i, int j)
+{
+	String temp= ch[i];
+	ch[i]=ch[j];
+	ch[j] = temp;
+}
+
+/*public String permutations(String[] ch, int currentindex)
+{
+	public int j;
+	String[] ch, currentindex;
+	if(currentindex = ch.length-1)
+	{
+		System.out.println(String.valueOf(ch));
+	}
+	for(int i = currentindex; i< ch.length; i++)
+	{
+	swap(ch, currentindex, j);
+	utility.permutations(ch, currentindex+1);
+	swap(ch, currentindex, j);
+	}
+}
+*/
+}
+

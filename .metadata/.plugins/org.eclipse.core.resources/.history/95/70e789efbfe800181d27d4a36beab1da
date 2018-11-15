@@ -1,0 +1,16 @@
+package Functionalprograms;
+
+import java.util.*;
+import Utility.Utility;
+
+public class IntAdd {
+public static void main(String[] args)
+{
+	int n, a[5];
+	boolean flag;
+	System.out.println("Enter array elements");
+	Utility utility = new Utility();
+	n = utility.InputInteger();
+    int x = utility.triplets(a);
+}
+}

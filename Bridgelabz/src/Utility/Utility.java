@@ -24,7 +24,7 @@ public class Utility {
 	  /****This method will return input of string type to a specified method ***/ 
 	  
 	  
-	  public void replaceString(String template,String username)
+	  public String replaceString(String template,String username)
 	  {
 		  System.out.println("Enter username");
 		  if(username.length() < 3)
@@ -35,8 +35,10 @@ public class Utility {
 		  /****This method will replace template with the username that is accepted by user.***/
 		  
 		  else
-			  String out = template.replace("<<username>>", username);
-		  return out;
+		  {
+			  String output = utility.replaceString("<<username>>", username);
+			  return output;
+		  }
 	  }
 	  
 
@@ -124,12 +126,19 @@ public void LeapYear(int yearno)
 }
 
 
-void checkLeapYear(int yearno)
+public void checkLeapYear(int yearno)
 {
-	if(yearno%400 == 0)
-	{
+	if(yearno%4 == 0) /**This method will check if given year is a lea[ year.*/
+ {
+	if(yearno%100 == 0) /*when all these conditions will be true the we can say
+	given year is a leap year.*/ 
+   {
+		if(yearno%400 == 0)
+	  {
 		System.out.println(yearno+ "is a leap year");
-	}
+	  }
+   }
+ }
 	else
 		System.out.println(yearno+ "is not a leap year");
 }
@@ -139,15 +148,17 @@ void checkLeapYear(int yearno)
 
 public int power(int pow, int base)
 {
-	System.out.println("Enter the power");
-	if(pow > 31)
+	System.out.println("Enter the power"); 
+	if(pow > 31) /*The input taken by the user should not exceed beyond 31. If
+	it is more than 31 then user isn requested to reenter new and valid input.*/
 	{
 		System.out.println("Please enter valid power");
 		pow = scanner.nextInt();
-	    
+	   utility.power(pow, base);
 	}
 	else
-		utility.calculate();
+		utility.calculate(i);
+	 
 }
 
 private int calculate(int i)
@@ -203,7 +214,7 @@ public void gambling()
 {
 	for(int t=0; t < trials; t++) /*for loop to iterate till the no. of trials */
 	{
-		int stake, target, bet, won, trials;
+		public int stake, target, bet, won, trials;
 		int cash = stake;    
 	 while(cash > 0 && cash <= target)
 		{
@@ -222,6 +233,75 @@ public void gambling()
 	System.out.println("Percentage of win over trails "  +100 * won/trials);
 	System.out.println("Average # bet       " +1.0 *bet/trials);
 }
+
+
+/*************************Distinct Coupon Number************************/
+
+public int dist_coupon(int n)
+{
+	for(int i=0; i<n; i++)
+	{
+	double randno= Math.random();
+	if(i != randno)
+	{
+		System.out.println(i+ "is a distinct coupon number");
+	}
+	else
+		System.out.println("Not  a distinct coupon number");
+	
+}
 }
 
+/***********************2D array*****************************************/
 
+public void twodarr()
+{
+	int a= scanner.nextInt();
+	double b = scanner.nextDouble();
+	boolean c = scanner.nextBoolean();
+	for(int i=0; i<2; i++)
+	{
+		for(int j=0; j<2; j++)
+		{
+		System.out.println(a[i][j]);
+	}
+  }
+	for(int i=0; i<2; i++)
+	{
+		for(int j=0; j<2; j++)
+		{
+		System.out.println(b[i][j]);
+	}
+  }
+	for(int i=0; i<2; i++)
+	{
+		for(int j=0; j<2; j++)
+		{
+		System.out.println(c[i][j]);
+	}
+  }
+}
+
+/********************Sum of Three integers************************/
+
+public int triplets(int a[])
+{
+
+	int b[], n;
+	boolean flag;
+	for(int i=0; i<n-2; i++)
+	{
+		for(int j=i+1; j<n-1; j++)
+		{
+			for(int k=j+1; k<n; k++)
+			{
+				if(a[i]+a[j]+a[k] == 0)
+				{
+					
+					flag = 0;
+				}
+			}
+		}
+	}
+}
+}

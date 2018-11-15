@@ -1,0 +1,21 @@
+package Functionalprograms;
+
+import java.util.*;
+import Utility.Utility;
+
+public class IntAdd {
+public static void main(String[] args)
+{
+	int n;
+	System.out.println("Enter array elements");
+	Utility utility = new Utility();
+	n = utility.InputInteger();
+	for(int i=0; i<n-2; i++)
+	{
+		for(int j=i+1; j<n-1; j++)
+		{
+			for(int k=j+1; k<n; k++)
+		}
+	}
+}
+}

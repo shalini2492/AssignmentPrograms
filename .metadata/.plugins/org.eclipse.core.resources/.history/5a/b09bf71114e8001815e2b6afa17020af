@@ -1,0 +1,111 @@
+package Utility;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Utility {
+	Utility utility= new Utility();
+			  Scanner scanner= new Scanner(System.in);
+		  /* Scanner is used to obtain input of primitive types like int, double, long etc.
+		   * 
+		   */
+		 
+	  public String InputString()
+	  {
+		  return sc.nextLine();	 
+		  }
+	  
+	  public Integer InputInteger()
+	  {
+		  return sc.nextInt();
+	  }
+	  
+	  public void replaceString(String template,String username)
+	  {
+		  System.out.println("Enter username");
+		  if(username.length() < 3)
+		{
+			  System.out.println("Please enter string of more than 3 characters");
+		  }
+		  
+		  else
+			  String output = template.replace("<<username>>", username);
+		  return output;
+	  }
+	  
+}
+
+/***********************************Flip coin******************************/
+
+static Random random = new Random();
+public class FlipCoin
+{
+	public int HeadorTail(int n)
+	{
+	long headper=0, tailper=0;
+	int headcount=0, tailcount=0;
+	int heads, tail, n,i;
+	
+	
+	System.out.println("Enter the no. of times you want to flip the coin");
+	if(n < 0)
+	{
+		System.out.println("Please enter valid no.");
+		n = scanner.nextInt();
+		HeadorTail(n);
+	}
+	for(int i=0; i<n; i++)
+	{
+		double rand = Math.random();
+	System.out.println("Random no. are" +rand);
+  if(rand < 0.5)
+	    {
+	    	System.out.println("The occurrence of tail" +i);
+	    	tailcount = tailcount + 1;
+	    }
+	    else
+	    		System.out.println("The occurrence of heads" +i);
+	    	
+	}
+	System.out.println("Head count" +headcount);
+	System.out.println("tail count" +tailcount);
+	
+
+
+
+	
+	if(headcount>tailcount)
+	{
+		System.out.println("Headcount is greater");
+	}
+	else
+		System.out.println("tailcount is greater");
+
+}
+
+/*********************Leap Year*****************************/
+
+public class LeapYear 
+{
+	
+	if(n.length()<4)
+	{
+		System.out.println("Enter 4-digit year");
+		
+	}
+	else
+	
+	
+}
+
+
+void checkLeapYear(int n)
+{
+	if(n%400 == 0)
+	{
+		System.out.println(n+ "is a leap year");
+	}
+	else
+		System.out.println(n+ "is not a leap year");
+}
+

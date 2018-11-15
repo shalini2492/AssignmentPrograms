@@ -1,0 +1,14 @@
+package Functionalprograms;
+
+import Utility.Utility;
+
+	public class FlipCoin {
+		public static void main(String[] args)
+		{
+			int headcount=0, tailcount=0;
+			int heads, tail, n,i;
+					Utility utility= new Utility();
+		utility.HeadorTail(int headcount, int tailcount);
+		}
+	
+}

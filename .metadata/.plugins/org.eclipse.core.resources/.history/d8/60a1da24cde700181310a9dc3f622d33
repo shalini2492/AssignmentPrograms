@@ -1,0 +1,30 @@
+package Functionalprograms;
+import Utility.Utility;
+public class Username {
+  public static void main(String[] args)
+  {
+	  String username="";
+	  String template="Hello <<Username>>! How are you?";
+	  System.out.println(s);
+	  System.out.println("Enter username");
+			  System.out.println("Hello" +username+ "! How are you?");
+	 
+  }
+  public String InputString()
+  {
+	  return username;
+  }
+  public Integer InputInteger()
+  {
+	  return username;
+  }
+  public void replaceString(s,username)
+  {
+	  if(username.length()<3)
+	{
+		  System.out.println("Please enter string of more than 3 characters");
+	  }
+	  else
+		  String s1= 
+  }
+}

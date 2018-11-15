@@ -1,0 +1,5 @@
+package Functionalprograms;
+
+public class HarmonicNo {
+int i=0;
+}

@@ -1,0 +1,44 @@
+package Functionalprograms;
+import Utility.Utility;
+
+/*******************String replace*********************/
+
+public class Username {
+	public static void main(String[] args)
+	{
+		  String template="Hello <<username>>! How are you?";
+  String username;
+
+  Utility util1= new Utility();
+  util1.InputString();
+  util1.InputInteger();
+  String out= util1.replaceString(template, username);
+  return "Hello" +out+ "! How are you";
+  }
+
+/*********************Flip coin**************************/	
+	
+public class flipCoin {
+	public static void main(String[] args)
+	{
+		int headcount=0, tailcount=0;
+		int heads, tail, n,i;
+		int heads, tails;
+	Utility u1= new Utility();
+	u1.flip();
+	}
+}
+
+/*********************Leap Year*******************************/
+
+public class LeapYear
+{
+	public static void main(String[] args)
+	{
+		int n;
+	Utility ut = new Utility();
+	System.out.println("Enter the year");
+	ut.checkLeapYear(n);
+    	
+}
+

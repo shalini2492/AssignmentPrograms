@@ -1,0 +1,11 @@
+package Functionalprograms;
+
+import java.util.*;
+import Utility.Utility;
+
+public class Power_two {
+	
+int pow, base, i;
+Utility utility = new Utility();
+int a= utility.power(pow, base);
+}

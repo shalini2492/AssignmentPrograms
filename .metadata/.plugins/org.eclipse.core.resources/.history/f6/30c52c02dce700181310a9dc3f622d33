@@ -1,0 +1,21 @@
+package Functionalprograms;
+import Utility.Utility;
+public class Username {
+	public static void main(String[] args)
+	{
+		  String template="Hello <<username>>! How are you?";
+  String username;
+
+  Utility util1= new Utility();
+  util1.InputString();
+  util1.InputInteger();
+  String out= util1.replaceString(template, username);
+  return "Hello" +out+ "! How are you";
+  }
+
+public class flipCoin {
+	int heads, tails;
+	Utility u1= new Utility();
+	u1.flip();
+	}
+}

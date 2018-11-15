@@ -1,0 +1,7 @@
+package Functionalprograms;
+
+public class Power_two {
+	
+int pow, base, i;
+Utility utility = new Utility;
+}

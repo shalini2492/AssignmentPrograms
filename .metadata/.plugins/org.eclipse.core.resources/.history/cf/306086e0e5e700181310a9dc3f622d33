@@ -1,0 +1,15 @@
+package Functionalprograms;
+
+import Utility.Utility;
+
+	public class flipCoin {
+		public static void main(String[] args)
+		{
+			int headcount=0, tailcount=0;
+			int heads, tail, n,i;
+			int heads, tails;
+		Utility u1= new Utility();
+		u1.flip();
+		}
+	
+}

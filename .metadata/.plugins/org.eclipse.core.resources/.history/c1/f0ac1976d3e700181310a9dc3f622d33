@@ -1,0 +1,10 @@
+package Functionalprograms;
+import Utility.Utility;
+public class Username {
+  String template="Hello <<username>>! How are you?";
+  String username;
+  Utility util1= new Utility();
+  util1.InputString();
+  util1.InputInteger();
+  util1.replaceString(template, username); 
+  }

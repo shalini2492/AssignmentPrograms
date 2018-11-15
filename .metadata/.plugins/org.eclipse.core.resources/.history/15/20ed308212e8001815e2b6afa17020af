@@ -1,0 +1,28 @@
+package Functionalprograms;
+
+import java.util.*;
+import Utility.Utility;
+
+	public class FlipCoin {
+		public static void main(String[] args)
+		{
+			CoinToss ct = new CoinToss();
+			int c;
+			do
+			{
+			System.out.println("Enter 1 to flip the coin or 0 to quit");	
+			
+			Utility utility = new Utility();
+			c = utility.InputInteger();
+			if(c!= 0)
+			{
+				int a= utility.HeadorTail(int headcount, int tailcount);
+			}
+			else
+			{
+				System.out.println("Please enter valid input");
+		}
+			} while(c == 1);	
+		} 
+	
+

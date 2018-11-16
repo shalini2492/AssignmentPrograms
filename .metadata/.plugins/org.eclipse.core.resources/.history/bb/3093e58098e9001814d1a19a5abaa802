@@ -558,18 +558,7 @@ public String searchStr(String s[])
 		start = mid + 1;
 		return searchStr(s);
 }
-
+}
 
 /*********************Insertion Sort for Integer*************************/
 
-public int insertionSort(int[] s)
-{
-	int in, index;
-	s[0] = s[index];
-	for(int i=0; i < s[index]; i++)
-	{
-		System.out.println("");
-		in = utility.InputInteger();
-	    insertionSort(s);
-	}
-}

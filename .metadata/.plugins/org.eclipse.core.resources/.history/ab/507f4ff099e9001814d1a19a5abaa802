@@ -1,0 +1,14 @@
+package Algorithmprograms;
+
+import Utility.Utility;
+import java.util.*;
+public class InsertSortint {
+public static void main(String[] args)
+{
+	
+	System.out.println("Enter the elements in an array");
+	Scanner scanner = new Scanner(System.in);
+	int f = scanner.nextInt();
+	int[] arr = new int[f];
+}
+}

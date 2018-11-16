@@ -564,12 +564,10 @@ public String searchStr(String s[])
 
 public int insertionSort(int[] s)
 {
-	int in, index;
+	int index;
 	s[0] = s[index];
 	for(int i=0; i < s[index]; i++)
 	{
-		System.out.println("");
-		in = utility.InputInteger();
-	    insertionSort(s);
+		
 	}
 }

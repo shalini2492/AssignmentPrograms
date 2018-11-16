@@ -1,0 +1,14 @@
+package Functionalprograms;
+
+import Utility.Utility;
+public class Quadratic {
+public static void main(String[] args)
+{
+	float x, a, b, c;
+	String s = "delta = b*b - 4 a*c";
+	float d= x*x;
+	Utility utility = new Utility();
+	String s1 = utility.quad(s);
+	System.out.println(s1);
+}
+}

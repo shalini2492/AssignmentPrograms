@@ -1,0 +1,18 @@
+package Functionalprograms;
+
+import java.util.Scanner;
+import Utility.Utility;
+import Utility.Utility;
+import Utility.Utility;
+public class Distance {
+public static void main(String[] args)
+{
+	
+	System.out.println("Enter the coordinates");
+	Scanner scanner = new Scanner(System.in);
+	int x = scanner.nextInt();
+	int y = scanner.nextInt();
+	Utility utility = new Utility();
+	utility.dist();
+}
+}

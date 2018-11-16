@@ -1,0 +1,14 @@
+package Algorithmprograms;
+
+import Utility.Utility;
+
+public class CheckAnagram {
+public static void main(String[] args)
+{
+	String s1, s2;
+	System.out.println("Enter two strings");
+	Utility utility = new Utility();
+	s1 = utility.InputString();
+	s2 = utility.InputString();
+}
+}

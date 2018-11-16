@@ -1,0 +1,17 @@
+package Algorithmprograms;
+
+import Utility.Utility;
+import java.util.*;
+
+public class StringBinary {
+public static void main(String[] args)
+{
+	String search;
+	String[] st = new String[10];
+	Utility utility = new Utility();
+	Scanner scanner = new Scanner(System.in);
+    st = scanner.nextLine();
+    System.out.println("Enter string to be searched");
+    search = utility.InputString();
+}
+}

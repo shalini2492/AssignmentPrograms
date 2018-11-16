@@ -1,0 +1,9 @@
+package Functionalprograms;
+
+import Utility.Utility;
+public class Quadratic {
+public static void main(String[] args)
+{
+	
+}
+}

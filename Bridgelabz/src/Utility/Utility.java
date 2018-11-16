@@ -1,5 +1,7 @@
 package Utility;
 
+
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -149,6 +151,7 @@ public void checkLeapYear(int yearno)
 
 public int power(int pow, int base)
 {
+	int i;
 	System.out.println("Enter the power"); 
 	if(pow > 31) /*The input taken by the user should not exceed beyond 31. If
 	it is more than 31 then user is requested to reenter new and valid input.*/
@@ -266,7 +269,10 @@ public boolean InputBoolean()
 
 public double InputDouble()
 {
-	return scanner.nextDouble();
+	return scanner.nextDouble(); /*Scans the next token of the input as a double. This 
+	method will throw InputMismatchException if the next token cannot be 
+	translated into a valid double value.Scans the next token of the input as
+	 a double. */
 }
 
 public void twodarr(int row, int column)
@@ -276,14 +282,14 @@ public void twodarr(int row, int column)
 	{
 		for(int j=0; j<column; j++)
 		{
-		a[i][j]= scanner.nextInt();
+		a[i][j]= scanner.nextInt(); /* Reads the integer value from user.*/
 		}
 	}
 	for(int i=0; i<row; i++)
 	{
 		for(int j=0; j<column; j++)
 		{
-			System.out.print(a[i][j]+ "");
+			System.out.print(a[i][j]+ "");  //printing the array.
 		}
 	System.out.println(" ");
 	}
@@ -296,14 +302,15 @@ public int triplets(int a[])
 {
 
 	int b[], n;
-	boolean flag;
+	boolean flag;  // flag to check if the sum of triplets is 0. Returns true if the 
+	//result is non-zero.
 	for(int i=0; i<n-2; i++)
 	{
 		for(int j=i+1; j<n-1; j++)
 		{
 			for(int k=j+1; k<n; k++)
 			{
-				if(a[i]+a[j]+a[k] == 0)
+				if(a[i]+a[j]+a[k] == 0) //checks whether sum is zero or non-zero.
 				{
 					
 					flag = false;;
@@ -317,13 +324,13 @@ public int triplets(int a[])
 
 /*************************Distance calculation*************************/
 
-public void dist()
+public void dist(int i, int j)
 {
 	int x = 0, y=0;
-	int i = 0, j = 0;
-  double c = Math.pow(x, 2);
-  double d = Math.pow(y, 2);
-  double dn = c * d;
+	
+  double c = Math.pow(x, 2);  //Returns x*x.
+  double d = Math.pow(y, 2);  //Returns y*y.
+  double dn = c * d;         
   double diff = (c-i) * (d-j);
   
 }
@@ -332,26 +339,225 @@ public void dist()
 
 public void swap(String[] ch, int i, int j)
 {
+	/* This method is used to swap values from location i and i+1. We use temp 
+	 * variable for this purpose.
+	 */
 	String temp= ch[i];
 	ch[i]=ch[j];
 	ch[j] = temp;
 }
 
-/*public String permutations(String[] ch, int currentindex)
+public String per(String[] ch, int cindex)
 {
-	public int j;
-	String[] ch, currentindex;
-	if(currentindex = ch.length-1)
+	int j;
+	j = utility.InputInteger();  
+	ch = new String[j]; 
+	
+	if(cindex == (ch.length-1))  /*original string ch and cindex is set as its 
+		length-1. Means currentindex is ch[i+1] and then remianing elements 
+		are swapped using swap() method iteratively. */
 	{
 		System.out.println(String.valueOf(ch));
 	}
-	for(int i = currentindex; i< ch.length; i++)
+	for(int i = cindex; i< ch.length; i++)
 	{
-	swap(ch, currentindex, j);
-	utility.permutations(ch, currentindex+1);
-	swap(ch, currentindex, j);
+	swap(ch, cindex, j);     //iterative swap() method.
+	utility.per(ch, cindex+1); /* recursive per() method. Here currentindex is 
+	incremented. and again swap method is called. */
+	swap(ch, cindex, j);
 	}
 }
-*/
+
+/************************Stopwatch*********************************/
+
+public void stopWatch(int startTime, int stopTime)
+{
+	startTime=0;
+	stopTime=0;
+	
+	int elapsedTime, diff, ch;
+	
+	long start;
+	start = System.currentTimeMillis();
+	long now = System.currentTimeMillis();
+	System.out.println((now-start)/1000.0);
 }
+
+
+/************************TicTacToe***********************************/
+
+public void playGame(int x)
+{
+	Random random = new Random(); //Random instance is created for generating 
+	                                //random no.
+	int row, column, cellno;
+	int won;
+	int[][] a =new int[row][column];
+
+	for(int i=0; i < row; i++)
+	{
+		for(int j=0; j < column; j++)
+		{
+    	    cellno = a[row][column];
+	        cellno = utility.InputInteger();
+		}
+	}
+	column= row;
+	for(int i=0; i==row; i++)
+	{
+	if(a[row][column] == 'X')
+	  {
+		won++;
+	  }
+	else
+		won--;
+	}
+}
+
+/*************************Quadratic*******************************/
+
+public String quad(int a, int b, int c)
+{
+	a = utility.InputInteger();
+	
+	double k, root1, root2;
+	if(k > 0)
+	{
+		root1 = (-b + (Math.sqrt(k) / (2 * a)));
+		root2 = (-b - (Math.sqrt(k) / (2 * a)));
+		System.out.println("First root:" +root1);
+		System.out.println("Second root" +root2);
+	}
+	else if(k == 0)
+	{
+		root1 = (-b + (Math.sqrt(k) / (2 * a)));
+		System.out.println("First root is:" +root1);
+	}
+	else
+		System.out.println("Roots are imaginary");
+}
+
+/******************************WindChill********************************/
+
+public double calTemp(double temp, double speed)
+{
+	double cal;
+	temp = utility.InputDouble();
+	speed = utility.InputDouble();
+	if(temp > 50 || speed <3 || speed > 120)
+	{
+	System.out.println("Please enter valid temperature");
+	temp = scanner.nextDouble();
+	System.out.println("Please enter valid speed");
+	speed = scanner.nextDouble();
+	calTemp(temp, speed);
+	}
+	else
+		cal = 35.74 + 0.6215 * temp + (0.4275 * temp - 35.75) * Math.pow(speed, 0.16);
+	    return cal;
+}
+
+/**************************Algorithm Programs************************************/
+
+/*************************Check for Anagram****************************/
+
+public String checkAnagram(String s1, String s2)
+{
+	if(s1.replaceAll(" ", "").length() == s2.replaceAll(" ", "").length())
+	  {
+	    char[] char1 = s1.toLowerCase().toCharArray();
+		char[] char2 = s2.toLowerCase().toCharArray();
+	
+	    Arrays.sort(char1);
+	    Arrays.sort(char2);
+	
+	   if(Arrays.equals(char1, char2))
+   	   {
+		    System.out.println("Given strings are anagram");
+	   }
+	   else 
+	        System.out.println("Given strings are not anagram");
+		
+     }
+}
+
+/**********************Prime no.*****************************/
+
+public int prime(int[] x)
+{
+	int i, n=1000;
+	n = scanner.nextInt();
+	int[] a= new int[n];
+	if(i%i == 0 && i%1 == 0) //Only the nos divisible by itself and 1 are returned.
+	{
+		System.out.println(a[i]);
+	}
+}
+
+public int primdrome(int[] a)
+{
+  int i, j;
+  int[] c = new int[1000];
+  /*if(c[i] == c[j])
+  {
+    System.out.println(c[i]);
+  }*/
+  for(i=0; i<1000; i++)
+  {
+	  if(c[i+1] == c[i-1])
+	  {
+	      System.out.println(c[i]);
+	      primdrome(a);
+	  }
+	  else
+		  System.out.println("");
+  }
+}
+
+/***********************Binary Search for Integer**********************/
+
+public int searchBinary(int[] k, int s, int e)
+{
+	int x, i, j;
+    int mid = (s + (e-1))/2; //mid value is calculated.
+    if(x == mid) //checked if mid value is the key or not.
+    {
+    	return mid;
+    }
+    else 
+    	if(x > mid)    //if key is in first half part then recursive method is used.
+    		//mid is set start and end is decremented by 1. 
+    	{
+    		return searchBinary(k, mid, e-1);
+    	}
+    	else // If key is in second half part of array then recursive method is used.
+    		// Now the mid is incremented and set as start of array and end is kept
+    		//as it is.
+    		return searchBinary(k, mid+1, e);
+}
+
+/*********************Binary Search for String****************************/
+
+public String searchStr(String s[])
+{
+	int i, k, start, end;
+	int mid= (start + (end-1) / 2);
+	k = mid;
+	if(s[k] == s[mid])
+	{
+		System.out.println("Element searched:" +s[k]);
+	}
+	else if(k > mid)
+	{
+		start = mid;
+		end = end -1;
+		return searchStr(s);
+		
+	}
+	else
+		start = mid + 1;
+		return searchStr(s);
+}
+
+/*********************Insertion Sort for Integer*************************/
 

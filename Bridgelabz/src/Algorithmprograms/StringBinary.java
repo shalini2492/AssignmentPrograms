@@ -14,7 +14,7 @@ public static void main(String[] args)
     int x = scanner.nextInt();
     String[] st = new String[x];
     System.out.println("Enter string to be searched");
-    search = utility.InputString();
+    search = utility.inputString();
     String tr = utility.searchStr(st);
     System.out.println(tr);
 }

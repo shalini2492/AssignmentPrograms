@@ -1,0 +1,21 @@
+package Utility;
+
+import java.util.*;
+
+public class Utility 
+{
+	
+	Utility utility = new Utility();
+	Scanner sc = new Scanner(System.in);
+    public String inputString()
+    {
+    	return sc.nextLine();
+    }
+    public int inputInteger()
+    {
+    	return sc.nextInt();
+    }
+}
+
+
+

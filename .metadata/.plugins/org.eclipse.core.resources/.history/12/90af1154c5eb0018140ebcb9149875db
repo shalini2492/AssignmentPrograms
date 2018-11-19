@@ -1,0 +1,11 @@
+package Utility;
+
+import java.util.*;
+
+public class Utility 
+{
+	Utility utility = new Utility();
+}
+
+
+

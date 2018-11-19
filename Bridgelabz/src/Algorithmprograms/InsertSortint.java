@@ -5,12 +5,15 @@ import java.util.*;
 public class InsertSortint {
 public static void main(String[] args)
 {
-	int ins;
+	int s;
 	int[] arr = new int[10];
+	 Utility utility = new Utility();
 	System.out.println("Enter the elements in an array");
-	Scanner scanner = new Scanner(System.in);
+    int n = utility.inputInteger();
 	System.out.println("Enter the element to be inserted");
-    Utility utility = new Utility();
-    ins = utility.InputInteger();
+    
+    s = utility.inputInteger();
+    int d = utility.insertionSort(arr);
+    System.out.println(d);
 }
 }

@@ -8,7 +8,7 @@ public static void main(String[] args)
 
 Utility utility = new Utility();
 System.out.println("Enter the number for harmonic number");
-int n = utility.InputInteger();
+int n = utility.inputInteger();
 utility.harmonicNo();
 }
 

@@ -13,9 +13,9 @@ public static void main(String[] args)
     int stopTime = 0;
 	System.out.println("Enter 1 to start the timer and 0 to stop the timer");
 	Utility utility = new Utility();
-	ch = utility.InputInteger();
-	startTime = utility.InputInteger();
-	stopTime = utility.InputInteger();
+	ch = utility.inputInteger();
+	startTime = utility.inputInteger();
+	stopTime = utility.inputInteger();
     utility.stopWatch(startTime, stopTime);
 }
 }

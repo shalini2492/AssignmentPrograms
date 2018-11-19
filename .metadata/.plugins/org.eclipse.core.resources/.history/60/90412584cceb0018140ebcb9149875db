@@ -1,0 +1,20 @@
+package Functionalprograms;
+import Utility.Utility;
+import util.Util;
+
+/*******************String replace*********************/
+
+public class Username 
+{
+	public static void main(String[] args)
+	   {
+		  String template = "Hello <<username>> ! How are you?";
+          String username="";
+
+          Util utility = new Util();
+          utility.inputString();
+          utility.inputInteger();
+          String str = utility.replaceString(template, username);
+          System.out.println(str);
+       }
+}

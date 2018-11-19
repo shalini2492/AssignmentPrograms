@@ -12,7 +12,7 @@ public class Permutation {
 	 System.out.println("Enter the string for permutation");
 	 str = scanner.nextLine();
 	 Utility utility = new Utility();
-	 String st = utility.per(str, currentindex);
+	 String st = utility.per(ch, cindex);
 	 System.out.println(st);
  }
 }

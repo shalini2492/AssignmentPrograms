@@ -9,7 +9,7 @@ public static void main(String[] args)
 int i, n;
 Utility utility = new Utility();
 System.out.println("Enter the number for factorization");
-n= utility.InputInteger();
+n= utility.inputInteger();
 i = utility.factors(n);
 }
 }

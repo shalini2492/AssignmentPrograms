@@ -93,7 +93,7 @@ public int HeadorTail(int n)
 	                 }
 	           else
 		                    System.out.println("tailcount is greater");
-
+    return n;
 }
  
 /*********************Leap Year*****************************/
@@ -156,6 +156,7 @@ public int power(int pow, int base)
 	                  }
 	                      System.out.println("2 to the power" +pow+ "is" +i);
 	      }
+	      return pow;
 }
 
 /********************Harmonic Number*****************************/
@@ -193,6 +194,7 @@ public int factors(int n)
 		                             System.out.println("" +i);
 	                           }
                       }
+	            return n;
 }
 
 /************************Gambler*************************************/
@@ -238,6 +240,7 @@ public int dist_coupon(int n)
 		                         System.out.println("Not  a distinct coupon number");
 	
               }
+	   return n;
 }
 
 /***********************2D array*****************************************/
@@ -266,7 +269,7 @@ public void twodarr(int row, int column)
 	                	for(int j=0; j<column; j++)
 		                     {
 		                          a[i][j]= sc.nextInt(); /* Reads the integer value from user.*/
-		               /*      }
+		                     }
 	             }
 	        for(int i=0; i<row; i++)
 	             {
@@ -281,10 +284,10 @@ public void twodarr(int row, int column)
 
 /********************Sum of Three integers************************/
 
-public int triplets(int a[])
+public int[] triplets(int a[])
 {
 
-	int b[], n;
+	int b[], n=10;
 	boolean flag;  // flag to check if the sum of triplets is 0. Returns true if the 
 	//result is non-zero.
 	for(int i=0; i<n-2; i++)
@@ -301,6 +304,7 @@ public int triplets(int a[])
 			}
 		}
 	}
+	return a;
 }
 
 
@@ -330,10 +334,10 @@ public void swap(String[] ch, int i, int j)
 	ch[j] = temp;
 }
 
-public String per(String[] ch, int cindex)
+public String[] per(String[] ch, int cindex)
 {
 	   int j;
-	   j = utility.InputInteger();  
+	   j = sc.nextInt();  
 	   ch = new String[j]; 
 	
 	       if(cindex == (ch.length-1))  /*original string ch and cindex is set as its 
@@ -345,10 +349,11 @@ public String per(String[] ch, int cindex)
 	             for(int i = cindex; i< ch.length; i++)
 	                     {
 	                           swap(ch, cindex, j);     //iterative swap() method.
-	                           utility.per(ch, cindex+1); /* recursive per() method. Here currentindex is 
+	                           per(ch, cindex+1); /* recursive per() method. Here currentindex is 
 	                                                      incremented. and again swap method is called. */
 	                           swap(ch, cindex, j);
 	                     }
+return ch;
 }
 
 /************************Stopwatch*********************************/
@@ -395,15 +400,17 @@ public void playGame(int x)
 	        else
 		               won--;
 	    }
+	
 }
 
 /*************************Quadratic*******************************/
 
+double k, root1, root2;
 public String quad(int a, int b, int c)
 {
 	a = sc.nextInt();
 	
-	double k, root1, root2;
+	
 	if(k > 0)
 	    {
 		           root1 = (-b + (Math.sqrt(k) / (2 * a)));
@@ -418,13 +425,14 @@ public String quad(int a, int b, int c)
 	        }
 	   else
 		          System.out.println("Roots are imaginary");
+	
 }
 
 /******************************WindChill********************************/
 
 public double calTemp(double temp, double speed)
 {
-	double cal;
+	double cal=0;
 	temp = sc.nextDouble();
 	speed = sc.nextDouble();
 	           if(temp > 50 || speed <3 || speed > 120)
@@ -462,25 +470,40 @@ public String checkAnagram(String s1, String s2)
 	           System.out.println("Given strings are not anagram");
 		
      }
+	return s1;
 }
 
 /**********************Prime no.*****************************/
 
-public int prime(int[] x)
+public int[] prime(int range)
 {
-	int i, n=1000;
-	n = sc.nextInt();
-	int[] a= new int[n];
-	   if(i%i == 0 && i%1 == 0) //Only the nos divisible by itself and 1 are returned.
-	        {
-		          System.out.println(a[i]);
-	        }
+	boolean isPrime = false;
+	int count = 0;
+	int prime[]=new int[range];
+	for(int i=0; i<=range; i++)
+	{
+		for(int j=2; j<i; j++)
+		{
+			if(i%j==0)
+			{
+				isPrime = true;
+				break;
+			}
+			else
+				isPrime = false;
+			
+		}
+		if(isPrime == false)
+			prime[count++] = i;
+	}
+	return prime;
 }
 
-public int primdrome(int[] a)
+public int[] primdrome(int[] a)
 {
-  int i, j;
+  int i=0, j=1;
   int[] c = new int[1000];
+  
   if(c[i] == c[j])
   {
     System.out.println(c[i]);
@@ -495,6 +518,7 @@ public int primdrome(int[] a)
 	                     else
 		                              System.out.println("");
                  }
+           return a;
 }
 
 /***********************Binary Search for Integer**********************/
@@ -546,7 +570,7 @@ public String searchStr(String s[])
 
 /*********************Insertion Sort for Integer*************************/
 
-public int insertionSort(int[] s)
+public int[] insertionSort(int[] s)
 {
 	int in, index;
 	int i=1, n;
@@ -556,29 +580,27 @@ public int insertionSort(int[] s)
 		if(s[i] > s[j])
 		{
 			System.out.println("Swapping elements:");
-			sort(i, j);
+			 int temp;
+	         temp = i;
+	         i = j;
+	         j = temp;
 			
 		}
 		else
 			insertionSort(s);
 	}
+	return s;
 }
-    public int sort(int i, int j)
-        {
-	         int temp;
-	         temp = i;
-	         i = j;
-	         j = temp;
-        }
+    
 
 
 /******************Insertion sort for String*******************************/
 	          
-public String insortStr(String[] st)
+public String[] insortStr(String[] st)
 {
-	int flag =0;
+	int flag =0, i;
 	st = new String[5];
-    for(int i = 1; i < 5; i++)
+    for(i = 1; i < 5; i++)
     {
     	int key = i;
     	int j = key - 1;
@@ -591,26 +613,60 @@ public String insortStr(String[] st)
     		insortStr(st);
     		
     }
+    return st;
 }
 
 /********************Bubble Sort for Integer************************/
-    
-public int bubsortint(int n)
+int i, j, temp;
+public int[] bubsortint(int no, int[] arr)
 {
-	int flag = 0;
-	int[] arr = new int[n];
-	int i = 1, j = i -1;
-	for(i=0; i < n; i++)
+
+	
+	for(i=1; i < no-1; i++)
 	{
-		if(arr[i] > arr[j])
+		for(j=i-1; j<no-i-1; j++)
+	        {
+		        if(arr[i] > arr[j])
+		              {
+		// flag = 1;
+		                 temp = arr[i];
+		                 arr[i]=arr[j];
+		                 arr[j]=temp;
+		              }
+	            
+	        }
+
+    }
+	return arr;
+}
+public void sortedArray(int no, int[] arr)
+{
+	System.out.println("Sorted elements are:");
+	for(i=0; i<no; i++)
+	{
+		System.out.println(arr[i]);
+	}
+}
+
+/**********************Bubble Sort for String***********************/
+
+String tem;
+public String[] bubsortString(String[] str, int no)
+{
+	int i, j;
+    for(i=0; i<no-1; i++)
+	{
+		for(j=0; j<no-i-1; j++)
 		{
-		flag = 1;
-		System.out.println("Swapping elements:");
-	    sort(i, j);
+			if(str[i].equals(str[j]))
+			{
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
 		}
-	else
-		bubsortint(n);
-	}	
+	}
+	return str;
 }
 		                     
 

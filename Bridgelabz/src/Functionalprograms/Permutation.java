@@ -6,13 +6,13 @@ import Utility.Utility;
 public class Permutation {
  public static void main(String[] args)
  {
-	 String str;
-	 int currentindex;
-	 Scanner scanner = new Scanner(System.in);
-	 System.out.println("Enter the string for permutation");
-	 str = scanner.nextLine();
+	 String[] str = new String[10];
+	 int currentindex=0;
 	 Utility utility = new Utility();
-	 String st = utility.per(ch, cindex);
+	 System.out.println("Enter the string for permutation");
+	String s = utility.inputString();
+	 
+	 String st = utility.per(str, currentindex);
 	 System.out.println(st);
  }
 }

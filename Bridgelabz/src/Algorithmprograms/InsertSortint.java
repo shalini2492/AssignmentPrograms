@@ -13,7 +13,7 @@ public static void main(String[] args)
 	System.out.println("Enter the element to be inserted");
     
     s = utility.inputInteger();
-    int d = utility.insertionSort(arr);
+    int[] d = utility.insertionSort(arr);
     System.out.println(d);
 }
 }

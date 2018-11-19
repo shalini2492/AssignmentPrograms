@@ -1,18 +1,28 @@
 package Algorithmprograms;
 
+import java.util.Scanner;
+
 import Utility.Utility;
 
 public class BubSortInt {
 public static void main(String[] args)
 {
-	int n=10;
-	int[] arr1 = new int[n];
+	int no=10;
+	
 	Utility utility = new Utility();
 	System.out.println("Enter no. of elements you want in an array");
-	n = utility.inputInteger();
+	no = utility.inputInteger();
 	System.out.println("Enter the elements");
-	//arr1 = utility.inputInteger();
-	int t = utility.bubsortint(n);
+	Scanner sc = new Scanner(System.in);
+	//arr1 = sc.nextInt();
+	int[] arr1 = new int[no];
+	
+	
+	for(int i=0; i<no; i++)
+	{
+		arr1[i] = sc.nextInt();
+	}
+	int[] t = utility.bubsortint(no, arr1);
 	System.out.println(t);
 }
 }

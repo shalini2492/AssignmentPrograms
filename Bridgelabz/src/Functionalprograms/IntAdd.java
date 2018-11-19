@@ -19,7 +19,7 @@ public static void main(String[] args)
 		a[i]=utility.inputInteger();
 	}
 	
-     int m = utility.triplets(a);
+     int[] m = utility.triplets(a);
     System.out.println(m);
 }
 }

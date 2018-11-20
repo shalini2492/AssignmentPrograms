@@ -1,0 +1,15 @@
+package Algorithmprograms;
+
+import Utility.Utility;
+public class MergeSortStr {
+public static void main(String[] args)
+{
+	String str[] = {"Python", "AngularJS", "Android", "Dotnet", "Java"};
+	Utility utility = new Utility();
+	for(int i=4; i++)
+	{
+		System.out.println(str[i]);
+	}
+	
+}
+}

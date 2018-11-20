@@ -168,7 +168,7 @@ public int power(int pow, int base)
 
 public void harmonicNo()
 {
-         int sum=10;
+         int sum;
          while(sum != 0)
  	  
              {
@@ -732,7 +732,7 @@ public String binSearch(String search)
     	 {
     		 if(word.equals(search))
     		 {
-    		    // count++;
+    			 count++;
     			 counted++;
     		 }
     	 }
@@ -834,7 +834,6 @@ public int changeReturn(int valofnote, int noofnote)
 		if(change > arr[i])
 		{
 			arr[i] = arr[i+1];
-			System.out.println("");
 		}
 		if(change == arr[i])
 		{
@@ -847,8 +846,6 @@ public int changeReturn(int valofnote, int noofnote)
 	//else
 		return changeReturn(valofnote, noofnote);
 }
-
-
 }
 
 	

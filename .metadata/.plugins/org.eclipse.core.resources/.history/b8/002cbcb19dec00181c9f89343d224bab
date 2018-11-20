@@ -1,0 +1,51 @@
+package Algorithmprograms;
+
+import java.io.*;
+import java.util.Scanner;
+
+import Utility.Utility;
+public class WordSearch {
+public static void main(String[] args) throws IOException
+{
+	int lineSize;
+	
+	String str;
+	Utility utility = new Utility();
+	RandomAccessFile ra = new RandomAccessFile("abc.txt", "r");
+	lineSize = 10;
+	int noofLines = (int) (ra.length() / lineSize);
+	System.out.println("Enter word to search");
+	str = utility.inputString();
+	String stri = utility.binSearch(str);
+	System.out.println(stri);
+	
+	/*int x=0, y=0;
+	String words;
+	Utility utility = new Utility();
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	String[] word = new String[10];
+	for(int i=0; i<10; i++)
+	{
+		System.out.println("words["+i+"]");
+		word[i] = br.readLine();
+
+	}
+	utility.sort(word);
+	for(int i=0; i<10; i++)
+	{
+		System.out.println(word[i]);
+	}
+	System.out.println("Enter the word to search in file");
+	words = br.readLine();
+	int in = utility.binSearch(words, word, x, y);
+	{
+		if(in<0)
+		{
+	         System.out.println("Word not found");		
+		}
+		else
+			System.out.println("Word " +words+ " found at " +in);
+	}
+}*/
+}
+}

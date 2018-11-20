@@ -14,6 +14,6 @@ public static void main(String[] args)
 	s2 = scanner.nextLine();
 	Utility utility = new Utility();
 	String str1 = utility.checkAnagram(s1, s2);
-	
+	System.out.println(str1);
 }
 }

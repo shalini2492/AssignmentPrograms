@@ -1,0 +1,15 @@
+package Algorithmprograms;
+
+import java.io.*;
+import java.util.Scanner;
+
+import Utility.Utility;
+public class WordSearch {
+public static void main(String[] args) throws IOException
+{
+	File f = new File("cd/home/hp/JavaPrograms/Bridgelabz/bin/Algorithmprograms");
+	BufferedReader br= new BufferedReader(new InputStreamReader(new FileInputStream("abcd.txt")));
+	
+}
+
+}

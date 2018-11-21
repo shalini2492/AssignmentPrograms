@@ -1,0 +1,8 @@
+package Algorithmprograms;
+import Utility.Utility;
+public class Binary {
+public static void main(String[] args)
+{
+	
+}
+}

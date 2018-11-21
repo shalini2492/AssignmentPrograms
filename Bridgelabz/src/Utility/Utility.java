@@ -349,25 +349,26 @@ public void swap(String[] ch, int i, int j)
 	ch[j] = temp;
 }
 
-public String[] per(String[] ch, int cindex)
+public String[] per(String[] ch, int currentindex)
 {
 	   int j;
 	   j = sc.nextInt();  
 	   ch = new String[j]; 
 	
-	       if(cindex == (ch.length-1))  /*original string ch and cindex is set as its 
+	       if(currentindex == (ch.length-1))  /*original string ch and cindex is set as its 
 		                             length-1. Means currentindex is ch[i+1] and then remianing elements 
 		                             are swapped using swap() method iteratively. */
 	                  {
 		                    System.out.println(String.valueOf(ch));
       	              }
-	             for(int i = cindex; i< ch.length; i++)
+	             for(int i = currentindex; i< ch.length; i++)
 	                     {
-	                           swap(ch, cindex, j);     //iterative swap() method.
-	                           per(ch, cindex+1); /* recursive per() method. Here currentindex is 
+	                           swap(ch, currentindex, j);     //iterative swap() method.
+	                           per(ch, currentindex+1); /* recursive per() method. Here currentindex is 
 	                                                      incremented. and again swap method is called. */
-	                           swap(ch, cindex, j);
+	                           swap(ch, currentindex, j);
 	                     }
+	             System.out.println(ch);
 return ch;
 }
 
@@ -931,7 +932,56 @@ public static void sqrt(int c)
 
 /***************Conversion of decimal to binary********************/
 
+public static void toBinry(int input)
+{
+	int[] bin = new int[100];
+	int i=0;
+	while(input > 0)
+	{
+		bin[i] = input%2; //remainder is determined as binary value.
+		input = input/2;  //divisor is set as next input.
+		i++;
+	}
+	for(int j=i-1; j>=0; j--)
+	{
+		System.out.print(bin[j]); //displaying binary representation of no.
+	
+	//System.out.println(bin[i]);
+    }
+}
 
+/***********************Expansion to binary**************************/
+
+public static void toBinary(int x)
+{
+	/*int[] bin = new int[100];
+	int mid, i=0, nibble1, nibble2;
+	int len = in, high, low;
+	while(in > 0)
+	{
+		bin[i] = in%2; //remainder is determined as binary value.
+		in = in/2;  //divisor is set as next input.
+		i++;
+	}
+	for(int j=i-1; j>=0; j--)
+	{
+		System.out.print(bin[j]); //displaying binary representation of no.
+	
+	//System.out.println(bin[i]);
+    }
+	*/
+	System.out.println("Swapping nibbles....");
+//return ((x & 0x0F << 4) | (x & 0xF0 >> 4));
+int h=((x & 0x0F) << 4 | (x & 0xF0) >> 4);
+System.out.println(h);
+}
+
+/******************************Displaying list*************************/
+
+public void displayList(String task, String deadline, int minutes)
+{
+	
+}
 
 }
 

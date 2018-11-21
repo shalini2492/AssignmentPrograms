@@ -12,7 +12,7 @@ public static void main(String[] args)
 	
 	System.out.println("Enter the no of columns of array");
 	int column = utility.inputInteger();
-	System.out.println("Library array is:" );
+	System.out.println("Enter elements" );
 	utility.twodarr(row, column);
 
 }

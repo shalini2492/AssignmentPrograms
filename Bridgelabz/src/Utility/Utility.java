@@ -1,5 +1,7 @@
 package Utility;
 
+import java.text.SimpleDateFormat;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,15 +16,38 @@ public class Utility
 	
 	
 	Scanner sc = new Scanner(System.in);
+	/*This method will read and accept input of type string and can be called using 
+	 * object of class
+	 */
     public String inputString()
     {
     	return sc.nextLine();
     }
+    /*This method will read and accept input of type integer and can be called
+     * using object of class.
+     */
     public int inputInteger()
     {
     	return sc.nextInt();
     }
     
+    /***********************2D array*****************************************/
+    /*This method will return input of type boolean*/
+
+    public boolean InputBoolean()
+    {
+    	return sc.nextBoolean();
+    }
+
+    /*This method will return input of type double.*/
+
+    public double InputDouble()
+    {
+    	return sc.nextDouble(); /*Scans the next token of the input as a double. This 
+    	method will throw InputMismatchException if the next token cannot be 
+    	translated into a valid double value.Scans the next token of the input as
+    	 a double. */ 
+    }
     /**********************String Replace*************************/
     
     public String replaceString(String template, String username)
@@ -212,6 +237,7 @@ public void gambling(int stake, int trials, int target)
 	            for(int t=0; t < trials; t++) 
 	                    {
 		                    cash = stake;  
+		 /*the player can play till the cash is 0 and cash is less than target.*/
 		                    while(cash > 0 && cash <= target)
 		                         {
 			                           bet++;
@@ -223,7 +249,7 @@ public void gambling(int stake, int trials, int target)
 		                   if(cash == target)		
 			                            won++;		
 	                    }
-	
+	/*printing the output.*/
 	System.out.println(won+ "wins of" +trials);
 	System.out.println("Percentage of win over trials "  +100 * won/trials);
 	System.out.println("Average # bet       " +1.0 *bet/trials);
@@ -248,23 +274,7 @@ public int dist_coupon(int n)
 	   return n;
 }
 
-/***********************2D array*****************************************/
-/*This method will return input of type boolean*/
 
-public boolean InputBoolean()
-{
-	return sc.nextBoolean();
-}
-
-/*This method will return input of type double.*/
-
-public double InputDouble()
-{
-	return sc.nextDouble(); /*Scans the next token of the input as a double. This 
-	method will throw InputMismatchException if the next token cannot be 
-	translated into a valid double value.Scans the next token of the input as
-	 a double. */ 
-}
 
 public void twodarr(int row, int column)
 {
@@ -280,7 +290,7 @@ public void twodarr(int row, int column)
 	             {
 		                 for(int j=0; j<column; j++)
 		                     {
-			                      System.out.print(a[i][j]+ "");  //printing the array.
+			                      System.out.print(a[i][j]+ " ");  //printing the array.
 		                     }
 	                              System.out.println(" ");
 	             }
@@ -413,11 +423,13 @@ public void playGame(int x)
 double k, root1, root2;
 public String quad(int a, int b, int c)
 {
-	a = sc.nextInt();
+	a = sc.nextInt(); // a is accepted.
 	
 	
 	if(k > 0)
 	    {
+		//calculating root1 and root2 for k if k is not 0.
+		
 		           root1 = (-b + (Math.sqrt(k) / (2 * a)));
 		           root2 = (-b - (Math.sqrt(k) / (2 * a)));
 		           System.out.println("First root:" +root1);
@@ -425,12 +437,14 @@ public String quad(int a, int b, int c)
 	    }
 	   else if(k == 0)
 	        {
+      //if k is 0 then only root1 is calculated because the output will not be 
+		  // infinite
 		          root1 = (-b + (Math.sqrt(k) / (2 * a)));
 		          System.out.println("First root is:" +root1);
 	        }
 	   else
 		          System.out.println("Roots are imaginary");
-	
+	return k;
 }
 
 /******************************WindChill********************************/
@@ -680,6 +694,7 @@ public String[] bubsortString(String[] str, int no)
 
 /*********************Find a number*****************************/
 int N;
+private Object Calender;
 public int guessNo(int n)
 {
 	for(int i=0; i<Math.pow(2, N); i++)
@@ -847,6 +862,75 @@ public int changeReturn(int valofnote, int noofnote)
 	//else
 		return changeReturn(valofnote, noofnote);
 }
+
+/**************************Calculate day*****************************/
+
+public void calDay(Date d1)
+{
+	int y, d, m;
+	y = sc.nextInt();
+	d= sc.nextInt();
+	m = sc.nextInt();
+	double x, d0, m0, y0;
+	while(d1 != null)
+	{
+		y0 = y - (14 - m) / 12;
+		x = y0 + y0/4 - y0/100 + y0/100;
+		m0 = m + 12 *((14 - m)/12) - 2;
+		d0 = (d + x + 31 * m0 / 12) % 7;
+	}
+	Calendar cal1 = new GregorianCalendar();
+	Calendar cal2 = new GregorianCalendar(2019, 12, 23);
+	cal2.get(Calendar.DAY_OF_WEEK);
+}
+
+/*********************Temperature Conversion***********************/
+
+public static void temperaturConversion(double cel, double fa)
+{
+	double ctof, ftoc;
+  if(cel>60 || fa > 55)
+  {
+	  System.out.println("Invalid value");
+	  System.out.println("please enter valid input");
+	  //temperaturConversion(cel, fa);
+  }
+   ctof= (cel * 9/5) + 32;
+   System.out.println("Converting temperature from celsius to fahreinheit:" +ctof);
+  
+   ftoc = (fa - 32) * 5/9;
+   System.out.println("Converting temperature from fahreinheit to celsius:" +ftoc);
+}
+
+/**********************Monthly Payment*****************************/
+
+public void monthlyPayment(int p, double r, int y)
+{
+	double pay;
+	int n = 12 * y;
+	double R = r / (12*100);
+	System.out.println("Calculating payment...");
+	pay = p * R / (1 -  Math.pow((1 + R), -n));
+	System.out.println("Monthly payment should be: "+pay);
+}
+
+/***************Square Root using Newton's method*******************/
+
+public static void sqrt(int c)
+{
+	double epsilon = 1e-15;  //relative error tolerance
+	double t=c;  //assume square root of c
+	while(Math.abs(t-c/t) > epsilon*t)
+//repeatedly apply newton's method till the desired accuracy is not achieved.		
+	{
+		t = (t+ (c/t))/2.0;
+	}
+	System.out.println("Sqaure root of " +c+ " is:" +t);
+		
+}
+
+/***************Conversion of decimal to binary********************/
+
 
 
 }

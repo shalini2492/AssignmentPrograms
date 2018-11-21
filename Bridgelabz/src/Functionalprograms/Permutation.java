@@ -11,8 +11,9 @@ public class Permutation {
 	 Utility utility = new Utility();
 	 System.out.println("Enter the string for permutation");
 	String s = utility.inputString();
-	 
-	 String st = utility.per(str, currentindex);
+	
+	 String[] st = utility.per(str, currentindex);
+	 System.out.println("Permutations for string: " +str+ " are:" +s);
 	 System.out.println(st);
  }
 }

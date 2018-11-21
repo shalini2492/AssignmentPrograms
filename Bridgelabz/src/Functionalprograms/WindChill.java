@@ -12,6 +12,7 @@ public static void main(String[] args)
 	t = scanner.nextDouble();
 	System.out.println("Enter the speed in miles per hour");
 	v = scanner.nextDouble();
+
 	Utility utility = new Utility();
 	double f = utility.calTemp(t, v);
 	System.out.println(f);

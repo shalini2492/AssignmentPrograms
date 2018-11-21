@@ -1,0 +1,12 @@
+package Algorithmprograms;
+
+import Utility.Utility;
+public class ConvertTemp {
+public static void main(String[] args)
+{
+	Utility utility = new Utility();
+	double celsius= utility.InputDouble();
+	double fah = utility.InputDouble();
+	System.out.println("Enter temperature in celsius");
+}
+}

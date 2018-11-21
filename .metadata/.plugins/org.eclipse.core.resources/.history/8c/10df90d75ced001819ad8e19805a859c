@@ -1,0 +1,15 @@
+package Algorithmprograms;
+
+import Utility.Utility;
+public class SquareRoot {
+public static void main(String[] args)
+{
+	double sqr;
+	int x;
+	System.out.println("Enter a no u want square root of");
+	Utility utility = new Utility();
+	x = utility.inputInteger();
+	utility.sqrt(x);
+	System.out.println("Square root of: "+x+ " is: " +sqr);
+}
+}

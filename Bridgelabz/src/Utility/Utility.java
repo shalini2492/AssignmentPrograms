@@ -1,15 +1,21 @@
 package Utility;
-
+import java.awt.*;
+import java.awt.List;
 import java.text.SimpleDateFormat;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
+import java.lang.reflect.Array;
 import java.util.*;
 
 import Algorithmprograms.InsortStr;
+import DataStructureprograms.LinkLIst;
+import Utility.Utility.LinkedList.Node;
 
 public class Utility 
 {
@@ -191,9 +197,9 @@ public int power(int pow, int base)
 
 /********************Harmonic Number*****************************/
 
-public void harmonicNo()
+public int harmonicNo(int sum)
 {
-         int sum=10;
+         sum=sc.nextInt();
          while(sum != 0)
  	  
              {
@@ -204,7 +210,7 @@ public void harmonicNo()
 	  
              }
               System.out.println("The harmonic no. is" +sum);
-
+return sum;
 }
 
 /**********************Prime Factorization**************************/
@@ -302,8 +308,9 @@ public void twodarr(int row, int column)
 public int[] triplets(int a[])
 {
 
-	int b[], n=10;
-	boolean flag;  // flag to check if the sum of triplets is 0. Returns true if the 
+	int n=10;
+	a = new int[n];
+	boolean flag=true;  // flag to check if the sum of triplets is 0. Returns true if the 
 	//result is non-zero.
 	for(int i=0; i<n-2; i++)
 	{
@@ -314,11 +321,17 @@ public int[] triplets(int a[])
 				if(a[i]+a[j]+a[k] == 0) //checks whether sum is zero or non-zero.
 				{
 					
-					flag = false;;
+					flag = false;
 				}
 			}
 		}
 	}
+	if(flag == true)
+	{
+		System.out.println("The sum is non-zero");
+	}
+	else
+		System.out.println("The sum is 0.");
 	return a;
 }
 
@@ -468,7 +481,7 @@ public double calTemp(double temp, double speed)
 	              return cal;
 }
 
-/**************************Algorithm Programs************************************/
+/**************************ALGORITHM PROGRAMS*******************************/
 
 /*************************Check for Anagram****************************/
 
@@ -565,13 +578,17 @@ public int searchBinary(int[] k, int s, int e)
 
 /*********************Binary Search for String****************************/
 
-public String searchStr(String s[])
+public String[] searchStr(String s[])
 {
-	int i, k, start, end;
+	int i, k, start=0;
+	String search = "are";
+    int n=10;
+	s = new String[n];
+	int end = n;
 	int mid= (start + (end-1) / 2); /* Mid element is calculated by taking the sum of 
 	start and end position of array and dividing it by 2. */ 
 	k = mid;
-	if(s[k] == s[mid])
+	if(search.equals(s[mid]))
 	    {
 		          System.out.println("Element searched:" +s[k]);
 	    } 
@@ -650,7 +667,7 @@ public int[] bubsortint(int no, int[] arr)
 	{
 		for(j=i-1; j<no-i-1; j++)
 	        {
-		        if(arr[i] > arr[j])
+		        if(arr[i] < arr[j])
 		              {
 		// flag = 1;
 		                 temp = arr[i];
@@ -661,6 +678,7 @@ public int[] bubsortint(int no, int[] arr)
 	        }
 
     }
+	
 	return arr;
 }
 public void sortedArray(int no, int[] arr)
@@ -698,12 +716,29 @@ int N;
 private Object Calender;
 public int guessNo(int n)
 {
+	int mid;
+	int start=0;
+	int end=n;
+	mid=(start+end)/2;
+	
 	for(int i=0; i<Math.pow(2, N); i++)
 	{
-		if(n == i)
+		if(n == mid)
 		{
 			System.out.println(n);
 		}
+		if(n>mid)
+		{
+			mid=mid+1;
+			guessNo(n);
+			
+		}
+		if(n>mid)
+		{
+			mid = mid-1;
+			guessNo(n);
+		}
+		
 	}
 	System.out.println("No. "  +n+ " found");
 	return n;
@@ -734,7 +769,7 @@ public String binSearch(String search)
 {
 	String lineNo = "";
 	String line = "";
-	double count, countLine=0, counted = 0;
+	double count=0, countLine=0, counted = 0;
 	String filePath = "cd/home/hp/JavaPrograms/Bridgelabz/bin/Algorithmprograms/abcd.txt";
     BufferedReader br;
 	try
@@ -748,7 +783,7 @@ public String binSearch(String search)
     	 {
     		 if(word.equals(search))
     		 {
-    		    // count++;
+    		    count++;
     			 counted++;
     		 }
     	 }
@@ -823,16 +858,15 @@ public String[] mergeSort(String[] st, int low, int high)
 	int mid = (low+high) / 2;
 	for(int i=0; i<4; i++)
 	{
-		if(st[i].compareTo(st[mid])>0)
+		if(st[i].compareToIgnoreCase(st[mid]) > 0)
 			{
 				String temp="";
 				temp = st[i];
-				st[i]=st[j];
-				st[j]=temp;
+				st[i]=st[mid];
+				st[mid]=temp;
 			}
 			else
-				mergeSort(st, low, high);
-		
+			    mergeSort(st, low, high);
 	}
 	
 	return st;
@@ -880,9 +914,9 @@ public void calDay(Date d1)
 		m0 = m + 12 *((14 - m)/12) - 2;
 		d0 = (d + x + 31 * m0 / 12) % 7;
 	}
-	Calendar cal1 = new GregorianCalendar();
+	/*Calendar cal1 = new GregorianCalendar();
 	Calendar cal2 = new GregorianCalendar(2019, 12, 23);
-	cal2.get(Calendar.DAY_OF_WEEK);
+	cal2.get(Calendar.DAY_OF_WEEK);*/
 }
 
 /*********************Temperature Conversion***********************/
@@ -972,17 +1006,119 @@ public static void toBinary(int x)
 	*/
 	System.out.println("Swapping nibbles....");
 //return ((x & 0x0F << 4) | (x & 0xF0 >> 4));
-int h=((x & 0x0F) << 4 | (x & 0xF0) >> 4);
+int h=((x & 0x0F) << 4 | (x & 0xF0) >> 4); //Bitwise operators are used to shift 
+                                             //bits of nibbles
 System.out.println(h);
 }
 
 /******************************Displaying list*************************/
 
-public void displayList(String task, String deadline, int minutes)
+public void displayList(String[] task, String[] deadline, int[] minutes)
 {
+	int n=10;
+	String status;
+	task = new String[n];
+	for(int i=0; i<n; i++)
+	{
 	
+	}
 }
 
+/************************DATA STRUCTURE PROGRAMS****************************/
+
+/**********************Unordered linked list********************/
+
+class LinkedList
+{
+	Node head;
+	class Node
+	{
+	  int data;
+	  Node next;
+	  public void Node(int d)
+	  {
+		  data = d;
+		  next=null;
+	  }
+	}
+	public String list(String str)
+	{
+		return str;
+	}
+	public String addItem(String item)
+	{
+		ArrayList<String> l = new ArrayList<>();
+		l.add(item);
+		return item;
+	}
+	public String removeItem(String item)
+	{
+		ArrayList<String> l = new ArrayList<>();
+		l.remove(item);
+		return item;
+	}
+	public String search(String item)
+	{
+		//System.out.println("Enter string to be searched");
+	    Node d;
+	    int p;
+	    //while()
+	}
+}
+
+
+
+public void unorderedList(Node head, int ptr) throws Exception
+{
+	Node a=new Node();
+	/*List li = new List();
+	
+	int next;
+	String data="is";
+	String s1 = "are";
+	File filepath = new File("cd//home//hp//JavaPrograms//Bridgelabz//bin//Algorithmprograms//abcd.txt");
+	BufferedReader br = new BufferedReader(new FileReader(filepath));
+	String s;
+	while((s = br.readLine()) != null)
+	{
+		System.out.println(s);
+		String[] i = s.split("");
+	}
+	
+	Node n=head;
+	while(n != null)
+	{
+		System.out.println(n.data+ "");
+		n = n.next;
+	}
+	for(int i=0; i<br.readLine().length(); i++)
+	{
+		if(data == s1)
+		{
+			li.remove(s1);;
+		}
+		else
+			li.add(s1);
+	}*/
+ArrayList<String> al = new ArrayList<>();
+int len = Array.getLength(al);
+for(int i=0; i<len; i++)
+{
+//al = sc.next();
+}
+for(int i=0; i<len; i++)
+{
+	System.out.println(al);
+}
+LinkLIst link = new LinkLIst();
+
+public String readfromFile(String fileName)
+{
+	String l = null;
+	String readFile="";
+	while((l=buffered))
+}
+}
 }
 
 	

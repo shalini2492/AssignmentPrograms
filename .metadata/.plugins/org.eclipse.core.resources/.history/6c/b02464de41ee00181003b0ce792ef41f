@@ -1,0 +1,18 @@
+package DataStructureprograms;
+
+public class Node {
+Node head;
+int ptr;
+
+
+void add(Node a)
+{
+	Node n = new Node();
+	head = a;
+	while(n.ptr != null)
+	{
+		
+	}
+	
+}
+}

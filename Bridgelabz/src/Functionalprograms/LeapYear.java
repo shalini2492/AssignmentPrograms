@@ -9,7 +9,9 @@ public class LeapYear
 			int n=0;
 
 		System.out.println("Enter the year");
+	
 		Utility utility = new Utility();
+		n= utility.inputInteger();
 		utility.LeapYear(n);
 	    	
 	}

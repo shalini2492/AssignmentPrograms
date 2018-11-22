@@ -1,0 +1,12 @@
+package DataStructureprograms;
+
+import Utility.Utility;
+
+public class Node {
+Node head;
+int ptr;
+int data;
+Node next;
+
+
+}

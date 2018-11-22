@@ -1,0 +1,6 @@
+package DataStructureprograms;
+
+public class LinkLIst {
+Node head;
+int next;
+}

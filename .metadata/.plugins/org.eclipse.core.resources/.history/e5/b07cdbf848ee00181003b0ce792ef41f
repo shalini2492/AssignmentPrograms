@@ -1,0 +1,51 @@
+package DataStructureprograms;
+
+import Utility.Utility;
+
+public class Node {
+Node head;
+int ptr;
+Node data;
+
+LinkLIst lI = new LinkLIst();
+Utility utility = new Utility();
+Node n = new Node();
+void add(Node a)
+{
+	
+	head = a;
+	if(n != null)
+	{
+		n.data = a;
+		n = null;
+	}
+	else
+		head = a;
+	while(n != null)
+	{
+		System.out.println(n.data);
+	}
+	System.out.println(n.data);
+	}
+public void remove(Node a)
+{
+	int position=0;
+	if(head == a)
+	{
+		return;
+	}
+   if(position == 0)
+   {
+	   Node temp = head;
+	   temp =temp.next;
+   }
+	/*while(n != null)
+	{
+		if(n.data == a)
+		{
+	n.ptr = n.data;
+		}
+	}*/
+	
+}
+}

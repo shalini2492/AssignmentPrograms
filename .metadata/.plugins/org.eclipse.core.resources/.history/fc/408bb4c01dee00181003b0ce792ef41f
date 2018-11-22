@@ -1,0 +1,16 @@
+package DataStructureprograms;
+
+import java.awt.List;
+
+import Utility.Utility;
+public class UnorderedList {
+public static void main(String[] args)
+{
+	List l = new List();
+	String word;
+	Utility utility = new Utility();
+	System.out.println("Enterb the word to search in the list");
+	word = utility.inputString();
+	
+}
+}

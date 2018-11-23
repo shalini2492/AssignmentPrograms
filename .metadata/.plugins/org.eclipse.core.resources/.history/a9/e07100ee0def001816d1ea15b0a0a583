@@ -1,0 +1,32 @@
+package DataStructureprograms;
+
+import Utility.Utility;
+
+public class Node<T> {
+
+T first;
+T data;
+Node<T> next;
+Node<T> pre;
+
+Node(T d)
+{
+	data=d;
+}
+public int getData()
+{
+	return data;
+}
+public void setData(T data)
+{
+	this.data=data;
+}
+public Node getNext()
+{
+	return next;
+}
+public void setNext()
+{
+	this.next=next;
+}
+}

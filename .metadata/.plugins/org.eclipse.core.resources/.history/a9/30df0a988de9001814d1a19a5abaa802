@@ -1,9 +1,0 @@
-package Algorithmprograms;
-
-import Utility.Utility;
-public class IntBinary {
-   public static void main(String[] args)
-   {
-	
-   }
-}

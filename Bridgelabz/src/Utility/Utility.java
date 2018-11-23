@@ -435,7 +435,7 @@ public void playGame(int x)
 /*************************Quadratic*******************************/
 
 double k, root1, root2;
-public String quad(int a, int b, int c)
+public double quad(int a, int b, int c)
 {
 	a = sc.nextInt(); // a is accepted.
 	
@@ -1071,53 +1071,34 @@ class LinkedList
 public void unorderedList(Node head, int ptr) throws Exception
 {
 	Node a=new Node();
-	/*List li = new List();
 	
-	int next;
-	String data="is";
-	String s1 = "are";
-	File filepath = new File("cd//home//hp//JavaPrograms//Bridgelabz//bin//Algorithmprograms//abcd.txt");
-	BufferedReader br = new BufferedReader(new FileReader(filepath));
-	String s;
-	while((s = br.readLine()) != null)
-	{
-		System.out.println(s);
-		String[] i = s.split("");
-	}
-	
-	Node n=head;
-	while(n != null)
-	{
-		System.out.println(n.data+ "");
-		n = n.next;
-	}
-	for(int i=0; i<br.readLine().length(); i++)
-	{
-		if(data == s1)
-		{
-			li.remove(s1);;
-		}
-		else
-			li.add(s1);
-	}*/
-ArrayList<String> al = new ArrayList<>();
-int len = Array.getLength(al);
-for(int i=0; i<len; i++)
-{
-//al = sc.next();
-}
-for(int i=0; i<len; i++)
-{
-	System.out.println(al);
-}
-LinkLIst link = new LinkLIst();
+   /* ArrayList<String> al = new ArrayList<>();
 
-public String readfromFile(String fileName)
-{
-	String l = null;
-	String readFile="";
-	while((l=buffered))
-}
+    int len = Array.getLength(al);
+    for(int i=0; i<len; i++)
+     {
+          //al = sc.next();
+     }
+    for(int i=0; i<len; i++)
+    {
+	     System.out.println(al);
+    }*/
+	
+   /* LinkLIst<String> link = new LinkLIst<>();
+
+    public String readfromFile(String file) throws Exception
+    {
+	     String[] st=new String[20];
+	     String l = null;
+	     String readfile="cd//home//hp//JavaPrograms//Bridgelabz//bin//Algorithmprograms//abcd.txt";
+	     BufferedReader br = new BufferedReader(new FileReader(readfile));
+	     while((l=br.readLine()) != null)
+	     {
+		      System.out.println(l);
+		      st=readfile.split(" ");
+	     }
+    }
+    return ;*/
 }
 }
 

@@ -11,5 +11,6 @@ Utility utility = new Utility();
 System.out.println("Enter the number for factorization");
 n= utility.inputInteger();
 i = utility.factors(n);
+System.out.println(i);
 }
 }

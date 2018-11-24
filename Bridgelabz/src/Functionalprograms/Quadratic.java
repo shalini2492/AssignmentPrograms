@@ -19,7 +19,7 @@ public static void main(String[] args)
 	System.out.println("Given quadratic equation:" +a+ "x^2+ " +b+ "x+ " +c);
 	
 	Utility utility = new Utility();
-	String s1 = utility.quad(a, b, c);
+	double s1 = utility.quad(a, b, c);
 	System.out.println(s1);
 	k = b ^ 2 - 4 * a * c;
 }

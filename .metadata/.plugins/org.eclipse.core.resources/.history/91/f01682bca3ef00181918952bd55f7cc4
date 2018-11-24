@@ -1,0 +1,243 @@
+package DataStructureprograms;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+import Utility.Utility;
+
+public class LinkLIst<T> {
+Node<T> head;
+T data;
+Node<T> ptr;
+
+int count=0;
+
+public void LinkLIst()
+{
+	//to create object, default constructor is created.
+}
+T a;
+Node<T> n = new Node(a);
+
+Node<T> temp = head;
+public String readfromFile(String file) throws Exception
+{
+     String[] st=new String[20];
+     String l = "";
+     String readfile="/home/hp/Desktop/abcd.txt";
+     BufferedReader br = new BufferedReader(new FileReader(readfile));
+     while((l=br.readLine()) != null)
+     {
+	      System.out.println(l);
+	      st=readfile.split(" ");
+     }
+     br.close();
+     return file;
+}
+
+public void add(String a)
+{
+	String data;
+	Node<T> next,n;
+	n.data = string;
+	n.next =null;
+	if(head == null)
+	{
+		head = n;
+		next = n;
+	}
+	else
+	{
+		ptr.next=n;
+		ptr=n;
+		
+	}
+	
+}
+
+public void remove(T a, int position)
+{
+	
+	if(head == a)
+	{
+		return;
+	}
+	
+	if(a == null)
+	{
+		return;
+	}
+   if(position == 0)
+   {
+	   head =temp.next;
+   }
+   for(int i=0; temp!=null && i<position-1; i++)
+   {
+	   temp = temp.next;
+	   
+   }
+	
+}
+
+public boolean searchItem(Node<T> head, T st)
+{
+	Node<T> curr = head;
+	while(curr.next != null)
+	{
+		if(curr == st)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+}
+
+public boolean isEmpty()
+{
+	if(head == null)
+	{
+		System.out.println("List is empty");
+		return true;
+	}
+	else
+		return false;
+}
+
+public int size()
+{
+	int c=0;
+	Node<T> n = head;
+    while(n != null)
+    {
+    	c++;
+    }
+    n= n.next;
+    return c;
+}
+
+public void append(T a)
+{
+	Node<T> new_node = new Node<T>(a);
+	if(head == null)
+		{
+			head = new Node<T>(a);
+			return;
+		}	
+	new_node.next=null;
+	Node last=head;
+	while(last.next != null)
+	{
+		last=last.next;
+		last.next=new_node;
+	}
+}
+
+public int index(String a)
+{
+	int pos=0;
+	if(head.next==null)
+	{
+		return 1;
+	}
+	for(int i=0; i<10; i++)
+	{
+		if(i==pos)
+		{
+			return pos;
+		}
+	}
+	return pos;
+	
+}
+
+public Node<T> insertItem(T a, int pos)
+{
+	Node<T> da = new Node<>(a);
+	da.data = a;
+	da.next = null;
+	if(head == null)
+	{
+		return da;
+	}
+	if(pos == 0)
+	{
+		da.next=head;
+		head=da;
+	}
+		for(int i=0; i<pos; i++)
+		{
+			if(i == pos)
+			{
+				n.data=a;
+				n.pre = n.pre.next;
+				n.next= n.next.pre;
+			}
+		}
+		return da;
+}
+
+public void pop()
+{
+	int pos = 0;
+if(pos == 1)
+{
+	//head = null;
+}
+else
+	
+	temp=(Node<T>) n.data;
+	for(int i=0; i<10; i++)
+	{
+		if(i==0)
+		{
+			n.data=n.pre.data;
+			n.pre.next = null;
+			
+		}
+	}
+}
+
+public void pop(int pos)
+{
+	if(pos == 1)
+	{
+		//head=null;
+	}
+	for(int i=0; i<10; i++)
+	{
+		if(i ==pos)
+		{
+			n.pre.next=n.next.next.pre;
+			
+		}
+	}
+}
+
+public void display()
+{
+	for(int i=0; i<10; i++)
+	{
+		System.out.println(n.data+ "->");
+	}
+}
+public void delete(T d, int pos)
+{
+	Node<T> start=new Node<T>(d);
+	if(pos == 0)
+	{
+		head =null;
+		
+	}
+	for(int i=0; i<pos-1; i++)
+	{
+		if(i == pos)
+		{
+			start.pre= start.next;
+			
+		}
+	}
+}
+
+}

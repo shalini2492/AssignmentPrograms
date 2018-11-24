@@ -1,0 +1,17 @@
+package uti;
+
+import DataStructureprograms.StringNode;
+
+public class Utility {
+	public String data;
+	public StringNode next;
+	public StringNode(String data, StringNode next) 
+	{
+		this.data = data;
+		this.next = next;
+	}
+	public String toString()
+	{
+		return data;
+	}
+}

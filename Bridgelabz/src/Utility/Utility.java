@@ -227,7 +227,8 @@ public int factors(int n)
 	                  {
 		                    while(n%i == 0)
 		                       {
-		                             System.out.println("" +i);
+		          
+		                    	System.out.println("" +i);
 	                           }
                       }
 	            return n;
@@ -347,7 +348,7 @@ public void dist(int i, int j)
   double d = Math.pow(y, 2);  //Returns y*y.
   double dn = c * d;         
   double diff = (c-i) * (d-j);
-  
+  System.out.println("The distance from (" +x+ "," +y+ ") to (0,0) is " +diff);
 }
 
 /**********************String Permutation******************************/
@@ -407,19 +408,42 @@ public void playGame(int x)
 {
 	    Random random = new Random(); //Random instance is created for generating 
 	                                //random no.
-	    int row, column, cellno;
-	    int won;
+	    int row=3, column=3, cellno;
+	    int won=0, count=0, c=0;
 	    int[][] a =new int[row][column];
 
 	    for(int i=0; i < row; i++)
-	              {
-		               for(int j=0; j < column; j++)
-		                   {
-    	                         cellno = a[row][column];
-	                             cellno = sc.nextInt();
-		                   }
-	               }
-	column= row;
+	       {
+	    	   for(int j=0; j<column; j++)
+	    	    {
+		                   cellno = a[i][j];
+	                       cellno = sc.nextInt();
+		                   
+	            }
+	       }
+	    switch(c)
+	    {
+	    case 1: if(a[0][0] + a[0][1] + a[0][2]=='X')
+	            won++;
+	    case 2: if(a[1][0] + a[1][1] + a[1][2]=='X')
+	    	    won++;
+	    case 3: if(a[2][0] + a[2][1] + a[2][2]=='X')
+	    	    won++;
+	    case 4: if(a[0][0] + a[1][0] + a[2][0]=='X')
+	    	    won++;
+	    case 5: if(a[0][1] + a[1][1] + a[2][1]=='X')
+	    	    won++;
+	    case 6: if(a[0][2] + a[1][2] + a[2][2]=='X')
+	    	    won++;
+	    case 7: if(a[0][0] + a[1][1] + a[2][2]=='X')
+	    	    won++;
+	    case 8: if(a[2][0] + a[1][1] + a[0][2]=='X')
+	    	    won++;
+	    default: System.out.println("This is default case");
+	    }
+	    
+	    
+	/*column= row;
 	for(int i=0; i==row; i++)
 	    {
 	         if(a[row][column] == 'X')
@@ -429,7 +453,42 @@ public void playGame(int x)
 	        else
 		               won--;
 	    }
-	
+	column=0;
+	for(int i=0; i<row; i++)
+	{
+		System.out.println();
+	}
+	if(a[row][column] == 'X')
+	{
+		count++;
+		
+	}
+	System.out.println("User won");
+	column=1;
+	for(int i=0; i<row; i++)
+	{
+		count++;
+		
+	}
+	System.out.println("User won");
+	column=2;
+	for(int i=0; i<row; i++)
+	{
+		count++;
+		
+	}
+	System.out.println("User won");
+	row=0;
+	for(int j=0; j<column; j++)
+	{
+		count++;
+	}
+	System.out.println("User won");
+	row=1;
+	for(int j=0; j<column; j++)
+	{
+		
+	}*/
 }
 
 /*************************Quadratic*******************************/
@@ -625,7 +684,8 @@ public int[] insertionSort(int[] s)
 			
 		}
 		else
-			insertionSort(s);
+			//insertionSort(s);
+			
 	}
 	return s;
 }
@@ -770,7 +830,7 @@ public String binSearch(String search)
 	String lineNo = "";
 	String line = "";
 	double count=0, countLine=0, counted = 0;
-	String filePath = "cd/home/hp/JavaPrograms/Bridgelabz/bin/Algorithmprograms/abcd.txt";
+	String filePath = "/home/hp/Desktop/abcd.txt";
     BufferedReader br;
 	try
 	{
@@ -778,6 +838,7 @@ public String binSearch(String search)
      if((line = br.readLine()) != null)
      {
     	 countLine++;
+    	 System.out.println(line);
     	 String[] words = line.split("");
     	 for(String word : words)
     	 {
@@ -785,14 +846,21 @@ public String binSearch(String search)
     		 {
     		    count++;
     			 counted++;
+    			 System.out.println(word+ " found.");
     		 }
+    		
+    		 
     	 }
+    	
     		 if(counted > 0)
     		 {
     			 counted=0;
     			 lineNo += countLine + ',';
+    			
     		 }
+    		
     	 }
+     
     	 br.close();
      }
 	
@@ -1028,7 +1096,7 @@ public void displayList(String[] task, String[] deadline, int[] minutes)
 
 /**********************Unordered linked list********************/
 
-class LinkedList
+/*class LinkedList
 {
 	Node head;
 	class Node
@@ -1070,7 +1138,7 @@ class LinkedList
 
 public void unorderedList(Node head, int ptr) throws Exception
 {
-	Node a=new Node();
+	//Node a=new Node();
 	
    /* ArrayList<String> al = new ArrayList<>();
 
@@ -1099,7 +1167,7 @@ public void unorderedList(Node head, int ptr) throws Exception
 	     }
     }
     return ;*/
-}
+
 }
 
 	

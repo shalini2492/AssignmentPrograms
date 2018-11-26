@@ -1,0 +1,153 @@
+package Functionalprograms;
+
+import Utility.Utility;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+
+public class TicTacToe {
+public static void main(String[] args)
+{
+	String[] cell;
+	String turn;
+	Utility utility=new Utility();
+	cell = new String[9];
+	turn = "X";
+	String winner = null;
+	
+	utility.populateEmptyCell();
+
+	System.out.println("Welcome to Game of Tic Tac Toe.");
+	System.out.println("--------------------------------");
+	utility.printCell();
+	System.out.println("X's will play first. Enter a cell number to place X in:");
+
+	while (winner == null) 
+	{
+		int numInput;
+		try 
+		{
+			numInput = utility.inputInteger();
+			if (!(numInput > 0 && numInput <= 9)) 
+			{
+				System.out.println("Invalid input; re-enter slot number:");
+				continue;
+			}
+		} 
+		catch (InputMismatchException e) 
+		{
+			System.out.println("Invalid input; re-enter slot number:");
+			continue;
+		}
+		if (cell[numInput-1].equals(String.valueOf(numInput)))
+		{
+			cell[numInput-1] = turn;
+			if (turn.equals("X")) 
+			{
+				turn = "O";
+			} 
+			else 
+			{
+				turn = "X";
+			}
+			utility.printCell();
+			winner = checkWinner();
+		} 
+		else 
+		{
+			System.out.println("Cell already taken  re-enter cell number:");
+			continue;
+		}
+	}
+	if (winner.equalsIgnoreCase("draw")) 
+	{
+		System.out.println("It's a draw! Thanks for playing.");
+	} 
+	else 
+	{
+		System.out.println("Congratulations! " + winner + "'s have won! Thanks for playing.");
+	}
+}
+
+static String checkWinner() 
+{
+	String[] cell = new String[9];
+	String turn ="X";
+	for (int a = 0; a < 8; a++) 
+	{
+		String line = null;
+		switch (a) 
+		{
+		case 0:
+			line = cell[0] + cell[1] + cell[2];
+			break;
+		case 1:
+			line = cell[3] + cell[4] + cell[5];
+			break;
+		case 2:
+			line = cell[6] + cell[7] + cell[8];
+			break;
+		case 3:
+			line = cell[0] + cell[3] + cell[6];
+			break;
+		case 4:
+			line = cell[1] + cell[4] + cell[7];
+			break;
+		case 5:
+			line = cell[2] + cell[5] + cell[8];
+			break;
+		case 6:
+			line = cell[0] + cell[4] + cell[8];
+			break;
+		case 7:
+			line = cell[2] + cell[4] + cell[6];
+			break;
+		}
+		if (line.equals("XXX")) 
+		{
+			return "X";
+		} 
+		else if (line.equals("OOO")) 
+		{
+			return "O";
+		}
+	}
+
+	for (int a = 0; a < 9; a++) 
+	{
+		if (Arrays.asList(cell).contains(String.valueOf(a+1))) 
+		{
+			break;
+		}
+		else if (a == 8) return "draw";
+	}
+
+	System.out.println(turn + "'s turn; enter a slot number to place " + turn + " in:");
+	return null;
+}
+/*int[][] ttt=new int[3][3];
+	int row, column;
+	char input='X';
+	Utility utility = new Utility();
+	for(int i=0; i<3; i++)
+	{
+	System.out.println("Enter the row in matrix for input X");
+    row = utility.inputInteger();
+    System.out.println("Enter the column in matrix for input X");
+    column = utility.inputInteger();
+    int[][] a = new int[row][column];
+    
+	}
+	//for(int k=0; k<3; k++)
+	//{
+		for(int i=0; i<3; i++)
+		{
+			int j=0;
+			i=j;
+		
+		System.out.println("| " +ttt[i][j]+ " | " +ttt[i][j]+ " | " +ttt[i][j]+ " | ");
+		
+	    }
+	//}			
+    utility.playGame(input);
+}*/
+}

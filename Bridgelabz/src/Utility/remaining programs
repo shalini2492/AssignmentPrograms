@@ -567,5 +567,32 @@ public int insertionSort(int[] s)
 	                insertionSort(s);
 	         }
 }
+	double head, tail;
+	double headper, tailper;
+	
+	
+      for(int i=0; i<n; i++)
+      {
+    	  if(Math.random() < 0.5)
+    	  {                   //random number is generated and if it is less than 0.5 then tail is incremented otherwise
+    		                  //head is incremented.
+    		  tail++;
+    	  }
+    	  else
+    	  {
+    		  head++;
+    	  }
+      }
+      headper = (head/n) * 100;       //percentage of head and tail is calculated and printed.
+      tailper = (tail/n) * 100;
+      System.out.println("Percentage of head "+headper+ "%");
+      System.out.println("Percentage of tail "+tailper+ "%");
+      if(headcount>tailcount)
+      {
+             System.out.println("Headcount is greater");
+      }
+else
+             System.out.println("tailcount is greater");
+return n;
 
 */

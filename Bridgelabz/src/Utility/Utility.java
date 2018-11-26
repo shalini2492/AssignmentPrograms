@@ -1,5 +1,6 @@
 package Utility;
-import java.awt.*;
+/* import java.awt.*;
+
 import java.awt.List;
 import java.text.SimpleDateFormat;
 
@@ -10,12 +11,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
-import java.lang.reflect.Array;
+import java.lang.reflect.Array;*/
 import java.util.*;
 
-import Algorithmprograms.InsortStr;
-import DataStructureprograms.LinkLIst;
-import Utility.Utility.LinkedList.Node;
+//import Algorithmprograms.InsortStr;
+//import DataStructureprograms.LinkLIst;
+
 
 public class Utility 
 {
@@ -141,30 +142,30 @@ public void LeapYear(int yearno)
 	 * is used of String class to obtain value of yearno. and then its length is
 	 * calculated and checked.
 	 */
-	   if(String.valueOf(yearno).length()<4)
-            	{
-		             System.out.println("Enter 4-digit year");
+	   if(String.valueOf(yearno).length()<4 && yearno <= 1582)
+        {
+		   
+		             System.out.println("Year should be of 4-digit and should not be less than 1582");
 		             yearno = sc.nextInt();
 		             LeapYear(yearno);
 		
-	            }
+	       }
+	   System.out.println("Invalid input...Please enter valid year");
+        
+
 	if(yearno%4 == 0) /**This method will check if given year is a leap year.*/
        {
-	        if(yearno%100 == 0) /*when all these conditions will be true the we can say
-	                                   given year is a leap year.*/ 
-                 {
+	       
 		                if(yearno%400 == 0)
 	                         {
-		                          System.out.println(yearno+ "is a leap year");
+		                	if(yearno%100 == 0)
+		                          System.out.println(yearno+ " is a leap year");
 	                         }
 		                else
-		                	System.out.println("not a leap year");
+		                	System.out.println(" not a leap year");
                   }
-	        else
-	        	System.out.println("not a leap year");
-       }
-	else
-		      System.out.println(yearno+ "is not a leap year");
+	      
+     
 }
 
 
@@ -213,28 +214,26 @@ public int harmonicNo(int sum)
 return sum;
 }
 
-/**********************Prime Factorization**************************/
+/***********************************Prime Factorization*****************************************/
 
 public int factors(int n)
-{
-	    if(n%2 == 0)
-	          {
-		             System.out.println("" +n);
-	          }
-	    else
-		             System.out.println("");
-	            for(int i=3; i<n; i=i+2)
-	                  {
-		                    while(n%i == 0)
-		                       {
-		          
-		                    	System.out.println("" +i);
-	                           }
-                      }
-	            return n;
+{ 
+	while(n%2 == 0)
+	{
+		System.out.println("2");
+		n/=2;
+	}
+	for(i=2; i<Math.sqrt(n); i+=2)
+	{
+		while(n%i == 0)
+		{
+			System.out.println(i);
+			n/=i;
+		}
+	}
+	return n;
 }
-
-/************************Gambler*************************************/
+/*********************************************Gambler****************************************************/
 
 public void gambling(int stake, int trials, int target)
 {	
@@ -263,7 +262,7 @@ public void gambling(int stake, int trials, int target)
 }
 
 
-/*************************Distinct Coupon Number************************/
+/*************************************Distinct Coupon Number*****************************************/
 
 public int dist_coupon(int n)
 {
@@ -281,7 +280,7 @@ public int dist_coupon(int n)
 	   return n;
 }
 
-
+/******************************************************2D Array*******************************************/
 
 public void twodarr(int row, int column)
 {
@@ -304,7 +303,7 @@ public void twodarr(int row, int column)
 	
 }
 
-/********************Sum of Three integers************************/
+/***********************************Sum of Three integers*****************************************/
 
 public int[] triplets(int a[])
 {
@@ -338,7 +337,7 @@ public int[] triplets(int a[])
 
 
 
-/*************************Distance calculation*************************/
+/******************************************Distance calculation***************************************/
 
 public void dist(int i, int j)
 {
@@ -351,7 +350,7 @@ public void dist(int i, int j)
   System.out.println("The distance from (" +x+ "," +y+ ") to (0,0) is " +diff);
 }
 
-/**********************String Permutation******************************/
+/**************************************String Permutation********************************************/
 
 public void swap(String[] ch, int i, int j)
 {
@@ -386,7 +385,7 @@ public String[] per(String[] ch, int currentindex)
 return ch;
 }
 
-/************************Stopwatch*********************************/
+/********************************************Stopwatch************************************************/
 
 public void stopWatch(int startTime, int stopTime)
 {
@@ -394,21 +393,42 @@ public void stopWatch(int startTime, int stopTime)
 	stopTime=0;
 	
 	int elapsedTime, diff, ch;
-	
+	double stop;
 	long start;
 	start = System.currentTimeMillis();
 	long now = System.currentTimeMillis();
-	System.out.println((now-start)/1000.0);
+	stop=(now-start)/1000.0;
+	System.out.println("Time " +stop);
 }
 
 
-/************************TicTacToe***********************************/
+/******************************************TicTacToe****************************************************/
 
-public void playGame(int x)
-{
-	    Random random = new Random(); //Random instance is created for generating 
-	                                //random no.
-	    int row=3, column=3, cellno;
+/*public void playGame(int x)
+{*/
+	    //Random random = new Random(); //Random instance is created for generating 
+	 String[] cell=new String[9];
+	 String turn;
+
+	public void printCell() 
+	{
+		System.out.println("/---|---|---\\");
+		System.out.println("| " + cell[0] + " | " + cell[1] + " | " + cell[2] + " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + cell[3] + " | " + cell[4] + " | " + cell[5] + " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + cell[6] + " | " + cell[7] + " | " + cell[8] + " |");
+		System.out.println("/---|---|---\\");
+	}
+
+	public void populateEmptyCell() 
+	{
+		for (int a = 0; a < 9; a++) {
+			cell[a] = String.valueOf(a+1); //string representation of integer is returned.
+	}
+	}
+	//random no.
+	   /* int row=3, column=3, cellno;
 	    int won=0, count=0, c=0;
 	    int[][] a =new int[row][column];
 
@@ -441,60 +461,15 @@ public void playGame(int x)
 	    	    won++;
 	    default: System.out.println("This is default case");
 	    }
+	    System.out.println("User won");*/
 	    
-	    
-	/*column= row;
-	for(int i=0; i==row; i++)
-	    {
-	         if(a[row][column] == 'X')
-	             {
-		               won++;
-	             }
-	        else
-		               won--;
-	    }
-	column=0;
-	for(int i=0; i<row; i++)
-	{
-		System.out.println();
-	}
-	if(a[row][column] == 'X')
-	{
-		count++;
-		
-	}
-	System.out.println("User won");
-	column=1;
-	for(int i=0; i<row; i++)
-	{
-		count++;
-		
-	}
-	System.out.println("User won");
-	column=2;
-	for(int i=0; i<row; i++)
-	{
-		count++;
-		
-	}
-	System.out.println("User won");
-	row=0;
-	for(int j=0; j<column; j++)
-	{
-		count++;
-	}
-	System.out.println("User won");
-	row=1;
-	for(int j=0; j<column; j++)
-	{
-		
-	}*/
-}
 
-/*************************Quadratic*******************************/
+
+
+/********************************************Quadratic*********************************************/
 
 double k, root1, root2;
-public double quad(int a, int b, int c)
+public void quad(int a, int b, int c)
 {
 	a = sc.nextInt(); // a is accepted.
 	
@@ -505,22 +480,22 @@ public double quad(int a, int b, int c)
 		
 		           root1 = (-b + (Math.sqrt(k) / (2 * a)));
 		           root2 = (-b - (Math.sqrt(k) / (2 * a)));
-		           System.out.println("First root:" +root1);
-		           System.out.println("Second root" +root2);
+		           System.out.println("First root: " +root1);
+		           System.out.println("Second root: " +root2);
 	    }
 	   else if(k == 0)
 	        {
       //if k is 0 then only root1 is calculated because the output will not be 
 		  // infinite
 		          root1 = (-b + (Math.sqrt(k) / (2 * a)));
-		          System.out.println("First root is:" +root1);
+		          System.out.println("First root is: " +root1);
 	        }
 	   else
 		          System.out.println("Roots are imaginary");
-	return k;
+	//return k;
 }
 
-/******************************WindChill********************************/
+/***************************************************WindChill************************************************/
 
 public double calTemp(double temp, double speed)
 {
@@ -537,8 +512,39 @@ public double calTemp(double temp, double speed)
 	                    }
 	           else
 		          cal = 35.74 + 0.6215 * temp + (0.4275 * temp - 35.75) * Math.pow(speed, 0.16);
-	              return cal;
+	             return cal;
 }
+
+/*********************************************Integer Operations*************************************/
+
+public int intOpt(int a, int b, int c)
+{
+	//a=10, b=10, c=10;
+	int result=0;
+	result = (a+(b*c));
+	System.out.println("First operation result: " +result);
+	System.out.println("Second operation result: " +((a*b)+c));
+	System.out.println("Third operation result: " +(c+(a/b)));
+	System.out.println("Fourth operation result: " +((a%b)+c));
+	return result;
+}
+
+/**********************************************Double Operations*************************************/
+
+public double doubleOpt(double a, double b, double c)
+{
+	//a=10, b=10, c=10;
+	double result=0;
+	result = (a+(b*c));
+	System.out.println("First operation result: " +result);
+	System.out.println("Second operation result: " +((a*b)+c));
+	System.out.println("Third operation result: " +(c+(a/b)));
+	System.out.println("Fourth operation result: " +((a%b)+c));
+	return result;
+}
+
+/******************************************Spring Season**************************************/
+
 
 /**************************ALGORITHM PROGRAMS*******************************/
 
@@ -567,28 +573,18 @@ public String checkAnagram(String s1, String s2)
 
 /**********************Prime no.*****************************/
 
-public int[] prime(int range)
+public boolean prime(int range)
 {
-	boolean isPrime = false;
-	int count = 0;
-	int prime[]=new int[range];
-	for(int i=0; i<=range; i++)
+	
+	for(int i=2; i<=range/2; i++)
 	{
-		for(int j=2; j<i; j++)
-		{
-			if(i%j==0)
-			{
-				isPrime = true;
-				break;
-			}
-			else
-				isPrime = false;
-			
-		}
-		if(isPrime == false)
-			prime[count++] = i;
+	    int rem = range%i;
+	    if(rem == 0)
+	    {
+	    		return false;
+	    }
 	}
-	return prime;
+	return true;
 }
 
 public int[] primdrome(int[] a)
@@ -617,7 +613,7 @@ public int[] primdrome(int[] a)
 
 public int searchBinary(int[] k, int s, int e)
 {
-	int x, i, j;
+	int x=0, i, j;
     int mid = (s + (e-1))/2; //mid value is calculated.
                if(x == mid) //checked if mid value is the key or not.
                     {
@@ -670,11 +666,11 @@ public int[] insertionSort(int[] s)
 {
 	int in, index;
 	int i=1, n=5;
-	int j = i -1;
+	int j = i-1;
 	System.out.println("Swapping elements:");
 	for(i = 1; i < n; i++)
 	{
-		if(s[i] > s[j])
+		if(s[i] < s[j])
 		{
 			
 			 int temp;
@@ -683,7 +679,7 @@ public int[] insertionSort(int[] s)
 	         j = temp;
 			
 		}
-		else
+		
 			//insertionSort(s);
 			
 	}
@@ -805,28 +801,26 @@ public int guessNo(int n)
 }
 
 /*********************Binary Search word************************/
-/*
-public static void sort(String[] word)
-{
-	int length = word.length;
-	for(int i=0; i<length; i++)
-	{
-		for(int j=i; j<length; j++)
-		{
-			if(word[i].compareTo(word[j])>0)
-			{
-				String temp;
-				temp = word[i];
-				word[i]= word[j];
-				word[j] = temp;
-			}
-		}
-	}
-}
-*/
 
-public String binSearch(String search)
+public int binSearch(String search, String[] words, int a, int b)
 {
+	if(b<=a)
+		return -1;
+	if(b - a == 0)
+		return words[a].equals(search) ? a: -1;
+	int mid= (a + b)/2;
+	if(search.compareTo(words[mid]) < 0)
+	{
+		return binSearch(search, words, 0, mid-1);
+	}
+	if(search.compareTo(words[mid]) > 0)
+	{
+		return binSearch(search, words, mid, b);
+	}
+	return mid;
+	
+	
+/*	
 	String lineNo = "";
 	String line = "";
 	double count=0, countLine=0, counted = 0;
@@ -868,7 +862,7 @@ public String binSearch(String search)
 	{
 		e.printStackTrace();
 	}
-   return search;
+   return search;*/
 }
 
 /************************Insertion Sort***************************/

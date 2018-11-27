@@ -1,0 +1,14 @@
+package Functionalprograms;
+
+import Utility.Utility;
+public class Stats5 {
+public static void main(String[] args)
+{
+	int i = 5;
+	Utility utility = new Utility();
+	double d = (Math.random() * i);
+	System.out.println("Enter value of d from 0 to 1");
+    d = utility.InputDouble();
+    
+}
+}

@@ -1,0 +1,12 @@
+package Functionalprograms;
+
+import Utility.Utility;
+public class Cosine {
+public static void main(String[] args)
+{
+	double n = 90;
+	n = n % (2 * Math.PI);
+	Utility utility = new Utility();
+	utility.cosine(n);
+}
+}

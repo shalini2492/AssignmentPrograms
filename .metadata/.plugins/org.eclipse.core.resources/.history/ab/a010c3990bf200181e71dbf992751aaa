@@ -1,0 +1,19 @@
+package Functionalprograms;
+ 
+import Utility.Utility;
+public class Trig {
+public static void main(String[] args)
+{
+	double angle=90, output;
+	
+	Utility utility = new Utility();
+	//System.out.println("Enter the angle: ");
+	angle = Math.toDegrees(angle);
+	double a = Math.sin(Math.toRadians(angle));
+	double b = Math.cos(Math.toRadians(angle));
+	System.out.println("Sine value of angle " +angle+ " is " +a);
+	System.out.println("Cosine value of angle " +angle+ " is " +a);
+//	angle = utility.inputInteger();
+	//utility.sincos(angle);;
+}
+}

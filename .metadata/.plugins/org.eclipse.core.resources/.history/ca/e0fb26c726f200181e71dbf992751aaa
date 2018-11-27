@@ -1,0 +1,30 @@
+package Functionalprograms;
+
+import static java.lang.Math.cos;
+
+import Utility.Utility;
+public class Cosine {
+public static void main(String[] args)
+{
+	Utility utility = new Utility();
+	System.out.println("Enter the angle");
+	double n=utility.InputDouble();
+	n = n % (2 * Math.PI);
+	double accuracy = (double) 0.0001, x1, denominator, cosx, cosval;
+	x = x * (double) (3.142/180.0);
+	x1 = 1;
+	cosx = x1;
+	cosval = (double) cos(x);
+	int i=1;
+	do
+	{
+		denominator = 2 * x * (2 * x - 1);
+		x1 = -x1 * x * x/denominator;
+		cosx = cosx + x1;
+		i = i + 1;
+		
+	}while(accuracy <= cosx - cosval);
+	System.out.println("Cosine value of angle " +x+ " is: " +cosx);
+	//utility.cosine(n);
+}
+}

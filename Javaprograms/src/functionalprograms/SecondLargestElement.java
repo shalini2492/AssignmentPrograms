@@ -22,7 +22,7 @@ public static void main(String[] args)
 		System.out.println(arr[i]);
 	}
 	Utility.findSecondLarge(arr);
-	
+	Utility.findSecondSmall(arr);
 /*	Utility.findSecondLarge(new int[] {45, 51, 28, 75, 49, 42});
 	 
     Utility.findSecondLarge(new int[] {985, 521, 975, 831, 479, 861});

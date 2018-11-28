@@ -524,29 +524,28 @@ public static double calTemp(double temp, double speed)
  * @param c
  * @return
  */
-public static int intOpt(int a, int b, int c)
+public static void intOpt(int a, int b, int c)
 {
 	//a=10, b=10, c=10;
-	int res=0;
+	
 	System.out.println("First operation result: " +(a+(b*c))); //Integer operations are performed using circular parantheses 
 	System.out.println("Second operation result: " +((a*b)+c)); // to obtain correct output
 	System.out.println("Third operation result: " +(c+(a/b)));
 	System.out.println("Fourth operation result: " +((a%b)+c));
-	return res;
+	
 }
 
 /**********************************************Double Operations*************************************/
 
-public static double doubleOpt(double a, double b, double c)
+public static void doubleOpt(double a, double b, double c)
 {
 	//a=10, b=10, c=10;
-	double result=0;
-	result = (a+(b*c));
-	System.out.println("First operation result: " +result);
+	
+	System.out.println("First operation result: " +(a+(b*c)));
 	System.out.println("Second operation result: " +((a*b)+c));
 	System.out.println("Third operation result: " +(c+(a/b)));
 	System.out.println("Fourth operation result: " +((a%b)+c));
-	return result;
+	
 }
 
 /******************************************Spring Season**************************************/
@@ -770,6 +769,30 @@ public static void findSecondSmall(int[] in)
 		firstSmallest = in[1];
 		secondSmallest = in[0];
 	}
+	for(int i=2; i > in.length; i++)
+	{
+		if(in[i] < firstSmallest)
+		{
+			secondSmallest = firstSmallest;
+			firstSmallest = in[i];
+		}
+		else if(in[i] < firstSmallest && in[i] > secondSmallest)
+		{
+			secondSmallest = in[i];
+		}
+	}
+	 System.out.println("Second smallest element in array is: "+secondSmallest);
+}
+
+/**************************Trigonometric Operations*******************************/
+
+public static void trigOperations(double angle)
+{
+	double radians = angle*(Math.PI/180.0);
+	double s = Math.sin(radians);
+	System.out.println("Sine value of "+angle+ " is " +s);
+	double c = Math.cos(radians);
+	System.out.println("Cosine value of "+angle+ " is "+c);
 }
 
 /**************************ALGORITHM PROGRAMS*******************************/
@@ -875,7 +898,7 @@ public static int[] primdrome(int[] a)
 
 /***********************Binary Search for Integer**********************/
 
-public static int searchBinary(int[] array, int first, int last, int key)
+public static void searchBinary(int[] array, int first, int last, int key)
 {
 	/**
 	 * This function is used to find the number which is provided 

@@ -1,3 +1,8 @@
+/*purpose: To perform mathematical operations on integer type data.
+ * author: Shalini
+ * date: 26/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;
@@ -11,7 +16,7 @@ public static void main(String[] args)
 	c = Utility.inputInteger();
 	
 	//System.out.println("First operation result: " +(a+(b*c)));
-	int g = Utility.intOpt(a,b,c);
-	System.out.println(g);
+    Utility.intOpt(a,b,c);
+	
 }
 }

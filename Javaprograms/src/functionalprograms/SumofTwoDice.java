@@ -1,5 +1,9 @@
+/*purpose: To compute sum of two dice
+ * author: Shalini
+ * date: 27/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
-
 
 public class SumofTwoDice {
 public static void main(String[] args)

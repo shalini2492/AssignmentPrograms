@@ -1,3 +1,8 @@
+/*purpose: To replace given string "name" with the user input name.
+ * author: Shalini
+ * date: 14/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

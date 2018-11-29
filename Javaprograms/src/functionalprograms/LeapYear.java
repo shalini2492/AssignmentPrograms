@@ -1,3 +1,8 @@
+/*purpose: To check whether the given 4-digit year is a leap year or not.
+ * author: Shalini
+ * date: 28/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

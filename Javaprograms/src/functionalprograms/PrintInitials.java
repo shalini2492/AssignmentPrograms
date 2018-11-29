@@ -1,3 +1,8 @@
+/*purpose: To print the star pattern for the given initials.
+ * author: Shalini
+ * date: 28/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 import utility.Utility;
 

@@ -1,3 +1,8 @@
+/*purpose: To add three numbers in such a way that the result should come 0.
+ * author: Shalini
+ * date: 20/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

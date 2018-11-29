@@ -1,3 +1,8 @@
+/*purpose: To return all prime factors of the given number
+ * author: Shalini
+ * date: 28/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;
@@ -10,7 +15,7 @@ int n;
 System.out.println("Enter the number for factorization");
 n= Utility.inputInteger();
 System.out.println("The factors of " +n+ " are: ");
-Integer i = Utility.factors(n);
-System.out.println(i);
+int x = Utility.factors(n);
+System.out.println(x);
 }
 }

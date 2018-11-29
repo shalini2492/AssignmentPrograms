@@ -1,3 +1,8 @@
+/*purpose: To compute roots using given formula
+ * author: Shalini
+ * date: 17/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

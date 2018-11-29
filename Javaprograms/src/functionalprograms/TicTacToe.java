@@ -1,6 +1,9 @@
+/* purpose: To calculate win over loss by taking user inputs in such a way that the inputs should be in line.
+ * author: Shalini
+ * date: 24/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
-
-
 
 import java.util.Scanner;
 

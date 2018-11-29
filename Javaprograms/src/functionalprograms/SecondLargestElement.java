@@ -1,3 +1,8 @@
+/*purpose: To find second largest and second smallest elements in array
+ * author: Shalini
+ * date: 28/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import java.util.Scanner;

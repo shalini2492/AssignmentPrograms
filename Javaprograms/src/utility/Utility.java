@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;*/
 import java.util.*;
+
 import static java.lang.Math.sin;
 import static java.lang.Math.cos;
 //import Algorithmprograms.InsortStr;
@@ -76,7 +77,7 @@ public class Utility
 
 /***********************************Flip coin******************************/
 
- static Random random = new Random();
+ //static Random random = new Random();
 public static int HeadorTail(int n)
 {
 	long headper=0, tailper=0;
@@ -99,7 +100,7 @@ public static int HeadorTail(int n)
 	     for(int i=0; i<n; i++)
 	     {
 		        double rand = Math.random();
-	            System.out.println("Random no. are" +rand);
+	            System.out.println("Random no. are " +rand);
                   if(rand < 0.5)
 	                    {
 	    	                 System.out.println("The occurrence of tail" +i);
@@ -139,9 +140,12 @@ public static int HeadorTail(int n)
 public static boolean LeapYear(int yearno) 
 {if(yearno > 1000)
 {
-	   if((yearno % 400 == 0) || ((yearno % 4 == 0) && (yearno % 100 != 0)))
+	   if(((yearno % 4 == 0) && (yearno % 100 != 0)))
 	   {
+		   if((yearno % 400 == 0))
+		   {
 	       return true;
+		   }
 	   }
 	}
 	return false;
@@ -206,6 +210,19 @@ public static int power(int pow, int base)
 	      return pow;
 }
 
+/*************************Power of 2*****************************/
+
+public static void powertwo(int number)//input validation
+{
+	System.out.println("Printing all till Power Value "+number);
+	   
+	   
+    for(int i=1;i<=number;i++)
+    {
+     	System.out.println("Power of 2^"+i+" is: "+(Math.pow(2, i)));	
+    }
+}
+
 /********************Harmonic Number*****************************/
 
 public static void harmonicNo(int number)
@@ -227,7 +244,7 @@ public static int factors(int n)
 { 
 	while(n%2 == 0)
 	{
-		System.out.println("2");
+		System.out.println("");
 		n/=2;
 	}
 	for(int i=2; i<Math.sqrt(n); i+=2)
@@ -389,18 +406,36 @@ public static void permuteString(String permuteString, String inputString)
 
 /********************************************Stopwatch************************************************/
 
-public static void stopWatch(int startTime, int stopTime)
+public static void stopWatch(long startTime, long stopTime)
 {
-	startTime=0;
-	stopTime=0;
-	
-	int elapsedTime, diff, ch;
-	double stop;
-	long start;
-	start = System.currentTimeMillis();
-	long now = System.currentTimeMillis();
-	stop=(now-start)/1000.0;
-	System.out.println("Time " +stop);
+	int flag=0;
+	int input=1;
+	while(flag==0)
+	{
+		switch(input)
+		{
+		case 1:
+			startTime=System.nanoTime();
+			System.out.println("enter 0 to stop the stopwatch");
+			input=Utility.inputInteger();
+			break;
+		case 0:
+			stopTime=System.nanoTime();
+			flag=1;
+			break;
+		default:
+			System.out.println("enter a valid option");
+		}
+	}
+	double elapsedTime=(stopTime-startTime)/Math.pow(10, 9);
+	System.out.println("startTime= "+startTime);
+	System.out.println("stopTime= "+stopTime);
+	if(startTime!=0)
+	{
+		System.out.println("elapsedTime= "+elapsedTime+" in seconds");
+	}
+	else
+		System.out.println("To start the stopwatch you should have pressed 0 only");
 }
 
 
@@ -428,46 +463,8 @@ public static void stopWatch(int startTime, int stopTime)
 		for (int a = 0; a < 9; a++) {
 			cell[a] = String.valueOf(a+1); //string representation of integer is returned.
 	}
-	}
-	//random no.
-	   /* int row=3, column=3, cellno;
-	    int won=0, count=0, c=0;
-	    int[][] a =new int[row][column];
-
-	    for(int i=0; i < row; i++)
-	       {
-	    	   for(int j=0; j<column; j++)
-	    	    {
-		                   cellno = a[i][j];
-	                       cellno = sc.nextInt();
-		                   
-	            }
-	       }
-	    switch(c)
-	    {
-	    case 1: if(a[0][0] + a[0][1] + a[0][2]=='X')
-	            won++;
-	    case 2: if(a[1][0] + a[1][1] + a[1][2]=='X')
-	    	    won++;
-	    case 3: if(a[2][0] + a[2][1] + a[2][2]=='X')
-	    	    won++;
-	    case 4: if(a[0][0] + a[1][0] + a[2][0]=='X')
-	    	    won++;
-	    case 5: if(a[0][1] + a[1][1] + a[2][1]=='X')
-	    	    won++;
-	    case 6: if(a[0][2] + a[1][2] + a[2][2]=='X')
-	    	    won++;
-	    case 7: if(a[0][0] + a[1][1] + a[2][2]=='X')
-	    	    won++;
-	    case 8: if(a[2][0] + a[1][1] + a[0][2]=='X')
-	    	    won++;
-	    default: System.out.println("This is default case");
-	    }
-	    System.out.println("User won");*/
-	    
-
-
-
+}
+	
 /********************************************Quadratic*********************************************/
 
 //static double k, root1, root2;
@@ -497,23 +494,19 @@ public static void quad(int a, int b, int c)
 
 /***************************************************WindChill************************************************/
 
-public static double calTemp(double temp, double speed)
+public static void calTemp(double temp, double speed)
 {
-	double cal=0;
-	temp = sc.nextDouble();
-	speed = sc.nextDouble();
+	           double cal=0;
 	           if(temp > 50 || speed <3 || speed > 120)
-	                    {
-	                        System.out.println("Please enter valid temperature");
-	                        temp = sc.nextDouble();
-	                        System.out.println("Please enter valid speed");
-	                        speed = sc.nextDouble();
-	                        calTemp(temp, speed);
-	                    }
-	           else
+	           {
+	               System.out.println("Please enter valid temperature and speed");
+	               temp = Utility.InputDouble();
+	               speed = Utility.InputDouble();
+	               calTemp(temp, speed);
+	           }
 		          cal = 35.74 + 0.6215 * temp + (0.4275 * temp - 35.75) * Math.pow(speed, 0.16);
-	           System.out.println("Result: " +cal);
-	             return cal;
+	           System.out.println("Windchill: " +cal);
+	           //  return cal;
 }
 
 /*********************************************Integer Operations*************************************/
@@ -550,7 +543,7 @@ public static void doubleOpt(double a, double b, double c)
 
 /******************************************Spring Season**************************************/
 
-public static boolean spring(int day, int month)
+public static boolean springSeason(int day, int month)
 {
 	boolean isSpring = (month == 3 && day >= 20 && day <= 31)
             || (month == 4 && day >=  1 && day <= 30)
@@ -625,16 +618,17 @@ public static void sine(double n)
 		double current_term=0.0;
 		if(i%2 == 0)
 		{
-	        current_term=-Math.pow(radians, pow)/ fact(pow);
+	        current_term = -Math.pow(radians, pow)/ fact(pow);
 		}
 		else
 		{
-			current_term=Math.pow(radians, pow)/fact(pow);
+			current_term = Math.pow(radians, pow)/ fact(pow);
 		}
 		sinx = sinx + current_term;
 	     pow = pow + 2;
 	}
 	System.out.println(sinx);
+	
 /*	double acc= (double) 0.0001, denominator, sinx, sinval;
 	 n = n * (double) (3.142 / 180.0);
 	 double x1 = n;
@@ -666,7 +660,27 @@ public static int fact(int no)
 
 public static void cosine(double x)
 {
-	double accuracy = (double) 0.0001, x1, denominator, cosx, cosval;
+	int theta=sc.nextInt();
+	double radians=Math.toRadians(theta);
+	int pow=1;
+	double cosx=0.0;
+	for(int i=1; i<=x; i++)
+	{
+		double current_term=0.0;
+		if(i%2 == 0)
+		{
+	        current_term = Math.pow(radians, pow)/ fact(pow);
+		}
+		else
+		{
+			current_term = -Math.pow(radians, pow)/ fact(pow);
+		}
+		cosx = cosx + current_term;
+	     pow = pow + 2;
+	}
+	System.out.println(cosx);
+	
+/*	double accuracy = (double) 0.0001, x1, denominator, cosx, cosval;
 	x = x * (double) (3.142/180.0); //converting degrees to radian
 	x1 = 1; //maps the sum along the series
 	cosx = x1;
@@ -680,25 +694,25 @@ public static void cosine(double x)
 		i = i + 1; //to evaluate do-while loop i is incremented.
 		
 	}while(accuracy <= cosx - cosval);
-	System.out.println("Cosine value of angle " +x+ " is: " +cosx);
+	System.out.println("Cosine value of angle " +x+ " is: " +cosx);*/
 }
 
 /***********************************Find repeated number******************************/
 
-public static int[] findRepeatedNo(int[] data, int size)
+public static void findRepeatedNo(int[] data, int size)
 {
 	System.out.println("Repeated elements are: ");
-	for(int i=0; i <= size; i++)
+	for(int i=0; i <= 100; i++)
 	{
-		for(int j=i+1; j <= size; j++)
+		for(int j=i+1; j <= 100; j++)
 		{
 			if(data[i] == data[j])
 			{
 				System.out.println(data[i]+ " ");
 			}
-		}
+		}//check for multiple copies of element...
 	}
-return data;
+//return data;
 }
 
 /**********************Find second largest element in array
@@ -759,20 +773,31 @@ public static void findSecondLarge(int[] input)
 public static void findSecondSmall(int[] in)
 {
 	int firstSmallest, secondSmallest;
+	
+	//Checking first 2 elements of input array
+	
 	if(in[0] < in[1])
 	{
+		//if first element is less than second element
+		
 		firstSmallest = in[0];
 		secondSmallest = in[1];
 	}
 	else
 	{
+		//if second element is less than first element
+		
 		firstSmallest = in[1];
 		secondSmallest = in[0];
 	}
 	for(int i=2; i > in.length; i++)
 	{
+		//for remaining elements of array
+		
 		if(in[i] < firstSmallest)
 		{
+			//if element at i is less than firstSmallest
+			
 			secondSmallest = firstSmallest;
 			firstSmallest = in[i];
 		}
@@ -798,6 +823,11 @@ public static void trigOperations(double angle)
 /**************************ALGORITHM PROGRAMS*******************************/
 
 /*************************Check for Anagram****************************/
+
+/* This method will check if two strings are anagram or not. Each character of first string is compared to each
+ * character of second string and then output is generated based on true or false condition.
+ * 
+ */
 
 public static void checkAnagram(String str1, String str2)
 {
@@ -845,24 +875,163 @@ public static void checkAnagram(String str1, String str2)
             }
                 if(not_found == 1)
                 {
-                	System.out.print("Strings are not Anagram to Each Other");
+                	System.out.print("Given strings are not Anagram");
                 }
                 else
                 {
-                	System.out.print("Strings are Anagram");
+                	System.out.print("Given strings are Anagram");
                 }
         }
         else
         {
-            System.out.print("Both Strings Must have the same number of Character to be an Anagram");
+            System.out.print("Both strings must of equal length to be an anagram");
         }
+}
+
+/*********************************String Permutation in iterative way***************************/
+public static void perString(String str)
+{
+	char[] temp = str.toCharArray();
+    // Step 1. Sort the string
+    Arrays.sort(temp);
+    System.out.println("String " + String.valueOf(temp));
+    int index = 0;
+    int lowest = 0;
+    while(true){
+        // Step 2. Rightmost char smallest than its neighbor
+        for(int i = 0; i < temp.length - 1; i++){
+            if(temp[i] < temp[i+1]){
+                lowest = i;               
+            }
+        }
+        // index of CHAR1
+        index = lowest;
+        // Step3. Find the ceiling of the 
+        int j = findCeiling(temp, index);
+        // Breaking condition at this juncture
+        // all permutations are printed
+        if(j == index) break;
+        
+        swap(temp, index, j);
+        String a = String.valueOf(temp);
+        // Step4. Sort the substring
+        char[] b = a.substring(index + 1).toCharArray();
+        Arrays.sort(b);
+        a = a.substring(0, index + 1) + String.valueOf(b);
+        temp = a.toCharArray();
+        System.out.println( "String " + String.valueOf(temp));
+        //}
+    }                        
+}
+
+/**
+ * 
+ * @param temp
+ * @param index
+ * @return
+ */
+public static int findCeiling(char[] temp, int index){
+    int k = index;
+    char test = temp[index];
+    while (k < temp.length - 1){
+        if(temp[index] < temp[k + 1]){
+            index = k + 1;
+            break;
+        }
+        k++;
+    }
+    k = index;
+    while (k < temp.length - 1){
+        if((temp[index] > temp[k + 1]) && (temp[k + 1] > test)){
+            index = k + 1;
+        }
+        k++;
+    }
+    return index;
+}
+
+/**
+ * Method used for swapping the char
+ * @param str
+ * @param i
+ * @param j
+ */
+private static void swap(char[] str, int i, int j){
+    char temp = str[i];
+    str[i] = str[j];
+    str[j] = temp;
+}
+	
+	
+	
+    /* char[] a = s.toCharArray();
+      int n = s.length();
+      char[] st = new char[n];
+      int i=1;
+      while(i<n)
+      {
+	      if(st[1] < i)
+	      {
+		       int j = ((i % 2) == 0) ? 0 : st[i];
+		       swap(s, i, j);
+		       System.out.println(join(s));
+		       st[i]++;
+		       i = 1;
+	      }
+	      else
+	      {
+	    	  st[i]=0;
+	    	  i++;
+	      }
+      }
+}
+public static String join(char[] s)
+{
+	StringBuilder sb = new StringBuilder();
+	sb.append(s);
+	return sb.toString();
+}
+
+public static void swap(char[] a, int i, int j)
+{
+	String temp="";
+	temp = a[i];
+	a[i] = a[j];
+	a[j] = temp;
+}*/
+/*********************************Check given string is palindrome****************************/
+
+public static void chkPalindrome(String str)
+{
+	String reverseString = "";
+	int length = str.length();
+	for(int i=length-1; i>=0; i--)
+	{
+		reverseString = reverseString + str.charAt(i);
+	}
+	if(str.equals(reverseString))
+	{
+		System.out.println("Given string is palindrome");
+	}
+	else
+	{
+		System.out.println("Given string is not palindrome");
+	}
+}
+
+/**************************************Strings are equal**********************************/
+
+public static boolean areEqual(String string1, String string2)
+{
+	return(string1.length() == string2.length()) &&
+			((string1 + string1).indexOf(string2) != -1);
 }
 
 /**********************Prime no.*****************************/
 
 public static boolean prime(int range)
 {
-	
+	//check once again.......
 	for(int i=2; i<=range/2; i++)
 	{
 	    int rem = range%i;
@@ -1354,8 +1523,17 @@ public static void changeReturn(int amount)
 
 /**************************Calculate day*****************************/
 
-public static int calDay(int d, int m, int y)
+public static int calDay(int m, int d, int y)
 {
+	if(d < 0 || m < 0 || y < 0)
+    {
+    	System.out.println("Please enter positive integer values.");
+    	m = sc.nextInt();
+    	d = sc.nextInt();
+    	y = sc.nextInt();
+    	calDay(d, m, y);
+    }
+	
 	
 	int y0 = y - (14 - m) / 12;
     int x = y0 + y0/4 - y0/100 + y0/400;
@@ -1369,14 +1547,17 @@ public static int calDay(int d, int m, int y)
 
 public static void temperaturConversion(double cel, double fa)
 {
-	double ctof, ftoc;
-  if(cel>60 || fa > 55)
+	double ctof=0, ftoc;
+ 
+	if(cel>60 || fa > 55)
   {
 	  System.out.println("Invalid value");
 	  System.out.println("please enter valid input");
 	  //temperaturConversion(cel, fa);
   }
-   ctof= (cel * 9/5) + 32;
+  else
+	  
+   ctof = (cel * 9/5) + 32;
    System.out.println("Converting temperature from celsius to fahreinheit:" +ctof);
   
    ftoc = (fa - 32) * 5/9;

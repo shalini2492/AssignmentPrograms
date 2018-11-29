@@ -1,3 +1,9 @@
+/*purpose: To calculate the win or loss of the player by performing operations on user input
+ * stake, trials and target
+ * author: Shalini
+ * date: 27/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

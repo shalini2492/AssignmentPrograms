@@ -1,3 +1,8 @@
+/* To calculate the elapsed time of stopwatch by calculating difference between start time and stop time.
+ * author: Shalini
+ * date: 26/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

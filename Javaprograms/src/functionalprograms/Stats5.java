@@ -1,3 +1,8 @@
+/*purpose: To compute minimum, maximum and average values of 5 randomly generated numbers
+ * author: Shalini
+ * date: 27/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

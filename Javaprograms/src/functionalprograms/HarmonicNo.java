@@ -1,3 +1,8 @@
+/*purpose: To compute harmonic number of given number
+ * author: Shalini
+ * date: 16/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

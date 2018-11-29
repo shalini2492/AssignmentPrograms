@@ -1,3 +1,8 @@
+/* purpose: To find thhe repeated element in an array
+ * author: Shalini
+ * date: 28/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
  import java.util.Scanner;
 
@@ -16,5 +21,6 @@ public static void main(String[] args)
 		arr[i] = sc.nextInt();
 	}
 	Utility.findRepeatedNo(arr, size);
+	//System.out.println(x);
 }
 }

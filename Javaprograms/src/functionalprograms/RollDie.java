@@ -1,3 +1,8 @@
+/* purpose: To generate proper number of rolling dice.
+ * author: Shalini
+ * date: 26/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 public class RollDie {
 	public static void main(String[] args)

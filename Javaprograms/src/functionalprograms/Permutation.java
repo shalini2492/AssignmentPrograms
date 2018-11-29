@@ -1,3 +1,9 @@
+/*purpose: To compute all the permutations of given string using recursive method
+ * author: Shalini
+ * date: 25/11/2018
+ * version: 1.0
+ */
+
 package functionalprograms;
 
 import utility.Utility;

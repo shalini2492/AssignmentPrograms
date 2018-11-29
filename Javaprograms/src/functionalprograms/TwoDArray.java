@@ -1,3 +1,8 @@
+/* purpose: To display two-dimensional array by taking limit of array and displaying it in 2-D manner.
+ * author: Shalini
+ * date: 22/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 import utility.Utility;

@@ -1,3 +1,8 @@
+/*purpose: To generate a distinct coupon number out of random numbers
+ * author: Shalini
+ * date: 16/11/2018
+ * version: 1.0
+ */
 package functionalprograms;
 
 public class DistinctCoupon {

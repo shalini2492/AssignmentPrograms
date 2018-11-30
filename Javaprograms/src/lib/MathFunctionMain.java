@@ -1,8 +1,11 @@
-package functionsandlibraries;
+package lib;
 
 import java.io.BufferedReader;
+import java.lang.Exception;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+
+import functionsandlibraries.MathFunction;
 import utility.Utility;
 
 public class MathFunctionMain {
@@ -13,6 +16,7 @@ public static void main(String[] args) throws Exception
 	System.out.println("1. Harmonic value of number\n2. Sin of angle\n3.Cosine of angle\n4.Binary value of number\n5.Square root of number\n6.isPrime\n7.Factorial of number\n8.Future Value\n9.Present value\n10.Min and Max value of integers\n11.Min and Max value of strings\n12.Check collinear using slope and area");
 	System.out.println("Enter your choice");
 	choice = Utility.inputInteger();
+	do{
 	  switch(choice)
 	      {
 	        case 1: 
@@ -96,7 +100,9 @@ public static void main(String[] args) throws Exception
 	                   System.out.println("Enter the duration: ");
 	                   duration = Utility.InputDouble();
 	                   MathFunction.presentValue(money, rateOfinterest, duration);
+	                   break;
 	        case 10:   int size;
+	                 
 	                   System.out.println("Enter the size of array: ");
 	                   size = Utility.inputInteger();
 	                   int[] a = new int[size];
@@ -105,8 +111,54 @@ public static void main(String[] args) throws Exception
 	                   {
 	                	   a[i] = sc.nextInt();
 	                   }
-	                   MathFunction.minInt(a);
-	                   MathFunction.maxInt(a);
-	}
+	                  MathFunction.maxInt(a, size);
+	                  MathFunction.minInt(a, size);
+	                  break;
+	        case 11:  int limit;
+	                  System.out.println("Enter the size of array of strings: ");
+	                  limit = Utility.inputInteger();
+	                  String[] strArray = new String[limit];
+	                  System.out.println("Enter the strings");
+	                  for(int i=0; i<limit; i++)
+	                  {
+	                	  strArray[i] = sc.nextLine();
+	                  }
+	                  MathFunction.minStrArray(strArray, limit);
+	                  MathFunction.maxStrArray(strArray, limit);
+	                  break;
+	        case 12:  int x1, x2, x3, y1, y2, y3;
+	                  System.out.println("Enter the coordinates for point A");
+	                  x1 = Utility.inputInteger();
+	                  y1 = Utility.inputInteger();
+	                  System.out.println("Enter the coordinates for point B");
+	                  x2 = Utility.inputInteger();
+	                  y2 = Utility.inputInteger();
+	                  System.out.println("Enter the coordinates for point C");
+	                  x3 = Utility.inputInteger();
+	                  y3 = Utility.inputInteger();
+	                  boolean isColl = MathFunction.checkCollinearSlope(x1, y1, x2, y2, x3, y3);
+	                  if(isColl)
+	                  {
+	                	  System.out.println("The given points are collinear checked using slope..");
+	                  }
+	                  else
+	                	  System.out.println("The given points are non-collinear checked using slope..");
+	                 boolean coll= MathFunction.checkCollinearArea(x1, y1, x2, y2, x3, y3);
+	                 if(coll)
+	                 {
+	                	 System.out.println("The given points are collinear checked using area of triangle..");
+	                 }
+	                 else
+	                	 System.out.println("The given points are non-collinear checked using area of triangle..");
+	                  break;
+	        default: System.out.println("You have entered invalid input...");
+	                 System.out.println("Please enter valid input..");
+	                 int validNo = Utility.inputInteger();
+	                 choice = validNo;
+	                 sc.close();
+	                 
+	          }
+	}while(choice< 0 && choice > 12);
 }
 }
+

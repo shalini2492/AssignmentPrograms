@@ -242,12 +242,8 @@ public static void harmonicNo(int number)
 
 public static int factors(int n)
 { 
-	while(n%2 == 0)
-	{
-		System.out.println("");
-		n/=2;
-	}
-	for(int i=2; i<Math.sqrt(n); i+=2)
+	
+	for(int i=2; i<n; i++)
 	{
 		while(n%i == 0)
 		{
@@ -607,10 +603,27 @@ public static void sincos(double angle)
 
 /*This method will compute the sine value of given input angle and will convert it to radians and then return take sine value and return.
 */
-public static void sine(double n)
+public static void sine(int theta, double radians, int n)
 {
-	int theta=sc.nextInt();
-	double radians=Math.toRadians(theta);
+	/*double x = Double.parseDouble(args[0]);
+
+    // convert x to an angle between -2 PI and 2 PI
+    x = x % (2 * Math.PI);
+
+    // compute the Taylor series approximation
+    double term = 1.0;      // ith term = x^i / i!
+    double sum  = 0.0;      // sum of first i terms in taylor series
+
+    for (int i = 1; term != 0.0; i++) {
+        term *= (x / i);
+        if (i % 4 == 1) sum += term;
+        if (i % 4 == 3) sum -= term;
+    }
+    System.out.println(sum);*/
+	
+	
+	//int theta=sc.nextInt();
+	//double radians=Math.toRadians(theta);
 	int pow=1;
 	double sinx=0.0;
 	for(int i=1; i<=n; i++)
@@ -704,7 +717,7 @@ public static void findRepeatedNo(int[] data, int size)
 	System.out.println("Repeated elements are: ");
 	for(int i=0; i <= 100; i++)
 	{
-		for(int j=i+1; j <= 100; j++)
+		for(int j=1; j <= 100; j++)
 		{
 			if(data[i] == data[j])
 			{
@@ -889,6 +902,12 @@ public static void checkAnagram(String str1, String str2)
 }
 
 /*********************************String Permutation in iterative way***************************/
+
+/**This method will find all the permutations by using ceiling() method and print them....
+ * 
+ * @param str input string taken from the user
+ */
+
 public static void perString(String str)
 {
 	char[] temp = str.toCharArray();
@@ -925,9 +944,11 @@ public static void perString(String str)
 }
 
 /**
- * 
- * @param temp
- * @param index
+ * This method will find the rightmost smallest character say Char1 
+ * Then it will check for the character that is greater than Char1 say Char2. Swap both characters Char1 and Char2.
+ * After that take substring followed by Char1 and then repeat above steps....
+ * @param temp character array used for taking substring.
+ * @param index location number of element in string array.
  * @return
  */
 public static int findCeiling(char[] temp, int index){
@@ -952,9 +973,9 @@ public static int findCeiling(char[] temp, int index){
 
 /**
  * Method used for swapping the char
- * @param str
- * @param i
- * @param j
+ * @param str original string
+ * @param i used for swapping
+ * @param j used for swapping
  */
 private static void swap(char[] str, int i, int j){
     char temp = str[i];
@@ -1122,7 +1143,7 @@ public static String decimalToBinary(int decimal)
 	}
 	if(binaryNoInString.length()>0 && binaryNoInString.length()<8)
 	{
-		binaryNoInString+=giveZero(8-binaryNoInString.length());
+		binaryNoInString+=appendZero(8-binaryNoInString.length());
 	}
 	for(int i=binaryNoInString.length()-1;i>=0;i--)
 	{
@@ -1136,7 +1157,7 @@ public static String decimalToBinary(int decimal)
 * @param numberofzeroRequired the number of zero the user needs
 * @return the string value 
 */
-public static String giveZero(int addZero) {
+public static String appendZero(int addZero) {
 	String s ="";
 	for(int i=0;i<addZero;i++)
 	{
@@ -1304,12 +1325,12 @@ static int N;
 
 public static int guessNo(int low, int high)
 {
-	Utility utility=new Utility();
+	//Utility utility=new Utility();
 	int mid=low+(high-low)/2;
 	if(low<high)
 	{
 		System.out.println("Is your number in between "+low+" and "+mid);
-		if(utility.InputBoolean())
+		if(Utility.InputBoolean())
 		{
 			return guessNo(low,mid);
 		}
@@ -1593,7 +1614,7 @@ public static void sqroot(int c)
 
 /***************Conversion of decimal to binary********************/
 
-public static void toBinry(int input)
+/*public static void toBinry(int input)
 {
 	int[] bin = new int[100];
 	int i=0;
@@ -1609,6 +1630,28 @@ public static void toBinry(int input)
 	
 	//System.out.println(bin[i]);
     }
+}*/
+
+public static String binary(int decimal) 
+{
+	String binaryNo="";
+	String temp="";
+	int no=decimal;
+	while(no>=1)
+	{
+		binaryNo=binaryNo+no%2;
+		no=no/2;
+	}
+	if(binaryNo.length()>0 && binaryNo.length()<4)
+	{
+		binaryNo+=appendZero(4-binaryNo.length());
+	}
+	for(int i=binaryNo.length()-1;i>=0;i--)
+	{
+		temp+=binaryNo.charAt(i);
+	}
+	binaryNo=temp;
+	return binaryNo;
 }
 
 /***********************Expansion to binary**************************/
@@ -1649,7 +1692,9 @@ public static void displayList(String[] task, String[] deadline, int[] minutes)
 	{
 	
 	}
+	sc.close();
 }
+
 
 /************************DATA STRUCTURE PROGRAMS****************************/
 

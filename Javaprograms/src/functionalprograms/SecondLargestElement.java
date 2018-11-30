@@ -28,6 +28,7 @@ public static void main(String[] args)
 	}
 	Utility.findSecondLarge(arr);
 	Utility.findSecondSmall(arr);
+	sc.close();
 /*	Utility.findSecondLarge(new int[] {45, 51, 28, 75, 49, 42});
 	 
     Utility.findSecondLarge(new int[] {985, 521, 975, 831, 479, 861});
@@ -38,25 +39,4 @@ public static void main(String[] args)
 */
 	
 }
-	/*int n;
-	System.out.println("Enter the limit of array");
-	Scanner sc=new Scanner(System.in);
-	n=Utility.inputInteger();
-	int[] arr = new int[n];
-	System.out.println("Enter the elements in array");
-	for(int i=0; i<n; i++)
-	{
-		arr[i] = sc.nextInt();
-	}
-	System.out.println("Given array is: ");
-	for(int i=0; i<n; i++)
-	{
-		System.out.println(arr[i]);
-	}
-	Utility.findSecondLarge(arr, n);*/
-	
-	
-	 
-
-
 }

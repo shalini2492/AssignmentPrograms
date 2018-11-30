@@ -34,7 +34,7 @@ public static void main(String[] args)
     // starting day
     int d = Utility.calDay(month, 1, year);
 
-    // print the calendar
+    
     for (int i = 0; i < d; i++)
         System.out.print("   ");
     for (int i = 1; i <= days[month]; i++) {

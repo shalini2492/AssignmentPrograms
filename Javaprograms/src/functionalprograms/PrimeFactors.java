@@ -10,7 +10,7 @@ import utility.Utility;
 public class PrimeFactors {
 public static void main(String[] args)
 {
-int n;
+int n; //check output
 
 System.out.println("Enter the number for factorization");
 n= Utility.inputInteger();

@@ -1,4 +1,4 @@
-/* purpose: To find thhe repeated element in an array
+/* purpose: To find the repeated element in an array
  * author: Shalini
  * date: 28/11/2018
  * version: 1.0

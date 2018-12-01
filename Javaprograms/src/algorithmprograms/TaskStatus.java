@@ -13,7 +13,7 @@ public static void main(String[] args)
 	int[] min = new int[n];
 	System.out.println("Enter the tasks in the list array");
 	Scanner sc = new Scanner(System.in);
-	Utility utility = new Utility();
+	
 	for(int i=0; i<n; i++)
 	{
 	t[i] = sc.nextLine();
@@ -33,6 +33,7 @@ public static void main(String[] args)
 	{
 		System.out.println(t[i]+ "|" +dline[i]+ "|" +min[i]);
 	}
-	utility.displayList(t, dline, min);
+	Utility.displayList(t, dline, min);
+	sc.close();
 }
 }

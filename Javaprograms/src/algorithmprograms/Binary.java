@@ -22,7 +22,7 @@ public static void main(String[] args)
 		if(swappedDec%Math.pow(2, i)==0)
 		{
 			System.out.println("The swapped number :"+swappedDec+
-					" is divisble by "+i+"th power of 2");
+					" is divisible by "+i+"th power of 2");
 			return;
 		}
 	}

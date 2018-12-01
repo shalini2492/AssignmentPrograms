@@ -1,5 +1,4 @@
 package functionsandlibraries;
-
 import java.util.Arrays;
 
 public class StringFunctions {
@@ -12,24 +11,6 @@ public class StringFunctions {
 
 	public static void checkAnagram(String str1, String str2)
 	{
-		/*if(s1.replaceAll(" ", "").length() == s2.replaceAll(" ", "").length())
-		  {
-		            char[] char1 = s1.toLowerCase().toCharArray();
-			        char[] char2 = s2.toLowerCase().toCharArray();
-		
-		            Arrays.sort(char1);
-		            Arrays.sort(char2);
-		
-	   if(Arrays.equals(char1, char2))
-	   	     {
-			       System.out.println("Given strings are anagram");
-		     }
-	   else 
-		           System.out.println("Given strings are not anagram");
-			
-	     }
-		return s1;*/
-		
 		 int len, len1, len2, i, j, found=0, not_found=0;
 		 len1 = str1.length();
 	        len2 = str2.length();
@@ -105,11 +86,13 @@ public class StringFunctions {
 	    }                        
 	}
 
-	/**
-	 * 
-	 * @param temp
-	 * @param index
-	 * @return
+	/**This method is used to find the ceiling of the 'CHAR1' starting from the index of the 'CHAR1', ceiling 
+	 * here means starting from the index of the 'CHAR1' you have to find the smallest character which is greater
+	 * than the 'CHAR1'. Let's call this char as 'CHAR2'. If CHAR2 > CHAR1 then swap these characters and repeat the
+	 * above steps to find all the permutations.
+	 * @param temp character array of which we need all the permutations
+	 * @param index location of an element.
+	 * @return permutation of string
 	 */
 	public static int findCeiling(char[] temp, int index){
 	    int k = index;

@@ -8,7 +8,7 @@ public static void main(String[] args)
 {
 	int range=3;
 	
-	Utility utility = new Utility();
+	
 	Scanner sc = new Scanner(System.in);
 //	System.out.println("Enter the range for stirng array");
 	
@@ -23,12 +23,12 @@ public static void main(String[] args)
 	{
 		System.out.println(s1[i]);
 	}
-	String[] s = utility.bubsortString(s1, range);
+	String[] s = Utility.bubsortString(s1, range);
 	System.out.println("String after bubble sort");
 	for(int i=0; i<range; i++)
 	{
 		System.out.println(s[i]);
 	}
-	
+	sc.close();
 }
 }

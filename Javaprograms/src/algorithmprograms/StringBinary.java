@@ -1,20 +1,19 @@
 package algorithmprograms;
 
-import java.util.*;
+import java.util.Scanner;
+
 
 import utility.Utility;
 
 public class StringBinary {
-public static void main(String[] args)
+public static void main(String[] args) 
 {
-	String search;
-    int start, end;
-	Utility utility = new Utility();
+	String search="";
 	Scanner scanner = new Scanner(System.in);
 	System.out.println("Enter the no. of strings in an array");
-    int x = utility.inputInteger();
+    int x = Utility.inputInteger();
     String[] st = new String[x];
-    System.out.println("enter strings");
+    System.out.println("Enter strings");
     for(int i=0; i<x; i++)
     {
     	st[i] = scanner.nextLine();
@@ -25,8 +24,9 @@ public static void main(String[] args)
     	System.out.println(st[i]);
     }
     System.out.println("Enter string to be searched");
-    search = utility.inputString();
-    String[] tr = utility.searchStr(st);
-    System.out.println(tr);
+    search = Utility.inputString();
+    Utility.searchStr(st, x);
+    scanner.close();
+    //System.out.println(tr);
 }
 }

@@ -5,6 +5,8 @@
  */
 package lib;
 
+import java.util.Scanner;
+
 import functionsandlibraries.StringFunctions;
 import utility.Utility;
 public class StringFunctionsMain {
@@ -15,24 +17,40 @@ public static void main(String[] args)
 	string1 = Utility.inputString();
 	System.out.println("Enter second string");
 	string2 = Utility.inputString();
-	System.out.println("1. Anagram\n2. Palindrome\n3. String permutation using iterative method\n4. String permutation using recursive method\n5. String arrays are equal");
+	 Scanner scan = new Scanner(string1);
+     Scanner sc = new Scanner(string2);
+     String result = "";
+     while(scan.hasNext()) {
+         result += scan.next();
+     }
+     System.out.println(result);
+     String result1 = "";
+     while(sc.hasNext())
+     {
+    	 result1 += sc.next();
+     }
+     System.out.println(result1);
+     scan.close();
+     sc.close();
 	
-	System.out.println("Enter choice");
+	//System.out.println(string2);
+	System.out.println("1. Check Anagram\n2. Check Palindrome\n3. String permutation using iteration\n4. String permutation using recursion\n5. Check for equal strings");
+	System.out.println("Enter the choice");
 	int choice = Utility.inputInteger();
 	do
 	{
 		switch(choice)
 		{
-			case 1: StringFunctions.checkAnagram(string1, string2);
+			case 1: StringFunctions.checkAnagram(result, result1);
 			        break;
-			case 2: StringFunctions.chkPalindrome(string1);
+			case 2: StringFunctions.chkPalindrome(result);
 			        break;
-			case 3: StringFunctions.perString(string1);
+			case 3: StringFunctions.perString(result);
 			        break;
-			case 4: StringFunctions.permutation(string1);
+			case 4: StringFunctions.permutation(result);
 			        break;
-			case 5: StringFunctions.areEqual(string1, string2);
-			        if(Utility.areEqual(string1, string2))
+			case 5: StringFunctions.areEqual(result, result1);
+			        if(Utility.areEqual(result, result1))
 			        	System.out.println("Strings are equal");
 			        else
 			        	System.out.println("Strings are not equal");

@@ -22,5 +22,6 @@ public static void main(String[] args)
 	}
 	Utility.findRepeatedNo(arr, size);
 	//System.out.println(x);
+	sc.close();
 }
 }

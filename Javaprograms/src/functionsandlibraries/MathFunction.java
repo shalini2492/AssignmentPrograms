@@ -37,9 +37,35 @@ public class MathFunction {
 	 * 
 	 */
 	
-	public static void sine(double n)
+	public static double sine(double n)
 	{
-		int theta=sc.nextInt();
+		int i;
+		double val=0;
+		for(i=0; i<8; i++)
+		{
+			double p = power(-1, i);
+			double px = power(n, 2*i+1);
+			double fac = fact(2+i);
+			val += p*px/fac;
+		}
+		return val;
+	}
+	
+	public static double power(double x, int n)
+	{
+		double val=1;
+		int i;
+		for(i=0; i<n; i++)
+		{
+			val*=x;
+		}
+		return val;
+	}
+		
+		
+		
+		
+		/*int theta=sc.nextInt();
 		double radians=Math.toRadians(theta);
 		int pow=1;
 		double sinx=0.0;
@@ -57,7 +83,7 @@ public class MathFunction {
 			sinx = sinx + current_term;
 		     pow = pow + 2;
 		}
-		System.out.println(sinx);
+		System.out.println(sinx);*/
 		
 	/*	double acc= (double) 0.0001, denominator, sinx, sinval;
 		 n = n * (double) (3.142 / 180.0);
@@ -73,7 +99,7 @@ public class MathFunction {
 			 i = i + 1;
 		 }while(acc <= sinx - sinval);
 		 System.out.println(sinx);*/
-	}
+	
 
 	public static int fact(int no)
 	{

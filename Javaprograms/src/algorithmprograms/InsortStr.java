@@ -23,5 +23,6 @@ public static void main(String[] args)
     System.out.println("Array after sorting:");
     String[] s = utility.insortStr(st); 
     System.out.println(s);
+    sc.close();
 }
 }

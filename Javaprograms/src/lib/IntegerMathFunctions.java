@@ -1,19 +1,20 @@
 package lib;
 
 import java.io.BufferedReader;
+
 import java.lang.Exception;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+
 
 import functionsandlibraries.MathFunction;
 import utility.Utility;
 
-public class MathFunctionMain {
+public class IntegerMathFunctions {
 public static void main(String[] args) throws Exception
 {
     int choice;
 	
-	System.out.println("1. Harmonic value of number\n2. Sin of angle\n3.Cosine of angle\n4.Binary value of number\n5.Square root of number\n6.isPrime\n7.Factorial of number\n8.Future Value\n9.Present value\n10.Min and Max value of integers\n11.Min and Max value of strings\n12.Check collinear using slope and area");
+	System.out.println("1. Harmonic value of number\n2. Sin of angle\n3.Cosine of angle\n4.Binary value of number");
 	System.out.println("Enter your choice");
 	choice = Utility.inputInteger();
 	do{

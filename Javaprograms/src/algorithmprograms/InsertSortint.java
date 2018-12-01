@@ -8,10 +8,10 @@ public static void main(String[] args)
 {
 	int s;
 	
-	 Utility utility = new Utility();
+	
 	System.out.println("Enter the range for elements in an array");
 	Scanner sc = new Scanner(System.in);
-	s = utility.inputInteger();
+	s = Utility.inputInteger();
 	int[] arr = new int[s];
 	System.out.println("Enter the elements");
 	for(int i=0; i<s; i++)
@@ -24,7 +24,7 @@ public static void main(String[] args)
 		System.out.println(arr[i]);
 	}
 	System.out.println("Array after sorting:");
-    int[] d = utility.insertionSort(arr);
-    System.out.println(d);
+    Utility.insertionSort(arr, s);
+    sc.close();
 }
 }

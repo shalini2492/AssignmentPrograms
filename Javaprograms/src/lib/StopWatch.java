@@ -6,14 +6,14 @@
 package lib;
 
 import utility.Utility;
-
+import functionsandlibraries.BLStdOut;
 public class StopWatch {
 public static void main(String[] args)
 {
 	
 	long startTime=0;
 	long stopTime=0;
-	System.out.println("enter 1 to start the stopwatch");
+	BLStdOut.println("enter 1 to start the stopwatch");
 	int input=Utility.inputInteger();
 	Utility.stopWatch(startTime, stopTime);
 }

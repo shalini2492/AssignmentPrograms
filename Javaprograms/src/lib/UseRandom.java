@@ -5,7 +5,7 @@ import utility.Utility;
 public class UseRandom {
 public static void main(String[] args)
 {
-	/*long seed;
+	long seed;
 	seed=System.currentTimeMillis();
 	System.out.println("Seed: " +seed);
 	long s=1234567892;
@@ -23,7 +23,7 @@ public static void main(String[] args)
 	double probability=-1.0;
 	BLRandom.uniform();
 	BLRandom.bernoulli(probability);
-	System.out.println("Probability: "+probability);*/
+	System.out.println("Probability: "+probability);
 	System.out.println("Enter total number of trials");
 	int trials = Utility.inputInteger();
 	System.out.println("Enter total number of successes");
@@ -37,8 +37,9 @@ public static void main(String[] args)
 	double q = 5 % 6;
 	System.out.println("probability of failure in one trial: "+q);
 	long k = MathFunction.factorial(trials) * MathFunction.factorial(success) * (MathFunction.factorial(failure));
-	double probability = k*((p*success)*(q*failure));
+	probability = k*((p*success)*(q*failure));
 	System.out.println("Probability: "+probability);
     BLRandom.bernoulli(probability);
+    BLRandom.gaussian();
 }
 }

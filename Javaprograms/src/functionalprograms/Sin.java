@@ -6,13 +6,53 @@
 package functionalprograms;
 
 //import Utility.Utility;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+
 
 import utility.Utility;
 public class Sin {
 public static void main(String[] args) throws Exception
 {
+	int x, theta;
+	System.out.println("Enter the number of terms..");
+	x=Utility.inputInteger();
+	System.out.println("Enter the value of theta in degrees..");
+	theta = Utility.inputInteger();
+	double radians=theta*Math.PI/180;
+	System.out.println("Converted to radians: "+radians);
+    Utility.sine(theta, radians, x);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 /*	double x = Double.parseDouble(args[0]);
 
     // convert x to an angle between -2 PI and 2 PI
@@ -29,14 +69,15 @@ public static void main(String[] args) throws Exception
     }
     System.out.println(sum);*/
 	
-	double Pi=3.14519;
-	BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+	//double Pi=3.14519;
+/*	BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
 	System.out.println("Enter number of terms you wish");
 	int n = Integer.parseInt(read.readLine());
 	System.out.println("Enter the value of theta");
 	int theta = Integer.parseInt(read.readLine());
-	double radians=theta*Pi/180;
-	System.out.println(radians);
-    Utility.sine(theta, radians, n);
+	double radians=theta*Math.PI/180;
+	System.out.println("Converted to radians: "+radians);
+    Utility.sine(theta, radians, n);*/
+ 
 }
 }

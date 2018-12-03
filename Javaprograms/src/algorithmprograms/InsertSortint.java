@@ -24,7 +24,11 @@ public static void main(String[] args)
 		System.out.println(arr[i]);
 	}
 	System.out.println("Array after sorting:");
-    Utility.insertionSort(arr, s);
+	for(int i=0; i<s; i++)
+	{
+    Utility.insertionSort(arr);
+    System.out.println(arr[i]);
+	}
     sc.close();
 }
 }

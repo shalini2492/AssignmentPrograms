@@ -4,7 +4,7 @@
  * version: 1.0
  */
 package lib;
-
+import functionsandlibraries.BLStdOut;
 import java.util.Scanner;
 
 import functionsandlibraries.StringFunctions;
@@ -13,9 +13,9 @@ public class StringFunctionsMain {
 public static void main(String[] args)
 {
 	String string1, string2;
-	System.out.println("Enter first string");
+	BLStdOut.println("Enter first string");
 	string1 = Utility.inputString();
-	System.out.println("Enter second string");
+	BLStdOut.println("Enter second string");
 	string2 = Utility.inputString();
 	 Scanner scan = new Scanner(string1);
      Scanner sc = new Scanner(string2);
@@ -23,7 +23,7 @@ public static void main(String[] args)
      while(scan.hasNext()) {
          result += scan.next();
      }
-     System.out.println(result);
+     BLStdOut.println(result);
      String result1 = "";
      while(sc.hasNext())
      {

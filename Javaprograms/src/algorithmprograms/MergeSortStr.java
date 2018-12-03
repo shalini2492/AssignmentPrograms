@@ -13,7 +13,7 @@ public static void main(String[] args)
 	}
 	System.out.println("The Given array is :");
 	Utility.printArray(num);
-	utility.sort(num, 0, num.length-1);
+	utility.sortInteger(num, 0, num.length-1);
 	System.out.println("\nThe Sorted array is :"); 
     Utility.printArray(num); 
 }

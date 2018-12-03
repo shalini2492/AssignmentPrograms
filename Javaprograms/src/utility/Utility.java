@@ -1,4 +1,5 @@
 package utility;
+import java.util.Arrays;
 /* import java.awt.*;
 
 import java.awt.List;
@@ -12,7 +13,7 @@ import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;*/
-import java.util.*;
+import java.util.Scanner;
 
 import static java.lang.Math.sin;
 import static java.lang.Math.cos;
@@ -57,7 +58,12 @@ public class Utility
     	translated into a valid double value.Scans the next token of the input as
     	 a double. */ 
     }
-    /**********************String Replace*************************/
+    /****This method will accept input string i.e. a line and will replace a particular name with user name.
+     * 
+     * @param template string
+     * @param username user input name 
+     * @return string with user input name
+     */
     
     public static String replaceString(String template, String username)
     {
@@ -75,7 +81,11 @@ public class Utility
     }
 
 
-/***********************************Flip coin******************************/
+/****This method is used to calculate the percentage of heads vs tail.
+ * 
+ * @param n number of times coin is tossed
+ * @return percentage of head vs tail
+ */
 
  //static Random random = new Random();
 public static int HeadorTail(int n)
@@ -135,7 +145,11 @@ public static int HeadorTail(int n)
     return n;
 }
  
-/*****************************************Leap Year*****************************************/
+/****This method is used to check whether the given input year is a leap year.
+ * 
+ * @param yearno year accepted from user
+ * @return boolean result true or false.
+ */
 
 public static boolean LeapYear(int yearno) 
 {if(yearno > 1000)
@@ -169,7 +183,12 @@ public static String checkLeapYear(int year) {
 	}
 }
 
-/*******************************Print three names in reverse order***********************/
+/***This method is used to print names in reverse to the order taken from the user
+ *  
+ * @param firstName first name entered by user
+ * @param secondName second name entered by user
+ * @param thirdName third name entered by user
+ */
 
 public static void reversePrint(String firstName, String secondName, String thirdName)
 {
@@ -179,6 +198,11 @@ public static void reversePrint(String firstName, String secondName, String thir
 	System.out.println("Hi " +thirdName+ ", " +secondName+ " and " +firstName);
 	
 }
+/**This method is used to print star pattern of given user input
+ * 
+ * @param name user input letter
+ * @return star pattern
+ */
 
 public static int initial(String name) {
     int n = 9;
@@ -261,8 +285,7 @@ public static void kPattern(int count) {
 public static void dpattern(int n) {     
     
   
-       // TODO Auto-generated method stub
-    //loop for rows
+        //loop for rows
         for (int i = 0; i < 9; i++){
            
                // loop for columns
@@ -319,7 +342,12 @@ public static void wpattern(int n) {
 }
 
 
-/*************************Power 2********************************/
+/****This method is used to print the power of 2 till the given number
+ * 
+ * @param pow number from 1 to that user input number
+ * @param base base will be 2 as we are calculating for the power of 2
+ * @return 2^1 to 2^number
+ */
 
 public static int power(int pow, int base)
 {
@@ -346,7 +374,12 @@ public static int power(int pow, int base)
 	      return pow;
 }
 
-/*************************Power of 2*****************************/
+/****This method is used to print the power of 2 till the given number
+ * 
+ * @param pow number from 1 to that user input number
+ * @param base base will be 2 as we are calculating for the power of 2
+ * @return 2^1 to 2^number
+ */
 
 public static void powertwo(int number)//input validation
 {
@@ -359,7 +392,10 @@ public static void powertwo(int number)//input validation
     }
 }
 
-/********************Harmonic Number*****************************/
+/****This method is used to calculate harmonic number.
+ * 
+ * @param number user input
+ */
 
 public static void harmonicNo(int number)
 {
@@ -374,7 +410,11 @@ public static void harmonicNo(int number)
 	System.out.println(" ");
 }
 
-/***********************************Prime Factorization*****************************************/
+/*****This method is used to calculate prime factors of given number
+ * 
+ * @param n user input number of which prime factors are to be calculated
+ * @return factors which are prime
+ */
 
 public static int factors(int n)
 { 
@@ -389,7 +429,13 @@ public static int factors(int n)
 	}
 	return n;
 }
-/*********************************************Gambler****************************************************/
+
+/***This method is used to check whether the game is won or loss. It is done by generating random value
+ * 
+ * @param stake user input money
+ * @param trials user input trials
+ * @param target user input goal
+ */
 
 public static void gambling(int stake, int trials, int target)
 {	
@@ -422,7 +468,11 @@ public static void gambling(int stake, int trials, int target)
 }
 
 
-/*************************************Distinct Coupon Number*****************************************/
+/****This method is used to find distinct number from a set of number
+ * 
+ * @param n user input
+ * @return distinct number
+ */
 
 public static int dist_coupon(int n)
 {
@@ -440,7 +490,11 @@ public static int dist_coupon(int n)
 	   return n;
 }
 
-/******************************************************2D Array*******************************************/
+/****This method is used to display two-dimensional array
+ * 
+ * @param row number of rows
+ * @param column number of columns
+ */
 
 public static void twodarr(int row, int column)
 {
@@ -463,7 +517,11 @@ public static void twodarr(int row, int column)
 	
 }
 
-/***********************************Sum of Three integers*****************************************/
+/*****This method is used to find sum of three integers in such a way that its result is 0.
+ * 
+ * @param a array of numbers
+ * @return sum
+ */
 
 public static int[] triplets(int a[])
 {
@@ -497,7 +555,11 @@ public static int[] triplets(int a[])
 
 
 
-/******************************************Distance calculation***************************************/
+/****This method is used to calculate distance between given coordinates and origin.
+ * 
+ * @param i first coordinate
+ * @param j second coordinate
+ */
 
 public static void dist(int i, int j)
 {
@@ -510,7 +572,10 @@ public static void dist(int i, int j)
   System.out.println("The distance from (" +x+ "," +y+ ") to (0,0) is " +diff);
 }
 
-/**************************************String Permutation********************************************/
+/*****This method is used for displaying permutations of given string
+ * 
+ * @param inputString user input
+ */
 
 public static void permutation(String inputString) 
 {
@@ -536,7 +601,11 @@ public static void permuteString(String permuteString, String inputString)
 
 
 
-/********************************************Stopwatch************************************************/
+/***This method is used to calculate elapsed time between start time and stop time
+ *  
+ * @param startTime start time of stopwatch
+ * @param stopTime stop time of stopwatch
+ */
 
 public static void stopWatch(long startTime, long stopTime)
 {
@@ -571,7 +640,10 @@ public static void stopWatch(long startTime, long stopTime)
 }
 
 
-/******************************************TicTacToe****************************************************/
+/*****This method is used to accept row and column and insert user input in that particular row and column and
+ * find if the 3 inputs are in line.
+ * 
+ */
 
 /*public void playGame(int x)
 {*/
@@ -597,7 +669,12 @@ public static void stopWatch(long startTime, long stopTime)
 	}
 }
 	
-/********************************************Quadratic*********************************************/
+/***This method is used to calculate roots of given quadratic equation
+ * 
+ * @param a first number
+ * @param b second number
+ * @param c third number
+ */
 
 //static double k, root1, root2;
 public static void quad(int a, int b, int c)
@@ -624,7 +701,11 @@ public static void quad(int a, int b, int c)
 	}
 }
 
-/***************************************************WindChill************************************************/
+/****This method is used to calculate windchill
+ * 
+ * @param temp user input temperature
+ * @param speed user input speed
+ */
 
 public static void calTemp(double temp, double speed)
 {
@@ -641,14 +722,14 @@ public static void calTemp(double temp, double speed)
 	           //  return cal;
 }
 
-/*********************************************Integer Operations*************************************/
-
-/**
- * @param a
- * @param b
- * @param c
- * @return
+/****This method is used to calculate different operations of integer
+ * 
+ * @param a first number
+ * @param b second number
+ * @param c third number
  */
+
+
 public static void intOpt(int a, int b, int c)
 {
 	//a=10, b=10, c=10;
@@ -660,8 +741,13 @@ public static void intOpt(int a, int b, int c)
 	
 }
 
-/**********************************************Double Operations*************************************/
 
+
+/**This method is used to perform different operations on double type of values
+ * @param a first number
+ * @param b second number
+ * @param c third number
+ */
 public static void doubleOpt(double a, double b, double c)
 {
 	//a=10, b=10, c=10;
@@ -675,6 +761,11 @@ public static void doubleOpt(double a, double b, double c)
 
 /******************************************Spring Season**************************************/
 
+/** This method is used to find whether the given date comes in spring season or not 
+ * @param day user input integer
+ * @param month user input integer
+ * @return boolean value true or false
+ */
 public static boolean springSeason(int day, int month)
 {
 	boolean isSpring = (month == 3 && day >= 20 && day <= 31)
@@ -703,8 +794,11 @@ public static void avg(double a, double b, double c, double d, double e)
 	
 }
 
-/***************Calculating min, max and average value of 5 random numbers********************/
+/***************Calculating minimum, maximum and average value of 5 random numbers********************/
 
+/**This method is used to calculate minimum, maximum and average of randomly generated double values
+ * @param result minimum, maximum and average
+ */
 public static void statsRandom(double result)
 {
 
@@ -728,6 +822,9 @@ public static void statsRandom(double result)
 
 /******************************Trigonometric function SinCos*********************/
 
+/**This method is used to calculate sine value and cosine value of given angle
+ * @param angle user input
+ */
 public static void sincos(double angle)
 {
 	angle = Math.toDegrees(angle);
@@ -739,8 +836,39 @@ public static void sincos(double angle)
 
 /*This method will compute the sine value of given input angle and will convert it to radians and then return take sine value and return.
 */
+/**This method is used to calculate sine value of angle by using taylor series
+ * @param theta angle value
+ * @param radians angle converted to radians
+ * @param n number of terms whose sum user want
+ */
 public static void sine(int theta, double radians, int n)
 {
+	double terms=0.0;
+	double sum=1.0;
+	for(int i=0; i<=n; i++)
+	{
+		if(terms != 0.0)
+		{
+			if(i%2 == 1)
+			{
+				double numerator = Math.pow(theta, i);
+				System.out.println("Numerator: "+numerator);
+				double denominator = fact(i);
+				System.out.println("Denominator is: "+denominator);
+			}	
+	}
+	}		
+	if(i%4 == 1)
+	{
+		sum += terms;
+	}
+	if(i%4 == 3)
+	{
+		sum -= terms;
+	}
+	
+	System.out.println("Sine value: "+terms);
+		}
 	/*double x = Double.parseDouble(args[0]);
 
     // convert x to an angle between -2 PI and 2 PI
@@ -760,7 +888,7 @@ public static void sine(int theta, double radians, int n)
 	
 	//int theta=sc.nextInt();
 	//double radians=Math.toRadians(theta);
-	int pow=1;
+	/*int pow=1;
 	double sinx=0.0;
 	for(int i=1; i<=n; i++)
 	{
@@ -792,7 +920,7 @@ public static void sine(int theta, double radians, int n)
 		 i = i + 1;
 	 }while(acc <= sinx - sinval);
 	 System.out.println(sinx);*/
-}
+
 
 public static int fact(int no)
 {
@@ -805,7 +933,10 @@ public static int fact(int no)
 }
 /***************************Cosine********************************/
 
-/*This method will calculate the cosine value of user input angle and will return cosine value*/
+/***This method will calculate the cosine value of user input angle and will return cosine value
+ * 
+ * @param x angle 
+ */
 
 public static void cosine(double x)
 {
@@ -846,7 +977,11 @@ public static void cosine(double x)
 	System.out.println("Cosine value of angle " +x+ " is: " +cosx);*/
 }
 
-/***********************************Find repeated number******************************/
+/*****This method is used to find repreated element in array
+ * 
+ * @param data array of size 100
+ * @param size user input size of array
+ */
 
 public static void findRepeatedNo(int[] data, int size)
 {
@@ -865,7 +1000,7 @@ public static void findRepeatedNo(int[] data, int size)
 }
 
 /**********************Find second largest element in array
- * @return *********************/
+ * @return second largest element in array*********************/
 
 public static void findSecondLarge(int[] input)
 {
@@ -917,7 +1052,10 @@ public static void findSecondLarge(int[] input)
 
 }
 
-/*****************************Find the second smallest element in array********************/
+/*********This method is used to find second smallest element in array
+ * 
+ * @param in array
+ */
 
 public static void findSecondSmall(int[] in)
 {
@@ -960,6 +1098,9 @@ public static void findSecondSmall(int[] in)
 
 /**************************Trigonometric Operations*******************************/
 
+/**This method is used to find sine and cosine value of given angle 
+ * @param angle user input
+ */
 public static void trigOperations(double angle)
 {
 	double radians = angle*(Math.PI/180.0);
@@ -973,11 +1114,12 @@ public static void trigOperations(double angle)
 
 /*************************Check for Anagram****************************/
 
-/* This method will check if two strings are anagram or not. Each character of first string is compared to each
- * character of second string and then output is generated based on true or false condition.
- * 
- */
 
+/** This method will check if two strings are anagram or not. Each character of first string is compared to each
+ * character of second string and then output is generated based on true or false condition.
+ * @param str1 user input first string
+ * @param str2 user input second string
+ */
 public static void checkAnagram(String str1, String str2)
 {
 	/*if(s1.replaceAll(" ", "").length() == s2.replaceAll(" ", "").length())
@@ -1156,7 +1298,10 @@ public static void swap(char[] a, int i, int j)
 	a[i] = a[j];
 	a[j] = temp;
 }*/
-/*********************************Check given string is palindrome****************************/
+/*****This method is used to check if given string is palindrome without using string in built functions
+ * 
+ * @param str user input string
+ */
 
 public static void chkPalindrome(String str)
 {
@@ -1176,7 +1321,12 @@ public static void chkPalindrome(String str)
 	}
 }
 
-/**************************************Strings are equal**********************************/
+/*******This method is used to find if given two strings are equal or not
+ * 
+ * @param string1 user input first string
+ * @param string2 user input second string
+ * @return boolean value true or false
+ */
 
 public static boolean areEqual(String string1, String string2)
 {
@@ -1184,7 +1334,11 @@ public static boolean areEqual(String string1, String string2)
 			((string1 + string1).indexOf(string2) != -1);
 }
 
-/**********************Prime no.*****************************/
+/******This method is used to find prime numbers from 1 to 1000 integer numbers
+ * 
+ * @param range size of array
+ * @return boolean value true or false
+ */
 
 public static boolean prime(int range)
 {
@@ -1200,6 +1354,12 @@ public static boolean prime(int range)
 	return true;
 }
 
+
+
+/**This method is used to find the numbers from prime numbers returned by above method which are anagram and palindrome
+ * @param a array of size 1000
+ * @return anagram and palindrome integers
+ */
 public static int[] primdrome(int[] a)
 {
   int i=0, j=1;
@@ -1222,7 +1382,13 @@ public static int[] primdrome(int[] a)
            return a;
 }
 
-/***********************Binary Search for Integer**********************/
+/******This method is used to given number using binary search
+ * 
+ * @param array given array
+ * @param first first element in array
+ * @param last last element in array
+ * @param key user input number to be searched
+ */
 
 public static void searchBinary(int[] array, int first, int last, int key)
 {
@@ -1320,7 +1486,12 @@ public static int binaryToDecimal(String binary)
 	return decimal;
 }
 
-/*********************Binary Search for String****************************/
+/*******This method is used to search input string using binary search 
+ * 
+ * @param s input string array
+ * @param n size of array
+ * @return search string
+ */
 
 public static String[] searchStr(String s[], int n)
 {
@@ -1356,66 +1527,68 @@ public static String[] searchStr(String s[], int n)
 }
 
 
-/*********************Insertion Sort for Integer*************************/
+/*******This method is used to perform insertion sort on integer type of array
+ * 
+ * @param s user input integer array
+ */
 
-public static void insertionSort(int[] s, int n)
+public static void insertionSort(int[] s)
 {
 	
-	int i=1;
-	int j = i-1;
-	System.out.println("Swapping elements: ");
-	for(i = 1; i < n; i++)
-	{
-		if(s[i] < s[j])
-		{
-			
-			 int temp;
-	         temp = i;
-	         i = j;
-	         j = temp;
-			
-		}
-		else
-			insertionSort(s, n);
-			
-	}
-	System.out.println(s[i]);
+    int x = s.length;  
+    for (int j = 1; j < x; j++) {  
+        int key = s[j];  
+        int i = j-1;  
+        while ( (i > -1) && ( s [i] > key ) ) {  
+            s [i+1] = s [i];  
+            i--;  
+        }  
+        s[i+1] = key;  
+    }  
 }
     
 
 
-/******************Insertion sort for String*******************************/
+/*****This method is used to perform insertion sort on string type of array
+ * 
+ * @param s input string array
+ */
 	          
-public static String[] insortStr(String[] s)
+public static void insortStr(String[] s)
 {
-	int flag =0, i;
-	//s = new String[5];
-    for(i = 1; i < 5; i++)
-    {
-    	int key = i;
-    	int j = key - 1;
-    	if(s[i].compareToIgnoreCase(s[j]) > 0)
-    			{
-    		        flag = 1;
-    		        String temp;
-    		        temp = s[i];
-    		        s[i] = s[j];
-    		        s[j] = temp;
-    			}
-    	else
-    		insortStr(s);
-    		
-    }
-    return s;
+	 String key;
+
+	    for (int j = 1; j < s.length; j++) 
+	    { 
+	        key = s[j];
+	        int i = j - 1;
+
+	        while (i >= 0) 
+	        {
+	            if (key.compareTo(s[i]) > 0) 
+	            {	
+	                break;
+	            }
+
+	            s[i+1] = s[i];
+
+	            i--;
+	        }
+
+	        s[i +1] = key;
+	    }
 }
 
-/********************Bubble Sort for Integer************************/
+/*****This method will perform bubble sort for integer type of array
+ * 
+ */
+
 static int i, j, temp;
 public static int[] bubsortint(int no, int[] arr)
 {
 
 	
-	for(i=1; i < no-1; i++)
+	for(i=1; i < no; i++)
 	{
 		for(j=i-1; j<no-i-1; j++)
 	        {
@@ -1445,14 +1618,19 @@ public static void sortedArray(int no, int[] arr)
 /**********************Bubble Sort for String***********************/
 
 static String tem;
+/**This method is used to perform bubble sort on string type of array
+ * @param str user input string
+ * @param no size of array
+ * @return sorted string array
+ */
 public static String[] bubsortString(String[] str, int no)
 {
 	int i, j;
     for(i=0; i<no-1; i++)
 	{
-		for(j=0; j<no-i-1; j++)
+		for(j=1; j<no-i-1; j++)
 		{
-			if(str[i].compareToIgnoreCase(str[j+1])>0)
+			if(str[i].compareToIgnoreCase(str[j])<0)
 			{
 				tem = str[i];
 				str[i] = str[j];
@@ -1466,6 +1644,11 @@ public static String[] bubsortString(String[] str, int no)
 /*********************Find a number*****************************/
 static int N;
 
+/**This method is used to guess a number from 1 to 2^n elements
+ * @param low first element in array
+ * @param high last element in array
+ * @return number
+ */
 public static int guessNo(int low, int high)
 {
 	//Utility utility=new Utility();
@@ -1502,9 +1685,56 @@ public static int guessNo(int low, int high)
 
 /*********************Binary Search word************************/
 
-public static int binSearch(String search, String[] words, int a, int b)
+/**This method is used to find a user input word from a specific file
+ * @param search word to be searched
+ * @param first first element in array
+ * @param last last element in array
+ * @return 
+ */
+public static void binSearch(String[] search, int first, int last)
 {
-	if(b<=a)
+	String searchWord="";
+    int len = search.length;
+    
+	for(int i=0; i<search.length; i++)
+	{
+		int mid = (i+len-1)/2;
+		if(search[i].contains(searchWord))
+			{
+				System.out.println(searchWord+ " Word found");
+			}
+		else if(search[i].compareTo(searchWord) < 0)
+		{
+			binSearch(search, 0, mid-1);
+		}
+		else 
+		{
+			binSearch(search, mid, last);
+		}
+	}
+	
+}	
+	public static int binarysearchWord(String word, String words[], int a, int b) 
+	{
+		if(b <= a)
+			return -1;
+		
+		if(b - a == 1)
+			return words[a].equals(word) ? a : -1;
+
+		int mid = (a + b)/2;
+		
+		if(word.compareTo(words[mid]) < 0)
+		{
+			return binarysearchWord(word, words, 0, mid-1);
+		}
+		else if(word.compareTo(words[mid]) > 0)
+		{
+			return binarysearchWord(word, words, mid, b);
+		}
+		 return mid;
+	}
+	/*if(b<=a)
 		return -1;
 	if(b - a == 0)
 		return words[a].equals(search) ? a: -1;
@@ -1518,12 +1748,15 @@ public static int binSearch(String search, String[] words, int a, int b)
 		return binSearch(search, words, mid, b);
 	}
 	return mid;
-	
+	*/
 	
 
-}
 
-/************************Insertion Sort***************************/
+
+/*******This method is used to perform insertion sort for string type array
+ * 
+ * @param str input string array
+ */
 
 public static void sortString(String[] str)
 {
@@ -1563,7 +1796,7 @@ public static void sortString(String[] str)
  * 
  * @param num integer array provided the value through user
  */
-public void bubSort(int[] num) {
+public static void bubSort(int[] num) {
 	int n=num.length;
 	for(int i=0;i<n-1;i++)
 	{
@@ -1590,7 +1823,7 @@ public void bubSort(int[] num) {
  * @param mid integer is the middle value of array
  * @param  Last integer the number is last element from array
  */
-public void merge(int array[], int First, int mid, int last) 
+public static void merge(int array[], int First, int mid, int last) 
 { 
      
     int n1 = mid - First + 1; 
@@ -1632,6 +1865,51 @@ public void merge(int array[], int First, int mid, int last)
     } 
 } 
 
+
+public static void mergeString(String array[], int First, int mid, int last) 
+{ 
+     
+    int n1 = mid - First + 1; 
+    int n2 = last - mid; 
+    String L[] = new String [n1]; 
+    String R[] = new String [n2]; 
+    for (int i=0; i<n1; ++i) 
+        L[i] = array[First + i]; 
+    for (int j=0; j<n2; ++j) 
+        R[j] = array[mid + 1+ j]; 
+
+    int i = 0, j = 0;         
+    int k = First; 
+    while (i < n1 && j < n2) 
+    { 
+        if (L[i].compareTo(R[j]) < 0) 
+        { 
+            array[k] = L[i]; 
+            i++; 
+        } 
+        else
+        { 
+            array[k] = R[j]; 
+            j++; 
+        } 
+        k++; 
+    } 
+    while (i < n1) 
+    { 
+        array[k] = L[i]; 
+        i++; 
+        k++; 
+    } 
+    while (j < n2) 
+    { 
+        array[k] = R[j]; 
+        j++; 
+        k++; 
+    } 
+} 
+
+
+
 /**
  * Function is used to sort the number which is provided
  * by the user
@@ -1640,22 +1918,143 @@ public void merge(int array[], int First, int mid, int last)
  * @param First integer the number is first element form array
  * @param Last integer the number is last element from array
  */
-public void sort(int array[], int First, int last) 
+public static void sortInteger(int array[], int First, int last) 
 { 
     if (First < last) 
     { 
         int mid = (First+last)/2; 
-        sort(array, First, mid); 
-        sort(array , mid+1, last); 
+        sortInteger(array, First, mid); 
+        sortInteger(array , mid+1, last); 
         merge(array, First, mid, last); 
     } 
 } 
+
+
+
+
+
+
+
+
+
+
+public static String[] mergeSort(String[] list) {
+    String [] sorted = new String[list.length];
+    if (list.length == 1) {
+        sorted = list;
+    } else {
+        int mid = list.length/2;
+        String[] left = null; 
+        String[] right = null;
+        if ((list.length % 2) == 0) {
+            left = new String[list.length/2];
+            right = new String[list.length/2];
+        } else { 
+            left = new String[list.length/2];
+            right = new String[(list.length/2)+1];
+        }
+        int x=0;
+        int y=0;
+        for ( ; x < mid; x++) {
+            left[x] = list[x];
+        }
+        for ( ; x < list.length; x++) {
+            right[y++] = list[x];
+        }
+        left = mergeSort(left);
+        right = mergeSort(right);
+        sorted = mergeArray(left,right);
+    }
+
+    return sorted;
+}
+
+public static String[] mergeArray(String[] left, String[] right) {
+    String[] merged = new String[left.length+right.length];
+    int lIndex = 0;
+    int rIndex = 0;
+    int mIndex = 0;
+    int comp = 0;
+    while (lIndex < left.length || rIndex < right.length) {
+        if (lIndex == left.length) {
+            merged[mIndex++] = right[rIndex++];
+        } else if (rIndex == right.length) {
+            merged[mIndex++] = left[lIndex++];
+        } else {  
+            comp = left[lIndex].compareTo(right[rIndex]);
+            if (comp > 0) {
+                merged[mIndex++] = right[rIndex++];
+            } else if (comp < 0) {
+                merged[mIndex++] = left[lIndex++];
+            } else { 
+                merged[mIndex++] = left[lIndex++];
+            }
+        }   
+    }
+    return merged;
+}
+
+
+
+
+
+
+/*
+public static void mergeSort(String[] array) 
+{ 
+	 if (array.length > 2) {
+         String[] left = new String[array.length / 2];
+         String[] right = new String[array.length - array.length / 2];
+
+         for (int i = 0; i < left.length; i++) {
+             left[i] = array[i];
+         }
+
+         for (int i = 0; i < right.length; i++) {
+             right[i] = array[i + array.length / 2];
+         }
+
+         mergeSort(left);
+         mergeSort(right);
+         merge(array, left, right);
+     }*/
+	
+    /*if (First < last) 
+    { 
+        int mid = (First+last)/2; 
+        sortString(array, First, mid); 
+        sortString(array , mid+1, last); 
+        mergeString(array, First, mid, last); 
+    } */
+
+
+public static void merge(String[] names, String[] left, String[] right) {
+    int a = 0;
+    int b = 0;
+    for (int i = 0; i < names.length; i++) {
+        if (b >= right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
+            names[i] = left[a];
+            a++;
+        } else {
+            names[i] = right[b];
+            b++;
+        }
+    }
+}
 
 /**
  * Function is used to display the array 
  * @param array integer taken a array number from the user
  */
 public static void printArray(int array[]) 
+{ 
+    int number = array.length; 
+    for (int i=0; i<number; ++i) 
+        System.out.print(array[i] + " "); 
+    System.out.println(); 
+} 
+
+public static void printStrArray(String[] array) 
 { 
     int number = array.length; 
     for (int i=0; i<number; ++i) 

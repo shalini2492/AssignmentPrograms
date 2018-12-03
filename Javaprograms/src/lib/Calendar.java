@@ -1,7 +1,7 @@
 package lib;
 
 import utility.Utility;
-
+import functionsandlibraries.BLStdOut;
 public class Calendar {
 
 public static void main(String[] args)
@@ -28,18 +28,18 @@ public static void main(String[] args)
 
 
     // print calendar header
-    System.out.println("   " + months[month] + " " + year);
-    System.out.println(" S  M Tu  W Th  F  S");
+    BLStdOut.println("   " + months[month] + " " + year);
+    BLStdOut.println(" S  M Tu  W Th  F  S");
 
     // starting day
     int d = Utility.calDay(month, 1, year);
 
     
     for (int i = 0; i < d; i++)
-        System.out.print("   ");
+        BLStdOut.print("   ");
     for (int i = 1; i <= days[month]; i++) {
-        System.out.printf("%2d ", i);
-        if (((i + d) % 7 == 0) || (i == days[month])) System.out.println();
+        BLStdOut.printf("%2d ", i);
+        if (((i + d) % 7 == 0) || (i == days[month])) BLStdOut.println();
     }
     
 }

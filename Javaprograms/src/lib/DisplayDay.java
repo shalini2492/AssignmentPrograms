@@ -6,7 +6,7 @@
 package lib;
 
 import utility.Utility;
-
+import functionsandlibraries.BLStdOut;
 public class DisplayDay {
 public static void main(String[] args)
 {
@@ -14,17 +14,17 @@ public static void main(String[] args)
 	
 	int year, date, month; 
 	
-    	System.out.println("Enter day");
+    	BLStdOut.println("Enter day");
 
     date = Utility.inputInteger();
-    System.out.println("Enter month");
+    BLStdOut.println("Enter month");
     month = Utility.inputInteger();
-    System.out.println("Enter year");
+    BLStdOut.println("Enter year");
     year = Utility.inputInteger();
     
     String week[]= {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     int out = Utility.calDay(date, month, year);
-   System.out.println("The day of the week that comes under date " +date+"/"+month+"/"+year+ " is: " +week[out]);
+    BLStdOut.println("The day of the week that comes under date " +date+"/"+month+"/"+year+ " is: " +week[out]);
 	//utility.calDay(d1);
 	}
 }

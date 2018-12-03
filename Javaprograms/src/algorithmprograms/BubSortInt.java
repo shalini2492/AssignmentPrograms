@@ -7,7 +7,7 @@ import utility.Utility;
 public class BubSortInt {
 public static void main(String[] args)
 {
-	int no=10;
+	int no;
 	
 	
 	System.out.println("Enter no. of elements you want in an array");
@@ -23,10 +23,11 @@ public static void main(String[] args)
 		arr1[i] = sc.nextInt();
 	}
 	
-	Utility.bubsortint(no, arr1);
+System.out.println("The sorted array is: ");
 	
 	for(int i=0; i<no; i++)
 	{
+		Utility.bubsortint(no, arr1);
 		System.out.println(arr1[i]);
 	}
 	sc.close();

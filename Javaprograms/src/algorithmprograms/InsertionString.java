@@ -1,25 +1,26 @@
 package algorithmprograms;
 
-import java.util.Scanner;
+
 
 import utility.Utility;
 
 public class InsertionString {
 public static void main(String[] args)
 {
-	Utility utility=new Utility();
-	String[] words = new String[5];
-	for(int i=0;i<5;i++)
-	{
-		System.out.println("words["+i+"]: ");
-		words[i]= utility.inputString();
+	System.out.println("Enter the numbers of elements you want in array(Insertion sort for string) :");
+    int size3=Utility.inputInteger();
+    String arr3[] = new String[size3];
+    System.out.println("Enter "+size3+" elements as a string in an array :");
+    for(int i=0;i<size3;i++)
+    {
+		arr3[i]=Utility.inputString();
 	}
-	
-	System.out.println("The Sorted List is:");
-	for(int i=0;i<5;i++)
+	System.out.println("The sorted list is (Insertion sort for String) :");
+	for(int i=0;i<size3;i++)
 	{
-		Utility.sortString(words);
-		System.out.println(words[i]);
+		Utility.insortStr(arr3);
+		System.out.println(arr3[i]);
 	}
+
 }
 }

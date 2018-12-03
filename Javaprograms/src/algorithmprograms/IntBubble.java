@@ -1,23 +1,25 @@
 package algorithmprograms;
 
-import java.util.*;
+
 
 import utility.Utility;
 
 public class IntBubble {
 public static void main(String[] args)
 {
-	Utility utility=new Utility();
-	int[] num =new int[5];
+	int size;
+	System.out.println("Enter the size of array");
+	size=Utility.inputInteger();
+	int[] num =new int[size];
 	System.out.println("Enter the numbers:");
-	for(int i=0;i<5;i++)
+	for(int i=0;i<size;i++)
 	{
-		num[i]=utility.inputInteger();
+		num[i]=Utility.inputInteger();
 	}
 	System.out.println("The sorted list using Bubble sort is:");
-	for(int i=0;i<5;i++)
+	for(int i=0;i<size;i++)
 	{
-		utility.bubSort(num);
+		Utility.bubSort(num);
 		System.out.println(num[i]);
 	}
 }

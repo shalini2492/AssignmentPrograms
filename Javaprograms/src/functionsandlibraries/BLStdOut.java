@@ -94,7 +94,7 @@ public class BLStdOut {
      */
     public static void main(String[] args) {
 
-        // write to stdout
+        // write to blstdout
         BLStdOut.println("Test");
        
         BLStdOut.printf("%.6f\n", 1.0/7.0);

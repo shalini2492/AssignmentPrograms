@@ -2,17 +2,17 @@ package lib;
 
 import functionsandlibraries.MathFunction;
 import utility.Utility;
-
+import functionsandlibraries.BLStdOut;
 public class PresentValue {
 public static void main(String[] args)
 {
 	int money;
     double rateOfinterest, duration;
-    System.out.println("Enter the money you want to invest: ");
+    BLStdOut.println("Enter the money you want to invest: ");
     money = Utility.inputInteger();
-    System.out.println("Enter the rate of interest: ");
+    BLStdOut.println("Enter the rate of interest: ");
     rateOfinterest = Utility.InputDouble();
-    System.out.println("Enter the duration: ");
+    BLStdOut.println("Enter the duration: ");
     duration = Utility.InputDouble();
     MathFunction.presentValue(money, rateOfinterest, duration);
 }

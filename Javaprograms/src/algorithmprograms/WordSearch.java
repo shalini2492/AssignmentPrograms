@@ -39,12 +39,12 @@ public class WordSearch
 		}
 		for(int i=0; i<splitArray.length; i++)
 		{
-		if(splitArray[i].contains(word))
-		{
-			System.out.println(word+ " Found");
-		}
-		else
-			System.out.println();
+			if(splitArray[i].contains(word))
+			{
+				System.out.println(word+ " Found");
+			}
+			else
+				System.out.println();
 		}
 		//System.out.println("Not found");
 	

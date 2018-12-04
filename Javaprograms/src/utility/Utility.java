@@ -841,9 +841,13 @@ public static void sincos(double angle)
  * @param radians angle converted to radians
  * @param n number of terms whose sum user want
  */
-public static void sine(int theta, double radians, int n)
+public static double sine(double theta, double radians, int n)
 {
-	double terms=0.0;
+	//radians=theta*Math.PI/180;
+	//System.out.println("Converted to radians: "+radians);
+	theta = theta*(Math.PI/180);
+	System.out.println("theta: "+theta);
+	int terms=0;
 	double sum=1.0;
 	for(int i=0; i<=n; i++)
 	{
@@ -853,22 +857,22 @@ public static void sine(int theta, double radians, int n)
 			{
 				double numerator = Math.pow(theta, i);
 				System.out.println("Numerator: "+numerator);
-				double denominator = fact(i);
+				double denominator = Utility.fact(i);
 				System.out.println("Denominator is: "+denominator);
 			}	
-	}
+	    }
 	}		
 	if(i%4 == 1)
 	{
-		sum += terms;
+		sum = sum + terms;
 	}
 	if(i%4 == 3)
 	{
-		sum -= terms;
+		sum = sum - terms;
 	}
 	
-	System.out.println("Sine value: "+terms);
-		}
+	return sum;
+}
 	/*double x = Double.parseDouble(args[0]);
 
     // convert x to an angle between -2 PI and 2 PI
@@ -1554,7 +1558,7 @@ public static void insertionSort(int[] s)
  * @param s input string array
  */
 	          
-public static void insortStr(String[] s)
+public static String insortStr(String[] s)
 {
 	 String key;
 
@@ -1577,6 +1581,7 @@ public static void insortStr(String[] s)
 
 	        s[i +1] = key;
 	    }
+	    return key;
 }
 
 /*****This method will perform bubble sort for integer type of array
@@ -1701,7 +1706,7 @@ public static void binSearch(String[] search, int first, int last)
 		int mid = (i+len-1)/2;
 		if(search[i].contains(searchWord))
 			{
-				System.out.println(searchWord+ " Word found");
+				//System.out.println(searchWord+ " Word found");
 			}
 		else if(search[i].compareTo(searchWord) < 0)
 		{
@@ -1714,6 +1719,8 @@ public static void binSearch(String[] search, int first, int last)
 	}
 	
 }	
+
+
 	public static int binarysearchWord(String word, String words[], int a, int b) 
 	{
 		if(b <= a)

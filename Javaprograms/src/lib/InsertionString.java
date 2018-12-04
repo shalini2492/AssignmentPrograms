@@ -1,4 +1,4 @@
-package algorithmprograms;
+package lib;
 
 
 

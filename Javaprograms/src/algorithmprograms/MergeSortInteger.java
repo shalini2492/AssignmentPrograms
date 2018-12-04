@@ -1,7 +1,7 @@
 package algorithmprograms;
 
 import utility.Utility;
-public class MergeSortInt {
+public class MergeSortInteger {
 public static void main(String[] args)
 {
 	Utility utility=new Utility();

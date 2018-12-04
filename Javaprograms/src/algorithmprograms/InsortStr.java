@@ -11,7 +11,7 @@ public static void main(String[] args)
 	System.out.println("Enter the size");
 	size = Utility.inputInteger();
 	String[] st = new String[size]; /*= {"PHP", "Java", "AngularJS", "ReactJS", "Python"};*/
-    Utility utility = new Utility();
+    //Utility utility = new Utility();
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter elements:");
     for(int i=0; i<size; i++)

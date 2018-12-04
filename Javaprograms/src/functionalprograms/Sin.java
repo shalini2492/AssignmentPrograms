@@ -12,14 +12,15 @@ import utility.Utility;
 public class Sin {
 public static void main(String[] args) throws Exception
 {
-	int x, theta;
+	int x;
+	double radians=0.0, theta;
 	System.out.println("Enter the number of terms..");
 	x=Utility.inputInteger();
 	System.out.println("Enter the value of theta in degrees..");
 	theta = Utility.inputInteger();
-	double radians=theta*Math.PI/180;
-	System.out.println("Converted to radians: "+radians);
-    Utility.sine(theta, radians, x);
+	
+   double sinVal=Utility.sine(theta, radians, x);
+   System.out.println("Sine value of angle: "+theta+ " is "+sinVal);
 	
 	
 	

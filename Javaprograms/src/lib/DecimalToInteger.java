@@ -13,7 +13,13 @@ public static void main(String[] args)
 	String string1=Double.toString(decimalNumber);
 	System.out.println("Before converting to Integer....."+decimalNumber);
 	String[] decString = string1.split("\\.");
-	String withoutDp = decString[0]+decString[1];
+	
+    String withoutDp = decString[0]+decString[1];
+	if(decString[0].compareTo(withoutDp) == 0)
+	{
+		System.out.println("Decimal to Integer: "+decString[1]);
+		
+	}
 	System.out.println("Decimal converted to integer...." +withoutDp);
 	//convertInt(decimalNumber);
 	/*Double dd = new Double(0.234323);

@@ -12,7 +12,7 @@ import utility.Utility;
 public class Sin {
 public static void main(String[] args) throws Exception
 {
-	int x;
+	int x;   //check output..........
 	double radians=0.0, theta;
 	System.out.println("Enter the number of terms..");
 	x=Utility.inputInteger();
@@ -23,7 +23,7 @@ public static void main(String[] args) throws Exception
    System.out.println("Sine value of angle: "+theta+ " is "+sinVal);
 	
 	
-	
+	//convert to degrees and then display output....
 	
 	
 	

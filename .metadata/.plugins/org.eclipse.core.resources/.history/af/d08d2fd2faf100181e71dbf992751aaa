@@ -1,8 +1,0 @@
-package Functionalprograms;
-import Utility.Utility;
-public class SumofTwoDice {
-public static void main(String[] args)
-{
-	
-}
-}

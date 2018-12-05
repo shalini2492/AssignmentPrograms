@@ -5,6 +5,7 @@
  */
 package functionalprograms;
 import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -40,7 +41,8 @@ public class PrintInitials
 					String kPattern;
 					while((kPattern=br.readLine()) != null)
 					{
-						showPatterns("/home/hp/JavaPrograms/Javaprograms/wpattern", 1, 11);
+						Utility.showPatterns("/home/hp/JavaPrograms/Javaprograms/wpattern", 1, 11);
+						
 					}
 					
 		case 'd':
@@ -50,77 +52,7 @@ public class PrintInitials
 	
 }
 	
-	public static void showPatterns(String fileName, int startLine, int endLine) 
-    {
-       String str = " ";
-       
-       String newstr = " ";
-       
-       String newstr1 = " ";
-       
-        int currentLine = 1;
-
-        try {
-        
-        	BufferedReader br = new BufferedReader (new FileReader(fileName));                
-            
-        	//read to startLine
-            
-        	while(currentLine < startLine) 
-            
-        	{
-           
-        		if (br.readLine()==null)
-                
-        		{
-                
-        			System.out.println("File too small");
-                
-        		}
-        		
-                 currentLine++;
-             }        
-             
-        	//read until endLine
-            
-        	while(currentLine <= endLine) 
-            
-        	{
-               String  line = br.readLine();
-            
-                 if (line == null) 
-                 
-                 {
-                     return;
-                 
-                 }
-                 
-              //   System.out.println(line);
-                 
-                 currentLine++;
-                 
-                 str = line;
-                 
-               //  System.out.println(str);
-                 
-                 newstr = str.replaceAll("1", "*");
-                 
-                 newstr1 = newstr.replaceAll("0", " ");
-
-                 System.out.println(newstr1);
-             }
-        	
-        	
-         } 
-         
-        catch (IOException ex) 
-        
-        {
-        
-        	System.out.println("Problem reading file.\n" + ex.getMessage());
-         } 
-        
-   }                    
+	
             
 }
 

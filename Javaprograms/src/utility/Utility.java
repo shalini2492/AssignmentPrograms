@@ -1,5 +1,6 @@
 package utility;
 import java.util.Arrays;
+import java.util.Date;
 /* import java.awt.*;
 
 import java.awt.List;
@@ -14,12 +15,18 @@ import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;*/
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.lang.Math.sin;
 import static java.lang.Math.cos;
 //import Algorithmprograms.InsortStr;
 //import DataStructureprograms.LinkLIst;
 import static java.lang.Math.sqrt;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Utility 
 {
@@ -861,15 +868,16 @@ public static double sine(double theta, double radians, int n)
 				System.out.println("Denominator is: "+denominator);
 			}	
 	    }
+		if(i%4 == 1)
+		{
+			sum = sum + terms;
+		}
+		if(i%4 == 3)
+		{
+			sum = sum - terms;
+		}
+		
 	}		
-	if(i%4 == 1)
-	{
-		sum = sum + terms;
-	}
-	if(i%4 == 3)
-	{
-		sum = sum - terms;
-	}
 	
 	return sum;
 }
@@ -1302,11 +1310,251 @@ public static void swap(char[] a, int i, int j)
 	a[i] = a[j];
 	a[j] = temp;
 }*/
+
+
+
+/**This method is used to read the contents from file and replace them with asterisk sign.
+ * @param fileName name of file
+ * @param startLine starting index of line
+ * @param endLine last index of line
+ */
+public static void showPatterns(String fileName, int startLine, int endLine) 
+{
+   String str = " ";
+   
+   String newstr = " ";
+   
+   String newstr1 = " ";
+   
+    int currentLine = 1;
+
+    try {
+    
+    	BufferedReader br = new BufferedReader (new FileReader(fileName));                
+        
+    	//read to startLine
+        
+    	while(currentLine < startLine) 
+        
+    	{
+       
+    		if (br.readLine()==null)
+            
+    		{
+            
+    			System.out.println("File too small");
+            
+    		}
+    		
+             currentLine++;
+         }        
+         
+    	//read until endLine
+        
+    	while(currentLine <= endLine) 
+        
+    	{
+           String  line = br.readLine();
+        
+             if (line == null) 
+             
+             {
+                 return;
+             
+             }
+             
+          //   System.out.println(line);
+             
+             currentLine++;
+             
+             str = line;
+             
+           //  System.out.println(str);
+             
+             newstr = str.replaceAll("1", "*");
+             
+             newstr1 = newstr.replaceAll("0", " ");
+
+             System.out.println(newstr1);
+         }
+    	
+    	
+     } 
+     
+    catch (IOException ex) 
+    
+    {
+    
+    	System.out.println("Problem reading file.\n" + ex.getMessage());
+     } 
+    
+}                    
+
+/***********************Frequency count************************************/
+
+/**This method is used to calculate number of occurances of a particular word in 
+ * @param splitArray User input array
+ */
+public static void noofOccurances(String splitArray)
+{
+	String splitt[]=splitArray.split(" ");
+	for(int i=0; i<splitt.length; i++)
+	{
+		System.out.println(splitt[i]);
+	}
+	System.out.println();
+	int count=1;
+	for(int i=0; i<splitt.length; i++)
+	{
+		for(int j=i+1; j<splitt.length; j++)
+		{
+			if(splitt[i].equals(splitt[j]))
+			{
+				count=count+1;
+				
+			}
+		}
+		if(splitt[i] != "0")
+		{
+			System.out.println(splitt[i]+ " " +count);
+			count=1;
+		}
+	}
+}
+
+/*******************String replacement using regular expression********************************/
+
+/**This method is used to replace specific names with the user input string values using regular expressions
+ * @param n Name of user
+ * @param full_name Full name of user
+ * @param contactNo Mobile number of user
+ * @param dateString System date
+ * @return Output string with the names replaced in it.
+ */
+public static String replaceString(String n, String full_name, String contactNo, String dateString)
+{
+	String template="Hello <<user>>,we have your full name as <<fullname>> in our system. your contact number is "
+			+ "91-xxxxxxxxxx. Please let us know in any case of clarification Thank you Bridgelabz <<date>>.";
+	//String dd="xx/xx/xxxx";
+	Pattern pattern=Pattern.compile("<<user>>");
+	Matcher match = pattern.matcher(template);
+	template = match.replaceFirst(n);
+	
+	Pattern pat=Pattern.compile("<<fullname>>");
+	Matcher ma = pat.matcher(template);
+	template = ma.replaceFirst(full_name);
+	
+	
+	Pattern patte=Pattern.compile("91-xxxxxxxxxx");
+	Matcher mat = patte.matcher(template);
+	template = mat.replaceFirst(contactNo);
+	Pattern patt=Pattern.compile("<<date>>");
+	Matcher matt = patt.matcher(template);
+	template = matt.replaceFirst(dateString);
+	
+	
+	
+	System.out.println(template);
+	return n;
+	
+}
+
+/************************Poem using regular expression*****************************/
+
+/**This method is used to replace animal name and its sound in a rhyme using regular expression.
+ * @param animal name of animal
+ * @param sound sound of animal
+ */
+public static void lyrics(String animal, String sound)
+{
+	String lyric="Old MacDonald had a farm..... E-I-E-I-O"
+			+ " And on his farm he had some %Animal%...E-I-E-I-O"
+			+ " With a %Sound% %Sound% here and a %Sound% %Sound% there"
+			+ " Here a %Sound% There a %Sound% %Sound%"
+			+ " Everywhere a %Sound% %Sound%";
+	Pattern pattern = Pattern.compile("%Animal%");
+	Matcher match = pattern.matcher(lyric);
+	lyric = match.replaceFirst(animal);
+	Pattern pat = Pattern.compile("%Sound%");
+	Matcher mat = pat.matcher(lyric);
+	lyric = mat.replaceAll(sound);
+	System.out.println(lyric);
+}
+
+/****************************User registration*******************************/
+
+/**This method will validate first name of user using regular expression
+ * @param first_name user input first name
+ * @return true if first name is valid or vice versa.
+ */
+public static boolean validateFirstName(String first_name)
+{
+	
+	return first_name.matches("[A-Za-z]*");
+}
+
+public static boolean validateLastName(String last_name)
+{
+	return last_name.matches("[A-Za-z]*");
+}
+
+public static boolean validateEmailAddress(String email)
+{
+	String validEmail="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+	Pattern p=Pattern.compile(validEmail);
+	Matcher mm = p.matcher(email);
+	//return email.matches("^[A-Za-z0-9-\\+]+(\\.[A-Za-z0-9-]+)*@^[_A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z{2})$");
+	return mm.matches();
+	
+}
+
+public static boolean validUserID(String username)
+{
+	return username.matches("[A-Za-z0-9]*");
+}
+
+public static boolean validPassword(String pass)
+{
+	String validPassword="^[a-zA-Z@#$%^&+=](?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}[a-zA-Z0-9]$";
+			
+			
+			
+			
+			//"^(?=.*[a-z])(?=.*[A-Za-z])"
+			//+ "?=.*\\d"
+			//+ "(?=.*[@$!%*?&])"
+			//+ "([A-Za-z\\d]{8,})$";
+	Pattern pat=Pattern.compile(validPassword);
+	Matcher mat = pat.matcher(pass);
+	return mat.matches();
+}
+
+public static boolean validContactNumber(String mobileNumber)
+{
+	 String validNumber = "^\\+?[0-9. ()-]{10,25}$";
+     Pattern pattern = Pattern.compile(validNumber);
+     Matcher matcher = pattern.matcher(mobileNumber);
+     return matcher.matches();
+    /* if (matcher.matches()) {
+         System.out.println("Phone Number Valid");
+     } else {
+         System.out.println("Phone Number must be in the form XXX-XXXXXXX");
+}*/
+}
+
+/***********************2D Array for different types of data**********************/
+
+public static void printArray(int size)
+{
+	
+}
+
+/***********************Check if string is palindrome***************************/
 /*****This method is used to check if given string is palindrome without using string in built functions
  * 
  * @param str user input string
  */
-
 public static void chkPalindrome(String str)
 {
 	String reverseString = "";
@@ -1558,7 +1806,7 @@ public static void insertionSort(int[] s)
  * @param s input string array
  */
 	          
-public static String insortStr(String[] s)
+public static void insortStr(String[] s)
 {
 	 String key;
 
@@ -1581,7 +1829,6 @@ public static String insortStr(String[] s)
 
 	        s[i +1] = key;
 	    }
-	    return key;
 }
 
 /*****This method will perform bubble sort for integer type of array
@@ -2157,7 +2404,7 @@ public static void sqroot(int c)
 	{
 		t = (t+ (c/t))/2.0;
 	}
-	System.out.println("Sqaure root of " +c+ " is:" +t);
+	System.out.println("Square root of " +c+ " is:" +t);
 		
 }
 
@@ -2243,6 +2490,7 @@ public static void displayList(String[] task, String[] deadline, int[] minutes)
 	}
 	sc.close();
 }
+
 
 
 /************************DATA STRUCTURE PROGRAMS****************************/

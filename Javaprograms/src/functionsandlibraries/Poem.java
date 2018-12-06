@@ -10,8 +10,8 @@ import utility.Utility;
 public class Poem {
 public static void main(String[] args)
 {
-	String lyrics="Old MacDonald had a farm..... E-I-E-I-O  "
-			+ " And on his farm he had some %Animal%...E-I-E-I-O  "
+	String lyrics="Old MacDonald had a farm..... E-I-E-I-O  \n"
+			+ " And on his farm he had some %Animal%...E-I-E-I-O  \n"
 			+ " With a %Sound% %Sound% here and a %Sound% %Sound% there  "
 			+ " Here a %Sound% There a %Sound% %Sound%  "
 			+ " Everywhere a %Sound% %Sound%";

@@ -3,7 +3,7 @@
  * date: 2/12/2018
  * version: 1.0
  */
-package algorithmprograms;
+package functionsandlibraries;
 
 import utility.Utility;
 import java.io.BufferedReader;

@@ -1,4 +1,4 @@
-package algorithmprograms;
+package functionsandlibraries;
 
 import utility.Utility;
 
@@ -12,6 +12,5 @@ public static void main(String[] args)
 			System.out.println(i);
 		}
 	}
-
 }
 }

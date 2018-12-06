@@ -18,6 +18,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import standardlibrary.BLStdOut;
+
 import static java.lang.Math.sin;
 import static java.lang.Math.cos;
 //import Algorithmprograms.InsortStr;
@@ -349,37 +351,7 @@ public static void wpattern(int n) {
 }
 
 
-/****This method is used to print the power of 2 till the given number
- * 
- * @param pow number from 1 to that user input number
- * @param base base will be 2 as we are calculating for the power of 2
- * @return 2^1 to 2^number
- */
 
-public static int power(int pow, int base)
-{
-	int i;
-	System.out.println("Enter the power"); 
-	      if(pow > 31) /*The input taken by the user should not exceed beyond 31. If
-	                           it is more than 31 then user is requested to reenter new and valid input.*/
-	            {
-		                 System.out.println("Please enter valid power");
-		                 pow = sc.nextInt();
-	                     power(pow, base);
-	            }
-	      
-	      else
-	      {
-	    	   base=2;
-	      
-	             for(i=0; pow<i; i++)
-	                  {
-		                  pow = pow*base;
-	                  }
-	                      System.out.println("2 to the power" +pow+ "is" +i);
-	      }
-	      return pow;
-}
 
 /****This method is used to print the power of 2 till the given number
  * 
@@ -388,7 +360,7 @@ public static int power(int pow, int base)
  * @return 2^1 to 2^number
  */
 
-public static void powertwo(int number)//input validation
+public static void powertwo(int number)
 {
 	System.out.println("Printing all till Power Value "+number);
 	   
@@ -415,6 +387,7 @@ public static void harmonicNo(int number)
 		System.out.println(result+ " ");
 	}
 	System.out.println(" ");
+	System.out.println(result);
 }
 
 /*****This method is used to calculate prime factors of given number
@@ -444,13 +417,12 @@ public static int factors(int n)
  * @param target user input goal
  */
 
-public static void gambling(int stake, int trials, int target)
+public static void gambler(int stake, int trials, int target)
 {	
 	/*for loop to iterate till the no. of trials */
 	int win = 0;
 	int loss = 0;
-
-	for (int i = 0; i < trials; i++) {
+    for (int i = 0; i < trials; i++) {
 		while (stake < target && stake > 0 && trials > 0) {
 			if (Math.random() >= 0.5)
 			{
@@ -473,6 +445,94 @@ public static void gambling(int stake, int trials, int target)
 	System.out.println("percentage of win is " + percentWin + "%");
 	System.out.println("percentage of loss is " + percentLoss + "%");
 }
+
+public static void gambling(int stake, int trials, int target, int times)
+{	
+	/*for loop to iterate till the no. of trials */
+	int win = 0;
+	int loss = 0;
+    int[][] printWinLoss = new int[times][times];
+	for (int i = 0; i < trials; i++) {
+		while (stake < target && stake > 0 && trials > 0) {
+			if (Math.random() >= 0.5)
+			{
+				stake++;
+				win++;
+				trials--;
+			} 
+			else 
+			{
+				stake--;
+				loss++;
+				trials--;
+			}
+		}
+	}
+	double percentWin = (win * 100) / (win + loss);
+	double percentLoss = (loss * 100) / (win + loss);
+	System.out.println("the player won " + win + " times.");
+	System.out.println("the player lost " + loss + " times.");
+	System.out.println("percentage of win is " + percentWin + "%");
+	System.out.println("percentage of loss is " + percentLoss + "%");
+	for(int i=0; i<times; i++)
+	{
+		for(int j=0; j<times; j++)
+		{
+			System.out.println(printWinLoss[i][j]+ " ");
+		}
+		System.out.println(" ");
+	}
+}
+
+
+/***********************Matrix Multiplication****************************/
+
+/**This method will perform multiplication of two matrices.
+ * @param first first 2d matrix
+ * @param second second 2d matrix
+ * @param row number of rows
+ * @param col number of columns
+ */
+public static void multiplyArray(int[][] first, int[][] second, int row, int col)
+{
+	int[][] third=new int[row][col];
+	for(int i=0; i<row; i++)
+	{
+		for(int j=0; j<col; j++)
+		{
+			third[i][j]=0;
+			for(int k=0; k<row; k++)
+			{
+				third[i][j]+=first[i][k]*second[k][j];
+				//BLStdOut.print(third[i][j]+" ");
+			}
+		}
+	}
+			for(int i=0; i<row; i++)
+			{
+				for(int j=0; j<col; j++)
+				{
+						
+						BLStdOut.print(third[i][j]+" ");
+				}
+		
+					    BLStdOut.print("\n");
+			}
+	
+}
+
+/***********************Power of 2************************************/
+
+public static void powerOf2(int pow, int base)
+{
+	base=2;
+	for(int i=0; i<=pow; i++)
+	{
+		System.out.println("The power of 2^" +pow+ " is "+Math.pow(2,i));
+	}
+}
+
+
 
 
 /****This method is used to find distinct number from a set of number
@@ -530,10 +590,31 @@ public static void twodarr(int row, int column)
  * @return sum
  */
 
-public static int[] triplets(int a[])
-{
 
-	int n=10;
+
+	public static int triplets(int b[],int length)
+	{
+		System.out.println();
+		int i,j,k,count=0;
+		for(i=0;i<length;i++)
+		{
+			for(j=i+1;j<length;j++)
+			{
+				for(k=j+1;k<length;k++)
+				{
+					if (b[i] + b[j] + b[k] == 0)
+					{
+						System.out.println(b[i] + " " + b[j] + " " + b[k]);
+						count++;
+					}
+				}
+			}
+		}
+		return count;
+	}
+
+
+	/*int n=10;
 	a = new int[n];
 	boolean flag=true;  // flag to check if the sum of triplets is 0. Returns true if the 
 	//result is non-zero.
@@ -558,7 +639,7 @@ public static int[] triplets(int a[])
 	else
 		System.out.println("The sum is 0.");
 	return a;
-}
+}*/
 
 
 
@@ -989,7 +1070,7 @@ public static void cosine(double x)
 	System.out.println("Cosine value of angle " +x+ " is: " +cosx);*/
 }
 
-/*****This method is used to find repreated element in array
+/*****This method is used to find repeated element in array
  * 
  * @param data array of size 100
  * @param size user input size of array
@@ -1493,11 +1574,19 @@ public static boolean validateFirstName(String first_name)
 	return first_name.matches("[A-Za-z]*");
 }
 
+/**This method will validate last name of user using regular expression.
+ * @param last_name last name of user
+ * @return true if name is valid or false if name is invalid.
+ */
 public static boolean validateLastName(String last_name)
 {
 	return last_name.matches("[A-Za-z]*");
 }
 
+/**This method is used to validate email address of user using regular expression.
+ * @param email email address of user
+ * @return true if email address is valid else false.
+ */
 public static boolean validateEmailAddress(String email)
 {
 	String validEmail="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -1509,11 +1598,19 @@ public static boolean validateEmailAddress(String email)
 	
 }
 
+/**This method is used to validate user ID using regular expression.
+ * @param username input user ID
+ * @return true if user ID is true else false.
+ */
 public static boolean validUserID(String username)
 {
 	return username.matches("[A-Za-z0-9]*");
 }
 
+/**This method is used to validate user password using regular expression.
+ * @param pass user input password
+ * @return true if password is valid else false
+ */
 public static boolean validPassword(String pass)
 {
 	String validPassword="^[a-zA-Z@#$%^&+=](?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}[a-zA-Z0-9]$";
@@ -1530,6 +1627,10 @@ public static boolean validPassword(String pass)
 	return mat.matches();
 }
 
+/**This method will validate contact number with its country code using regular expression.
+ * @param mobileNumber contact number of user
+ * @return true if valid else false
+ */
 public static boolean validContactNumber(String mobileNumber)
 {
 	 String validNumber = "^\\+?[0-9. ()-]{10,25}$";
@@ -1545,9 +1646,88 @@ public static boolean validContactNumber(String mobileNumber)
 
 /***********************2D Array for different types of data**********************/
 
-public static void printArray(int size)
+/**This method will accept elements of array of integer, double or boolean type and print them.
+ * @param choice choice of user
+ */
+public static void printArray(int choice)
 {
-	
+	int row, column;
+	BLStdOut.print("Enter number of rows in array: ");
+	row = Utility.inputInteger();
+	BLStdOut.print("Enter number of columns in array: ");
+	column = Utility.inputInteger();
+	int[][] integerArray;
+	double[][] doubleArray;
+	boolean[][] booleanArray;
+	do
+	{
+	switch(choice)
+	{
+	case 1:
+		    
+		     integerArray = new int[row][column];
+		     BLStdOut.print("Enter elements for integer array..");
+		     for(int i=0; i<row; i++)
+		     {
+		    	 for(int j=0; j<column; j++)
+		    	 {
+		    		 integerArray[i][j]=Utility.inputInteger();
+		    	 }
+		     }
+		    
+		     for(int i=0; i<row; i++)
+		     {
+		    	 for(int j=0; j<column; j++)
+		    	 {
+		    		
+		    	 BLStdOut.print(integerArray[i][j]+ " ");
+		    	 }
+		    	 System.out.println(" ");
+		     }
+		    
+		     break;
+	case 2: 
+			 doubleArray = new double[row][column];
+			 BLStdOut.print("Enter elements for double array..");
+			 for(int i=0; i<row; i++)
+			 {
+				 for(int j=0; j<column; j++)
+				 {
+					 doubleArray[i][j] = Utility.InputDouble();
+				 }
+			 }
+			 for(int i=0; i<row; i++)
+			 {
+				 for(int j=0; j<column; j++)
+				 {
+					 BLStdOut.print(doubleArray[i][j]+ " ");
+				 }
+				 System.out.println(" ");
+			 }
+			 
+			 break;
+	case 3: 
+			 booleanArray = new boolean[row][column];
+			 BLStdOut.print("Enter elements for boolean array..");
+			 for(int i=0; i<row; i++)
+			 {
+				 for(int j=0; j<column; j++)
+				 {
+					 booleanArray[i][j]=Utility.InputBoolean();
+				 }
+			 }
+			 for(int i=0; i<row; i++)
+			 {
+				 for(int j=0; j<column; j++)
+				 {
+					 BLStdOut.print(booleanArray[i][j]+ " ");
+				 }
+				 System.out.println(" ");
+			 }
+			
+			 break;
+	}
+	}while(choice>4 && choice != 0);
 }
 
 /***********************Check if string is palindrome***************************/
@@ -1594,7 +1774,7 @@ public static boolean areEqual(String string1, String string2)
 
 public static boolean prime(int range)
 {
-	//check once again.......
+	
 	for(int i=2; i<=range/2; i++)
 	{
 	    int rem = range%i;
@@ -1607,31 +1787,54 @@ public static boolean prime(int range)
 }
 
 
+/**This method is used to print array of element type.Here we have used generics.
+ * 
+ * @param input input 2D array.
+ */
+public static <E> void print2DArray(E[][] input)
+{
+	for(E[] outerElements : input)
+	{
+		for(E innerElements : outerElements)
+		{
+			BLStdOut.print(innerElements+ " ");
+		}
+		System.out.println();
+	}
+}
+
+
+/************************Check prime numbers which are also anagram********************/
+
+public static void primeAnagram(int number)
+{
+	
+	
+}
+
+
+
+
+
+
+
+
 
 /**This method is used to find the numbers from prime numbers returned by above method which are anagram and palindrome
  * @param a array of size 1000
  * @return anagram and palindrome integers
  */
-public static int[] primdrome(int[] a)
+public static boolean primdrome(int no)
 {
-  int i=0, j=1;
-  int[] c = new int[1000];
-  
-  if(c[i] == c[j])
+  int temp = no;
+  int reverse_no=0;
+  while(no>0)
   {
-    System.out.println(c[i]);
+	  int remainder = no%10;
+	  reverse_no = (reverse_no*10) + remainder;
+	  no/=10;
   }
-           for(i=0; i<1000; i++)
-                 {
-	                     if(c[i+1] == c[i-1])
-	                             {
-	                                  System.out.println(c[i]);
-	                                  primdrome(a);
-	                             }
-	                     else
-		                              System.out.println("");
-                 }
-           return a;
+  return (temp == reverse_no);
 }
 
 /******This method is used to given number using binary search

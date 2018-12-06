@@ -3,9 +3,9 @@
  * date: 26/11/2018
  * version: 1.0
  */
-package functionalprograms;
+package functionsandlibraries;
 
-import utility.Utility;
+import standardlibrary.BLStdOut;
 
 public class RollDie {
 	public static void main(String[] args)
@@ -19,5 +19,6 @@ public class RollDie {
     	   count++;
     	   System.out.println(roll);
        }
+      
    	}
 }

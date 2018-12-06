@@ -14,14 +14,14 @@ public static void main(String[] args)
 	System.out.println("Enter limit of array");
 	int n = Utility.inputInteger();
 	
-	int[] a=new int[n];
+	int[] array=new int[n];
 	System.out.println("Enter array elements");
 	for(int i=0; i<n; i++)
 	{
-		a[i]=Utility.inputInteger();
+		array[i]=Utility.inputInteger();
 	}
 	
-     int[] m = Utility.triplets(a);
-    System.out.println(m);
+     Utility.triplets(array, n);
+    //System.out.println(m);
 }
 }

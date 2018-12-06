@@ -19,6 +19,6 @@ public static void main(String[] args)
 	System.out.println("Enter the number of trials user wish");
 	trials = Utility.inputInteger();
 	
-	Utility.gambling(stake, trials, target);
+	Utility.gambler(stake, trials, target);
 }
 }

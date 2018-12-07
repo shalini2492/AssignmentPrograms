@@ -16,12 +16,12 @@ public class WordSearch
 	{
 		int first=0;
 		int last=0;
-		String [] words = new String[100];
-		Scanner sc = new Scanner(System.in);
 		FileReader f = new FileReader("/home/hp/JavaPrograms/Javaprograms/bin/algorithmprograms/abcd.txt");
 		BufferedReader br = new BufferedReader(f);
+		String[] words = new String[100];
 		String file;
-		String[] splitArray = new String[100];
+		int len=words.length;
+		String[] splitArray = new String[len];
 		System.out.print("Enter word to search for: ");
 		String word = Utility.inputString();
         
@@ -31,7 +31,7 @@ public class WordSearch
 			
 			splitArray = file.split(",");
 			
-		}//change...
+		}
 	
 		for(int i=0; i<splitArray.length; i++)
 		{

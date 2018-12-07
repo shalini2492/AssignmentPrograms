@@ -31,10 +31,11 @@ public static void main(String[] args) throws Exception
 		               BLStdOut.println("Enter number of terms you wish");
 		               int n = Integer.parseInt(read.readLine());
 		               BLStdOut.println("Enter the value of theta");
-		               int theta = Integer.parseInt(read.readLine());
+		               double theta = Integer.parseInt(read.readLine());
 		               double radians=theta*Pi/180;
 		               System.out.println(radians);
 		               MathFunction.sine(n);
+		               
 		               break;
 	        case 3: 
 		               double PI=3.14519;

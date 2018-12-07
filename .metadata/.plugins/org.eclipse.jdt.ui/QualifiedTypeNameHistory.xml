@@ -52,5 +52,7 @@
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="standardlibrary.BLRandom"/>
+<fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
 <fullyQualifiedTypeName name="utility.Utility"/>
 </qualifiedTypeNameHistroy>

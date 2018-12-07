@@ -24,10 +24,10 @@ public static void main(String[] args)
 		System.out.println(arr[i]);
 	}
 	System.out.println("Array after sorting:");
+	int sorted[]=Utility.insertionSort(arr);
 	for(int i=0; i<s; i++)
 	{
-    Utility.insertionSort(arr);
-    System.out.println(arr[i]);
+    System.out.println(sorted);
 	}
     sc.close();
 }

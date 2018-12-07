@@ -493,32 +493,124 @@ public static void gambling(int stake, int trials, int target, int times)
  * @param row number of rows
  * @param col number of columns
  */
-public static void multiplyArray(int[][] first, int[][] second, int row, int col)
+public static void multiplyArray(int[][] first, int[][] second, int r1, int c1, int r2, int c2)
 {
-	int[][] third=new int[row][col];
-	for(int i=0; i<row; i++)
+	int[][] result=new int[10][10];
+	for(int i=0; i<r1; ++i)
+        for(int j=0; j<c2; ++j)
+        {
+            result[i][j] = 0;
+        }
+
+    // Multiplying matrices a and b and
+    // storing result in result matrix
+    for(int i=0; i<r1; ++i)
+        for(int j=0; j<c2; ++j)
+            for(int k=0; k<c1; ++k)
+            {
+                result[i][j]+=first[i][k]*second[k][j];
+            }
+
+    // Displaying the result
+    System.out.println("\nOutput Matrix:\n");
+    for(int i=0; i<r1; ++i)
+        for(int j=0; j<c2; ++j)
+        {
+            System.out.println(result[i][j]+" ");
+            if(j == c2-1)
+                System.out.println();
+        }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*	
+	int[][] third=new int[row1][col1];
+	for(int i=0; i<row1; i++)
 	{
-		for(int j=0; j<col; j++)
+		for(int j=0; j<col1; j++)
 		{
 			third[i][j]=0;
-			for(int k=0; k<row; k++)
+			for(int k=0; k<row1; k++)
 			{
 				third[i][j]+=first[i][k]*second[k][j];
 				//BLStdOut.print(third[i][j]+" ");
 			}
 		}
 	}
-			for(int i=0; i<row; i++)
+			for(int i=0; i<row1; i++)
 			{
-				for(int j=0; j<col; j++)
+				for(int j=0; j<col1; j++)
 				{
 						
 						BLStdOut.print(third[i][j]+" ");
 				}
 		
 					    BLStdOut.print("\n");
-			}
+			}*/
 	
+}
+
+
+/**************************Transpose of matrix*****************************/
+
+/**This method will compute transpose of given matrix
+ * @param m given matrix
+ * @param r number of rows
+ * @param c number of columns
+ * @return transpose of matrix m
+ */
+public static int[][] transposeMatrix(int[][] m, int r, int c)
+{
+	int[][] transposeMatrix=new int[r][c];
+	for(int i=0; i<r; i++)
+	{
+		for(int j=0; j<c; j++)
+		{
+			transposeMatrix[j][i]=m[i][j];
+		}
+	}
+	
+	return m;
+}
+
+/*******************Determinant of matrix************************/
+ 
+public static int[][] findDeterminant(int[][] mat, int row, int column)
+{
+	int s=0;
+	int[][] det = new int[row-1][column-1];
+	for(int i=0; i<row; i++)
+	{
+		for(int j=0; j<column; j++)
+		{
+			det[i][j]=mat[++i][++j];
+		}
+	}
+	for(int i=0; i<row; i++)
+	{
+		for(int j=0; j<column; j++)
+		{
+			s=det[i][j]*det[i][j];
+		}
+		
+	}
+	for(int i=0; i<row; i++)
+	{
+		for(int j=0; j<column; j++)
+		{
+			mat[i][j]=(mat[i][j]*s)-mat[i][j+1]*s;
+		}
+	}
+	return mat;
 }
 
 /***********************Power of 2************************************/
@@ -933,7 +1025,7 @@ public static double sine(double theta, double radians, int n)
 {
 	//radians=theta*Math.PI/180;
 	//System.out.println("Converted to radians: "+radians);
-	theta = theta*(Math.PI/180);
+	/*theta = theta*(Math.PI/180);
 	System.out.println("theta: "+theta);
 	int terms=0;
 	double sum=1.0;
@@ -960,8 +1052,8 @@ public static double sine(double theta, double radians, int n)
 		
 	}		
 	
-	return sum;
-}
+	return sum;*/
+
 	/*double x = Double.parseDouble(args[0]);
 
     // convert x to an angle between -2 PI and 2 PI
@@ -981,7 +1073,7 @@ public static double sine(double theta, double radians, int n)
 	
 	//int theta=sc.nextInt();
 	//double radians=Math.toRadians(theta);
-	/*int pow=1;
+	int pow=1;
 	double sinx=0.0;
 	for(int i=1; i<=n; i++)
 	{
@@ -997,10 +1089,10 @@ public static double sine(double theta, double radians, int n)
 		sinx = sinx + current_term;
 	     pow = pow + 2;
 	}
-	System.out.println(sinx);
+	return sinx;
 	
 /*	double acc= (double) 0.0001, denominator, sinx, sinval;
-	 n = n * (double) (3.142 / 180.0);
+	 n = n * (double) (3.14159 / 180.0);
 	 double x1 = n;
 	 sinx = n;
 	 sinval = (double) sin(n);
@@ -1013,7 +1105,7 @@ public static double sine(double theta, double radians, int n)
 		 i = i + 1;
 	 }while(acc <= sinx - sinval);
 	 System.out.println(sinx);*/
-
+}
 
 public static int fact(int no)
 {
@@ -1024,6 +1116,7 @@ public static int fact(int no)
 	}
 	return fact;
 }
+
 /***************************Cosine********************************/
 
 /***This method will calculate the cosine value of user input angle and will return cosine value
@@ -1353,44 +1446,6 @@ private static void swap(char[] str, int i, int j){
     str[i] = str[j];
     str[j] = temp;
 }
-	
-	
-	
-    /* char[] a = s.toCharArray();
-      int n = s.length();
-      char[] st = new char[n];
-      int i=1;
-      while(i<n)
-      {
-	      if(st[1] < i)
-	      {
-		       int j = ((i % 2) == 0) ? 0 : st[i];
-		       swap(s, i, j);
-		       System.out.println(join(s));
-		       st[i]++;
-		       i = 1;
-	      }
-	      else
-	      {
-	    	  st[i]=0;
-	    	  i++;
-	      }
-      }
-}
-public static String join(char[] s)
-{
-	StringBuilder sb = new StringBuilder();
-	sb.append(s);
-	return sb.toString();
-}
-
-public static void swap(char[] a, int i, int j)
-{
-	String temp="";
-	temp = a[i];
-	a[i] = a[j];
-	a[j] = temp;
-}*/
 
 
 
@@ -1473,7 +1528,7 @@ public static void showPatterns(String fileName, int startLine, int endLine)
 
 /***********************Frequency count************************************/
 
-/**This method is used to calculate number of occurances of a particular word in 
+/**This method is used to calculate number of occurrences of a particular word in 
  * @param splitArray User input array
  */
 public static void noofOccurances(String splitArray)
@@ -1503,6 +1558,41 @@ public static void noofOccurances(String splitArray)
 	}
 }
 
+
+
+
+/**This method will compute number of occurrences of die numbers.
+ * @param splitArray array of integers
+ * @return count of numbers 
+ */
+public static int noofOccurrences(int[] splitArray)
+{
+	
+	for(int i=0; i<splitArray.length; i++)
+	{
+		System.out.println(splitArray[i]);
+	}
+	System.out.println();
+	int count=1;
+	for(int i=0; i<splitArray.length; i++)
+	{
+		for(int j=i+1; j<splitArray.length; j++)
+		{
+			if(splitArray[i] == splitArray[j])
+			{
+				count=count+1;
+				
+			}
+		}
+		if(splitArray[i] != 0)
+		{
+			System.out.println(splitArray[i]+ " " +count);
+			count=1;
+		}
+	}
+	return count;
+}
+
 /*******************String replacement using regular expression********************************/
 
 /**This method is used to replace specific names with the user input string values using regular expressions
@@ -1516,7 +1606,7 @@ public static String replaceString(String n, String full_name, String contactNo,
 {
 	String template="Hello <<user>>,we have your full name as <<fullname>> in our system. your contact number is "
 			+ "91-xxxxxxxxxx. Please let us know in any case of clarification Thank you Bridgelabz <<date>>.";
-	//String dd="xx/xx/xxxx";
+	
 	Pattern pattern=Pattern.compile("<<user>>");
 	Matcher match = pattern.matcher(template);
 	template = match.replaceFirst(n);
@@ -1614,14 +1704,6 @@ public static boolean validUserID(String username)
 public static boolean validPassword(String pass)
 {
 	String validPassword="^[a-zA-Z@#$%^&+=](?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}[a-zA-Z0-9]$";
-			
-			
-			
-			
-			//"^(?=.*[a-z])(?=.*[A-Za-z])"
-			//+ "?=.*\\d"
-			//+ "(?=.*[@$!%*?&])"
-			//+ "([A-Za-z\\d]{8,})$";
 	Pattern pat=Pattern.compile(validPassword);
 	Matcher mat = pat.matcher(pass);
 	return mat.matches();
@@ -1987,7 +2069,7 @@ public static String[] searchStr(String s[], int n)
  * @param s user input integer array
  */
 
-public static void insertionSort(int[] s)
+public static int[] insertionSort(int[] s)
 {
 	
     int x = s.length;  
@@ -1999,7 +2081,8 @@ public static void insertionSort(int[] s)
             i--;  
         }  
         s[i+1] = key;  
-    }  
+    } 
+    return s;
 }
     
 
@@ -2009,7 +2092,7 @@ public static void insertionSort(int[] s)
  * @param s input string array
  */
 	          
-public static void insortStr(String[] s)
+public static String[] insortStr(String[] s)
 {
 	 String key;
 
@@ -2032,6 +2115,7 @@ public static void insortStr(String[] s)
 
 	        s[i +1] = key;
 	    }
+	    return s;
 }
 
 /*****This method will perform bubble sort for integer type of array
@@ -2106,11 +2190,10 @@ static int N;
  */
 public static int guessNo(int low, int high)
 {
-	//Utility utility=new Utility();
 	int mid=low+(high-low)/2;
 	if(low<high)
 	{
-		System.out.println("Is your number in between "+low+" and "+mid);
+		System.out.println("Is your number in between "+low+" and "+high);
 		if(Utility.InputBoolean())
 		{
 			return guessNo(low,mid);
@@ -2126,18 +2209,8 @@ public static int guessNo(int low, int high)
 		return low;
 	}
 			
-		}
-	/*	if(n>mid)
-		{
-			mid = mid-1;
-			guessNo(n);
-		}
-		
-	}
-	System.out.println("No. "  +n+ " found");
-	return n;
-}*/
-
+}
+	
 /*********************Binary Search word************************/
 
 /**This method is used to find a user input word from a specific file
@@ -2191,21 +2264,7 @@ public static void binSearch(String[] search, int first, int last)
 		}
 		 return mid;
 	}
-	/*if(b<=a)
-		return -1;
-	if(b - a == 0)
-		return words[a].equals(search) ? a: -1;
-	int mid= (a + b)/2;
-	if(search.compareTo(words[mid]) < 0)
-	{
-		return binSearch(search, words, 0, mid-1);
-	}
-	if(search.compareTo(words[mid]) > 0)
-	{
-		return binSearch(search, words, mid, b);
-	}
-	return mid;
-	*/
+	
 	
 
 
@@ -2253,7 +2312,7 @@ public static void sortString(String[] str)
  * 
  * @param num integer array provided the value through user
  */
-public static void bubSort(int[] num) {
+public static int[] bubSort(int[] num) {
 	int n=num.length;
 	for(int i=0;i<n-1;i++)
 	{
@@ -2267,6 +2326,7 @@ public static void bubSort(int[] num) {
 			}
 		}
 	}
+	return num;
 }
 
 /************************Merge Sort*****************************/

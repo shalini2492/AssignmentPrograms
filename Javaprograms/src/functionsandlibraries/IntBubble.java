@@ -17,10 +17,10 @@ public static void main(String[] args)
 		num[i]=Utility.inputInteger();
 	}
 	System.out.println("The sorted list using Bubble sort is:");
-	for(int i=0;i<size;i++)
+	int sorted[]=Utility.bubSort(num);
+	for(int i=0;i<size; i++)
 	{
-		Utility.bubSort(num);
-		System.out.println(num[i]);
+		System.out.println(sorted);
 	}
 }
 }

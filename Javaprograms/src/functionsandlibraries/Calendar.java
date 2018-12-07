@@ -44,7 +44,8 @@ public static void main(String[] args)
         BLStdOut.print("   ");
     for (int i = 1; i <= days[month]; i++) {
         BLStdOut.printf("%2d ", i);
-        if (((i + d) % 7 == 0) || (i == days[month])) BLStdOut.println();
+        if (((i + d) % 7 == 0) || (i == days[month])) 
+        	BLStdOut.println();
     }
     
 }

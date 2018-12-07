@@ -51,6 +51,9 @@ public class StringFunctions {
 	}
 
 	/*********************************String Permutation in iterative way***************************/
+	/**This method is used to return permutations of a string in an iterative way
+	 * @param str user input string
+	 */
 	public static void perString(String str)
 	{
 		char[] temp = str.toCharArray();

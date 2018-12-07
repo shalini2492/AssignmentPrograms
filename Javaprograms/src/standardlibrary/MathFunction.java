@@ -48,7 +48,8 @@ public class MathFunction {
 			double fac = factorial(2+i);
 			val += p*px/fac;
 		}
-		return val;
+				
+		return n;
 	}
 	
 	public static double power(double x, int n)
@@ -59,6 +60,7 @@ public class MathFunction {
 		{
 			val*=x;
 		}
+		
 		return val;
 	}
 		

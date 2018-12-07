@@ -6,6 +6,7 @@
 package functionsandlibraries;
 
 import standardlibrary.BLStdOut;
+import utility.Utility;
 
 public class RollDie {
 	public static void main(String[] args)
@@ -19,6 +20,9 @@ public class RollDie {
     	   count++;
     	   System.out.println(roll);
        }
+       
+      Utility.noofOccurrences(array);
       
+   
    	}
 }

@@ -90,10 +90,19 @@ public class BLStats {
 		 validateNotNull(a);
 	        return Math.sqrt(var(a));
 	}
-/*	public static double median(double[] a)
+	public static double median(double[] a)
 	{
-		
-	}*/
+	   int startIndex=0, endIndex=0;
+	   int midIndex = (startIndex+endIndex)/2;
+	   if((midIndex%2) == 0)
+	   {
+		   a[midIndex]=midIndex;
+	   }
+	   else
+		   a[midIndex]=(a[midIndex]+a[midIndex+1])/2;
+	       double y=a[midIndex];
+	       return y;
+	}
 	/**
 	 * @param a
 	 */
@@ -101,29 +110,29 @@ public class BLStats {
 	{
 		validateNotNull(a);
         int n = a.length;
-        StdDraw.setXscale(-1, n);
-        StdDraw.setPenRadius(1.0 / (3.0 * n));
+        BLStdDraw.setXscale(-1, n);
+        BLStdDraw.setPenRadius(1.0 / (3.0 * n));
         for (int i = 0; i < n; i++) {
-            StdDraw.point(i, a[i]);
+            BLStdDraw.point(i, a[i]);
         }
 	}
 	public static void plotLines(double[] a)
 	{
 		validateNotNull(a);
         int n = a.length;
-        StdDraw.setXscale(-1, n);
-        StdDraw.setPenRadius();
+        BLStdDraw.setXscale(-1, n);
+        BLStdDraw.setPenRadius();
         for (int i = 1; i < n; i++) {
-            StdDraw.line(i-1, a[i-1], i, a[i]);
+            BLStdDraw.line(i-1, a[i-1], i, a[i]);
         }
 	}
 	public static void plotBars(double[] a)
 	{
 		validateNotNull(a);
         int n = a.length;
-        StdDraw.setXscale(-1, n);
+        BLStdDraw.setXscale(-1, n);
         for (int i = 0; i < n; i++) {
-            StdDraw.filledRectangle(i, a[i]/2, 0.25, a[i]/2);
+            BLStdDraw.filledRectangle(i, a[i]/2, 0.25, a[i]/2);
         }
 	}
 	 private static void validateNotNull(Object x) {

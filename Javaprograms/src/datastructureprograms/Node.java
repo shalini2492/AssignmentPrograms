@@ -1,37 +1,21 @@
 package datastructureprograms;
 
-import utility.Utility;
-
 public class Node<T> {
 
-T head;
+T front;
 T data;
 Node<T> next;
 Node<T> pre;
-
-
-/*public T Node()
-{
-	
-}*/
-Node(T d)
-{
-	data=d;
-}
-public T getData()
-{
-	return data;
-}
-public void setData(T data)
+int index;
+Node(T data)
 {
 	this.data=data;
 }
-public Node getNext()
+Node(T front, Node<T> next)
 {
-	return next;
-}
-public void setNext()
-{
+	this.front=front;
 	this.next=next;
 }
+
+
 }

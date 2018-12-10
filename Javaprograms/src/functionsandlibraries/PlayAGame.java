@@ -16,8 +16,7 @@ public static void main(String[] args)
 	
 	BLStdOut.print("\nEnter how many times you would like to play this game..!");
 	times=Utility.inputInteger();
-	for(int i=0; i<times; i++)
-	{
+	
 	BLStdOut.print("Enter the money the user have");
 	stake= Utility.inputInteger();
 	BLStdOut.print("Enter the target player wants to achieve");
@@ -26,9 +25,8 @@ public static void main(String[] args)
 	trials = Utility.inputInteger();
 	
 	Utility.gambling(stake, trials, target, times);
-	BLStdOut.print("You have " +(times-1)+ " chance/s");
 	
-	}
+
 	
 	
 }

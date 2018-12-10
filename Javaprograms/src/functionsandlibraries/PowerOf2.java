@@ -13,5 +13,7 @@ public static void main(String[] args)
 		BLStdOut.print("Invalid input..please enter a valid number");
 		power=Utility.inputInteger();
 	}
+	
+	
 }
 }

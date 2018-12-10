@@ -27,6 +27,7 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sqrt;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -371,6 +372,20 @@ public static void powertwo(int number)
     }
 }
 
+public static double harmonicNumber(int num)
+{
+	double number=0;
+
+	for (double i = 1; i <= num; i++) {
+
+		number = number + (double) 1/num;
+		num--;
+    //System.out.print(num + " ");
+      
+}
+	  return number;
+}
+
 /****This method is used to calculate harmonic number.
  * 
  * @param number user input
@@ -446,7 +461,7 @@ public static void gambler(int stake, int trials, int target)
 	System.out.println("percentage of loss is " + percentLoss + "%");
 }
 
-public static void gambling(int stake, int trials, int target, int times)
+public static int gambling(int stake, int trials, int target, int times)
 {	
 	/*for loop to iterate till the no. of trials */
 	int win = 0;
@@ -482,6 +497,7 @@ public static void gambling(int stake, int trials, int target, int times)
 		}
 		System.out.println(" ");
 	}
+	return win;
 }
 
 
@@ -584,33 +600,43 @@ public static int[][] transposeMatrix(int[][] m, int r, int c)
 
 /*******************Determinant of matrix************************/
  
-public static int[][] findDeterminant(int[][] mat, int row, int column)
+public static int findDeterminant(int[][] matrix)
 {
-	int s=0;
-	int[][] det = new int[row-1][column-1];
-	for(int i=0; i<row; i++)
-	{
-		for(int j=0; j<column; j++)
-		{
-			det[i][j]=mat[++i][++j];
-		}
-	}
-	for(int i=0; i<row; i++)
-	{
-		for(int j=0; j<column; j++)
-		{
-			s=det[i][j]*det[i][j];
-		}
-		
-	}
-	for(int i=0; i<row; i++)
-	{
-		for(int j=0; j<column; j++)
-		{
-			mat[i][j]=(mat[i][j]*s)-mat[i][j+1]*s;
-		}
-	}
-	return mat;
+	int sum=0; 
+    int s;
+    if(matrix.length==1)
+    {  
+      return(matrix[0][0]);
+    }
+    //for loop for row by row expansion..
+    for(int i=0;i<matrix.length;i++) 
+    { 
+      int[][]smaller= new int[matrix.length-1][matrix.length-1]; 
+      for(int a=1;a<matrix.length;a++)
+      {
+        for(int b=0;b<matrix.length;b++)
+        {
+          if(b<i)
+          {
+            smaller[a-1][b]=matrix[a][b]; //a[0][0]=matrix[1][0] & a[0][1]=matrix[1][1] & a[1][0]=matrix[2][1] & a[1][1]=matrix[2][2]
+          }
+          else if(b>i)
+          {
+            smaller[a-1][b-1]=matrix[a][b]; 
+          }
+        }
+      }
+      //To change the sign of middle element from positive to negative.
+      if(i%2==0)
+      { 
+        s=1;
+      }
+      else{
+        s=-1;
+      }
+      sum+=s*matrix[0][i]*(findDeterminant(smaller)); 
+    }
+    return sum; 
 }
 
 /***********************Power of 2************************************/
@@ -2487,6 +2513,7 @@ public static String[] mergeSort(String[] list) {
 }
 
 public static String[] mergeArray(String[] left, String[] right) {
+	
     String[] merged = new String[left.length+right.length];
     int lIndex = 0;
     int rIndex = 0;
@@ -2510,6 +2537,7 @@ public static String[] mergeArray(String[] left, String[] right) {
     }
     return merged;
 }
+
 
 
 
@@ -2760,78 +2788,29 @@ public static void displayList(String[] task, String[] deadline, int[] minutes)
 
 /**********************Unordered linked list********************/
 
-/*class LinkedList
+public static String readFromFile(String file) throws Exception
 {
-	Node head;
-	class Node
-	{
-	  int data;
-	  Node next;
-	  public void Node(int d)
-	  {
-		  data = d;
-		  next=null;
-	  }
-	}
-	public String list(String str)
-	{
-		return str;
-	}
-	public String addItem(String item)
-	{
-		ArrayList<String> l = new ArrayList<>();
-		l.add(item);
-		return item;
-	}
-	public String removeItem(String item)
-	{
-		ArrayList<String> l = new ArrayList<>();
-		l.remove(item);
-		return item;
-	}
-	public String search(String item)
-	{
-		//System.out.println("Enter string to be searched");
-	    Node d;
-	    int p;
-	    //while()
-	}
+	    String l=null;
+	    String readFile="";
+	    try
+	    {
+	    	FileReader file_reader=new FileReader(file);
+	    	BufferedReader br=new BufferedReader(file_reader);
+	    	while((l=br.readLine()) != null)
+	    	{
+	    		readFile=l+readFile;
+	    	}
+	    }
+	    catch(FileNotFoundException fileNotFoundException)
+	    {
+	    	System.out.println("File not found: "+file);
+	    }
+	    catch(IOException ioException)
+	    {
+	    	System.out.println("Error in reading file: "+file);
+	    }
+	    return readFile;
 }
-
-
-
-public void unorderedList(Node head, int ptr) throws Exception
-{
-	//Node a=new Node();
-	
-   /* ArrayList<String> al = new ArrayList<>();
-
-    int len = Array.getLength(al);
-    for(int i=0; i<len; i++)
-     {
-          //al = sc.next();
-     }
-    for(int i=0; i<len; i++)
-    {
-	     System.out.println(al);
-    }*/
-	
-   /* LinkLIst<String> link = new LinkLIst<>();
-
-    public String readfromFile(String file) throws Exception
-    {
-	     String[] st=new String[20];
-	     String l = null;
-	     String readfile="cd//home//hp//JavaPrograms//Bridgelabz//bin//Algorithmprograms//abcd.txt";
-	     BufferedReader br = new BufferedReader(new FileReader(readfile));
-	     while((l=br.readLine()) != null)
-	     {
-		      System.out.println(l);
-		      st=readfile.split(" ");
-	     }
-    }
-    return ;*/
-
 }
 
 	

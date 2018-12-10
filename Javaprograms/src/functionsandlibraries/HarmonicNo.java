@@ -16,28 +16,18 @@ public static void main(String[] args)
 	int count=0;
 	System.out.println("Enter a positive number to calculate harmonic series");
 	int number=Utility.inputInteger();
+	double ha=Utility.harmonicNumber(number);
+	BLStdOut.println();
+	for(int i=0; i<2; i++)
+	{
+		for(int j=0; j<2; j++)
+		{
+			BLStdOut.print(ha+" ");
+		}
+		BLStdOut.println();
+	}
 	
-	
-    while(number>0)
-    {
-    	output= output + (double) 1/number;
-    	number--;
-    	count++;
-    	 BLStdOut.print(" "+output);
-    	 BLStdOut.print(" ");
-       
-    }
    
-   
-    for(int i=0; i<count; i++)
-    {
-    	for(int j=0; j<i; j++)
-    	{
-    		result[i][j]=output;
-    		BLStdOut.print(result[i][j]+ " ");
-    	}
-    	BLStdOut.print(" ");
-    }
 }
 
 }

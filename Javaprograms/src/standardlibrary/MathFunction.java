@@ -103,7 +103,7 @@ public class MathFunction {
 		 System.out.println(sinx);*/
 	
 
-	public static void fact(int no)
+	public static double fact(int no)
 	{
 		int fact=1;
 		for(int i=1; i<=no; i++)
@@ -111,7 +111,7 @@ public class MathFunction {
 			fact = fact*i;
 			System.out.println("Factorial: "+fact);
 		}
-		
+		return fact;
 	}
 	
 	/******************************Cosine of angle****************************/
@@ -120,7 +120,7 @@ public class MathFunction {
 	 * 
 	 */
 
-	public static void cosine(double x)
+	public static double cosine(double x)
 	{
 		int theta=sc.nextInt();
 		double radians=Math.toRadians(theta);
@@ -140,7 +140,7 @@ public class MathFunction {
 			cosx = cosx + current_term;
 		     pow = pow + 2;
 		}
-		System.out.println(cosx);
+		return cosx;
 	}
 	
 	/************************************Binary value of integer******************************/

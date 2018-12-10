@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class PrintThreeNames {
 public static void main(String[] args)
 {
-	String name1, name2, name3;
+	/*String name1, name2, name3;
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Enter three names");
 	name1=Utility.inputString();
@@ -24,8 +24,8 @@ public static void main(String[] args)
 	{
 		System.out.println(order[i]);
 	}
-	sc.close();
-	/*String firstName, secondName, thirdName;
+	sc.close();*/
+	String firstName, secondName, thirdName;
 	System.out.println("Enter the first name");
 	firstName = Utility.inputString();
 	System.out.println("Enter the second name");
@@ -36,6 +36,6 @@ public static void main(String[] args)
 	
 	
 	Utility.reversePrint(firstName, secondName, thirdName); //reversePrint() method is called.
- */
+ 
 }
 }

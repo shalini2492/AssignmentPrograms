@@ -11,29 +11,28 @@ import utility.Utility;
 public class DeterminantMatrix {
 public static void main(String[] args)
 {
-	int row, column;
-	BLStdOut.print("Enter the number of rows for matrix..");
-	row=Utility.inputInteger();
-	BLStdOut.print("Enter the number of columns for matrix..");
-	column=Utility.inputInteger();
-	int[][] matrix = new int[row][column];
-	BLStdOut.print("Enter integer elements..");
-	for(int i=0; i<row; i++)
+	BLStdOut.print("Enter order of matrix..");
+	int order=Utility.inputInteger();
+	int[][] matrix = new int[order][order];
+	BLStdOut.print("Enter elements..");
+	for(int i=0; i<order; i++)
 	{
-		for(int j=0; j<column; j++)
+		for(int j=0; j<order; j++)
 		{
 			matrix[i][j]=Utility.inputInteger();
 		}
 	}
 	BLStdOut.print("Matrix: ");
-	for(int i=0; i<row; i++)
+	BLStdOut.print("\n");
+	for(int i=0; i<order; i++)
 	{
-		for(int j=0; j<column; j++)
+		for(int j=0; j<order; j++)
 		{
 			BLStdOut.print(matrix[i][j]+" ");
 		}
 		BLStdOut.println("\n");
 	}
-	Utility.findDeterminant(matrix, row, column);
+	int h= Utility.findDeterminant(matrix);
+	System.out.println("Determinant: "+h);
 }
 }

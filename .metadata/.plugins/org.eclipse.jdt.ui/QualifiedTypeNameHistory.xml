@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="Algorithmprograms.InsortStr"/>
 <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
 <fullyQualifiedTypeName name="java.time.MonthDay"/>
-<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 <fullyQualifiedTypeName name="Utility.Utility.LinkedList.Node"/>
 <fullyQualifiedTypeName name="javax.xml.soap.Node"/>
@@ -48,11 +47,15 @@
 <fullyQualifiedTypeName name="org.w3c.dom.css.Counter"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="standardlibrary.BLRandom"/>
-<fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
+<fullyQualifiedTypeName name="standardlibrary.BLStats"/>
+<fullyQualifiedTypeName name="functionsandlibraries.UseBLStats"/>
 <fullyQualifiedTypeName name="utility.Utility"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

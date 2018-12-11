@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="Functionalprograms.StopWatch"/>
-<fullyQualifiedTypeName name="util.Utility"/>
-<fullyQualifiedTypeName name="util.Util"/>
-<fullyQualifiedTypeName name="Algorithmprograms.InsortStr"/>
 <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
 <fullyQualifiedTypeName name="java.time.MonthDay"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
@@ -14,7 +10,6 @@
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="DataStructureprograms.LinkLIst"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Utility.Utility"/>
@@ -26,19 +21,16 @@
 <fullyQualifiedTypeName name="functionsandlibraries.StringFunctions"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="functionsandlibrariesmain.MathFunctionMain"/>
-<fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="lib.BLRandom"/>
 <fullyQualifiedTypeName name="functionsandlibraries.MathFunction"/>
 <fullyQualifiedTypeName name="lib.BLStdIn"/>
 <fullyQualifiedTypeName name="java.lang.Error"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 <fullyQualifiedTypeName name="functionsandlibraries.BLStdOut"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="functionsandlibraries.BLStdIn"/>
@@ -53,9 +45,19 @@
 <fullyQualifiedTypeName name="standardlibrary.BLRandom"/>
 <fullyQualifiedTypeName name="standardlibrary.BLStats"/>
 <fullyQualifiedTypeName name="functionsandlibraries.UseBLStats"/>
-<fullyQualifiedTypeName name="utility.Utility"/>
 <fullyQualifiedTypeName name="java.time.LocalDate"/>
-<fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.security.SecureRandom"/>
+<fullyQualifiedTypeName name="datastructureprograms.MyLinkedList"/>
+<fullyQualifiedTypeName name="utility.Utility"/>
+<fullyQualifiedTypeName name="datastructureprograms.Stack"/>
+<fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
 </qualifiedTypeNameHistroy>

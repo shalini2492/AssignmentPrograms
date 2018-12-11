@@ -15,7 +15,7 @@ public static void main(String[] args) throws Exception
 	{
 		myList.add(splitFile[i]);
 	}
-	BLStdOut.print("Elements of linked list: ");
+	BLStdOut.print("Elements of linked list: \n");
 	myList.display();
 	System.out.println();
 	BLStdOut.print("Enter the element you want to search..");

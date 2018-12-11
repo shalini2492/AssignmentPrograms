@@ -1,5 +1,6 @@
 package utility;
 import java.util.Arrays;
+
 import java.util.Date;
 /* import java.awt.*;
 
@@ -18,6 +19,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import datastructureprograms.MyLinkedList;
+import datastructureprograms.Stack;
 import standardlibrary.BLStdOut;
 
 import static java.lang.Math.sin;
@@ -1910,8 +1913,23 @@ public static <E> void print2DArray(E[][] input)
 		System.out.println();
 	}
 }
-
-
+ 
+/*******************************Ordered linked list*******************************/
+public static <T extends Comparable<T>> void orderedList(T data,MyLinkedList<T> mylinkedlist)
+{
+	int count=0;
+	for(int i=0;i<mylinkedlist.size();i++)
+	{
+		if(data.compareTo(mylinkedlist.get(i))>0)
+		{
+			count++;
+			continue;
+		}
+		mylinkedlist.insert(count, data);
+		return;
+	}
+	mylinkedlist.add(data);
+}
 /************************Check prime numbers which are also anagram********************/
 
 public static void primeAnagram(int number)
@@ -2811,6 +2829,23 @@ public static String readFromFile(String file) throws Exception
 	    }
 	    return readFile;
 }
-}
 
+
+/******************************Balanced Parantheses********************************/
+
+public static boolean isBalanced(char exp[])
+{
+	Stack stack=new Stack();
+	for(int i=0; i<exp.length; i++)
+	{
+		if(exp[i]=='(' || exp[i]=='{' || exp[i]=='[')
+			stack.push(exp);
+		if(exp[i]==')' || exp[i]==')' || exp[i]==']')
+			stack.pop();
+		if(stack.isEmpty())
+			return true;
+	}
+	return false;
+}
+}
 	

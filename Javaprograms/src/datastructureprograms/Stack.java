@@ -1,35 +1,58 @@
 package datastructureprograms;
 
-import standardlibrary.BLStdOut;
-
 public class Stack <T> {
-	MyLinkedList <T> list = new MyLinkedList<T>();
-	public Stack()
+MyLinkedList<T> list = new MyLinkedList<T>();
+	
+	public Stack() //default constructor to create instance of stack class.
 	{
 		
 	}
-	public void push(T data)
+	/**This method is used to insert element in stack
+	 * @param element user input element
+	 */
+	public void push(T element)
 	{
-		list.add(data);
+		list.add(element);
 	}
+	/**This method is used to remove element from top of the stack
+	 * @return element that is to be deleted
+	 */
 	public T pop()
 	{
 		int index=list.size()-1;
-		T removeData=list.get(index);
-		list.remove(removeData);
-		return removeData;
+		T deleteData=list.get(index);
+		list.remove(index);
+		return deleteData;
 	}
+	/**This method will return element from the top without deleting it.
+	 * @return top element
+	 */
 	public T peek()
 	{
 		return list.get(list.size()-1);
 	}
+	/**This method will check if stack is empty or not
+	 * @return true if stack is empty else false
+	 */
+	public boolean isEmpty()
+	{
+		return list.size()==0;
+	}
+	/**This method will return number of elements in stack i.e. size of stack
+	 * @return size of stack
+	 */
 	public int size()
 	{
 		return list.size();
 	}
-	public boolean isEmpty()
+	/**This method will display stack elements
+	 * 
+	 */
+	public void display()
 	{
-		int top=-1;
-		return (top==-1);
+		for(int i=list.size()-1; i>=0; i--)
+		{
+			System.out.println(list.get(i));
+		}
 	}
 }

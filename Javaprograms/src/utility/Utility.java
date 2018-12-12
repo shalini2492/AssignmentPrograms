@@ -1,6 +1,7 @@
 package utility;
 import java.util.Arrays;
 
+
 import java.util.Date;
 /* import java.awt.*;
 
@@ -30,8 +31,10 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sqrt;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Utility 
@@ -1898,6 +1901,8 @@ public static boolean prime(int range)
 }
 
 
+
+
 /**This method is used to print array of element type.Here we have used generics.
  * 
  * @param input input 2D array.
@@ -1922,7 +1927,7 @@ public static <T extends Comparable<T>> void orderedList(T data,MyLinkedList<T> 
 	{
 		if(data.compareTo(mylinkedlist.get(i))>0)
 		{
-			count++;
+			count++;  
 			continue;
 		}
 		mylinkedlist.insert(count, data);
@@ -2830,22 +2835,85 @@ public static String readFromFile(String file) throws Exception
 	    return readFile;
 }
 
+public static void writeToFile(String fileName, String data)
+{
+	try
+	{
+		FileWriter fw = new FileWriter(fileName);
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(data);
+		bw.close();
+	}
+	catch(FileNotFoundException fileNotFoundException)
+	{
+		System.out.println("File '"+fileName+"' not available to its given path." );
+	}
+	catch(IOException ioException)
+	{
+		System.out.println("Error in reading '"+fileName+"'");
+	}
+}
 
 /******************************Balanced Parantheses********************************/
 
-public static boolean isBalanced(char exp[])
+public static boolean isBalanced(String exp) 
 {
-	Stack stack=new Stack();
-	for(int i=0; i<exp.length; i++)
-	{
-		if(exp[i]=='(' || exp[i]=='{' || exp[i]=='[')
-			stack.push(exp);
-		if(exp[i]==')' || exp[i]==')' || exp[i]==']')
-			stack.pop();
-		if(stack.isEmpty())
-			return true;
-	}
-	return false;
+	Stack<Character> stack = new Stack<Character>();
+	char p;
+    for(int i=0; i<exp.length(); i++)
+    {
+    	p=exp.charAt(i);
+    	if(p == '(' || p == '{' || p == '[')
+    	{
+    		stack.push(p);
+    	}
+    	else
+    	{
+    		if(stack.isEmpty())
+    		{
+    			return false;
+    		}
+    		else
+    		{
+    			
+    			switch(p)
+    			{
+    			case '(': 
+    						if(stack.peek().equals(')'))
+    						{
+    							stack.pop();
+    						}
+    						else
+    						{
+    							return false;
+    						}
+    						break;
+    			case '{': 
+    						if(stack.peek().equals('}'))
+    						{
+    							stack.pop();
+    						}
+    						else
+    						{
+    							return false;
+    						}
+    						break;
+    			case '[': 
+    						if(stack.peek().equals(']'))
+    						{
+    							stack.pop();
+    						}
+    						else
+    						{
+    							return false;
+    						}
+    						break;
+    			}
+    		}
+    }
+   
+}
+    return true;
 }
 }
 	

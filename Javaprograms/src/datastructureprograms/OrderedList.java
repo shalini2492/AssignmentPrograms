@@ -2,7 +2,7 @@ package datastructureprograms;
 
 import standardlibrary.BLStdOut;
 import utility.Utility;
-
+import java.util.Scanner;
 public class OrderedList {
 	static	MyLinkedList <Integer> list=new MyLinkedList<Integer>();
 	public static void main(String[] args) throws Exception
@@ -10,15 +10,15 @@ public class OrderedList {
 		String file_name="/home/hp/JavaPrograms/Javaprograms/src/datastructureprograms/demo";
 		String readFile=Utility.readFromFile(file_name);
 		String[] splitArray=readFile.split(" ");
+		Scanner scan = new Scanner(readFile);
 		Integer[] arr=new Integer[splitArray.length];
-		int count=0;
-		for(int i=0;i<splitArray.length;i++)
-		{
-			count++;
-		}
+		
+		BLStdOut.print("The sorted list is: ");
+		String[] str=Utility.insortStr(splitArray);
+		
 		for(int i=0; i<splitArray.length; i++)
 		{
-			list.add(arr[0]);
+			list.add(arr[i]);
 		}
 		for(int i=1;i<arr.length;i++)
 		{

@@ -2254,7 +2254,7 @@ public static int guessNo(int low, int high)
 	}
 	else
 	{
-		System.out.println("the number is "+low);
+		//System.out.println("the number is "+low);
 		return low;
 	}
 			
@@ -2915,5 +2915,9 @@ public static boolean isBalanced(String exp)
 }
     return true;
 }
+
+
 }
+
+
 	

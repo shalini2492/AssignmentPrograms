@@ -111,6 +111,25 @@ public class MyLinkedList <T>
     	return -1;
     }
     
+    public Node<T> insertinSortedList(T data)
+    {
+    	Node<T> newNode=new Node<T>(data);
+    	if(first == null)
+    	{
+    		return newNode;
+    	}
+    	Node<T> current=first;
+    	Node<T> temp=null;
+    	while(current != null && current.data.toString().compareTo( (String) newNode.data) < 0)
+    	{
+    		temp=current;
+    		current=current.next;
+    	}
+    	newNode.next=current;
+    	temp.next=newNode;
+    	return first;
+    }
+    
     /**This method will return node which user wants at given index
      * @param index index of node
      * @return node
@@ -131,7 +150,7 @@ public class MyLinkedList <T>
     	return currentNode;
     }
     
-    /**This method will return the index
+    /**This method will return the index of node
      * @param index index of node
      * @return index
      */
@@ -163,11 +182,13 @@ public class MyLinkedList <T>
     		return;
     	}
     	Node<T> currentNode=first;
-    	for(int i=1; i<position; i++)
+    	for(int i=1; i<=position; i++)
     	{
     		currentNode=currentNode.next;
     	}
-    		currentNode.next=new Node<T>(data, currentNode.next);
+    	   Node<T> newNode=new Node<T>(data, currentNode.next);
+    	   currentNode.next=newNode;
+    		//currentNode.next=new Node<T>(data, currentNode.next);
     		count++;
     		
     }

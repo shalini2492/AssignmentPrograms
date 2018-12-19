@@ -185,7 +185,7 @@ public class MathFunction {
 		}
 		return s;
 	}
-	/**
+	/**This method will convert binary value to decimal number
 	 * @param binary the binary number which is in string type, and will converted in decimal value
 	 * @return returns decimal value of the given binary
 	 */
@@ -193,6 +193,7 @@ public class MathFunction {
 	{
 		int decimal=0;
 		int index=0;
+	
 		for(int i=binary.length()-1;i>=0;i--)
 		{
 			if(binary.charAt(i)=='1')
@@ -241,11 +242,11 @@ public class MathFunction {
 		{
 			t = (t+ (c/t))/2.0;
 		}
-		System.out.println("Sqaure root of " +c+ " is:" +t);
+		System.out.println("Square root of " +c+ " is:" +t);
 			//change return type
 	}
 	
-/*****This method will return true if given number is prime nu,ber else will return false if the number is not prime
+/*****This method will return true if given number is prime number else will return false if the number is not prime
  * 
  * @param number user input
  * @return boolean result

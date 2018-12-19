@@ -538,7 +538,7 @@ public static void multiplyArray(int[][] first, int[][] second, int r1, int c1, 
     for(int i=0; i<r1; ++i)
         for(int j=0; j<c2; ++j)
         {
-            System.out.println(result[i][j]+" ");
+            System.out.print(result[i][j]+" ");
             if(j == c2-1)
                 System.out.println();
         }
@@ -606,6 +606,10 @@ public static int[][] transposeMatrix(int[][] m, int r, int c)
 
 /*******************Determinant of matrix************************/
  
+/**This method is used to find determinant of 2X2 and 3X3 matrix.
+ * @param matrix input matrix
+ * @return determinant of matrix
+ */
 public static int findDeterminant(int[][] matrix)
 {
 	int sum=0; 
@@ -617,7 +621,7 @@ public static int findDeterminant(int[][] matrix)
     //for loop for row by row expansion..
     for(int i=0;i<matrix.length;i++) 
     { 
-      int[][]smaller= new int[matrix.length-1][matrix.length-1]; 
+      int[][] smaller= new int[matrix.length-1][matrix.length-1]; 
       for(int a=1;a<matrix.length;a++)
       {
         for(int b=0;b<matrix.length;b++)
@@ -1204,9 +1208,9 @@ public static void cosine(double x)
 public static void findRepeatedNo(int[] data, int size)
 {
 	System.out.println("Repeated elements are: ");
-	for(int i=0; i <= 100; i++)
+	for(int i=0; i < size; i++)
 	{
-		for(int j=1; j <= 100; j++)
+		for(int j=i+1; j < size; j++)
 		{
 			if(data[i] == data[j])
 			{

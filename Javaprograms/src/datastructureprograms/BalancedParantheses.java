@@ -1,3 +1,9 @@
+/**purpose: To find whether the given expression has balanced parantheses
+ * author: Shalini
+ * date: 13/12/2018
+ * version: 1.0
+ */
+
 package datastructureprograms;
 
 import utility.Utility;

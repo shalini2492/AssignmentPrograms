@@ -1,3 +1,8 @@
+/**purpose: To find whether given string is palindrime
+ * author: Shalini
+ * date: 13/12/2018
+ * version: 1.0
+ */
 package datastructureprograms;
 
 import standardlibrary.BLStdOut;

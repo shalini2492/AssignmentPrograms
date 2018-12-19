@@ -34,16 +34,16 @@ public class Deque1 <E> {
 	{
 		if(front==null) //if no element in list
 		{
-			Deque<E>tNode=new Deque<E>(c);
-			front=tNode;
+			Deque<E> newData=new Deque<E>(c);
+			front=newData;
 			rear=front;
 		}
 		else  //if element in list
 		{
-			Deque<E>tNode=new Deque<E>(c);
-			rear.next=tNode;
-			tNode.prev=rear;
-			rear=tNode;
+			Deque<E> newData=new Deque<E>(c);
+			rear.next=newData;
+			newData.prev=rear;
+			rear=newData;
 		}
 		counter++;
 	}
@@ -71,7 +71,7 @@ public class Deque1 <E> {
 	}
 	
 	/**
-	 * Function is used to remove the last element in the dqueue
+	 * Function is used to remove the last element in the deque
 	 * 
 	 * @return the element which are remove in the deqeue
 	 */
@@ -92,8 +92,8 @@ public class Deque1 <E> {
 		return value;
 	}
 	/**
-	 * Function is used to remove the element in the deque
-	 * @return 
+	 * Function is used to check if deque is empty or not
+	 * @return boolean value
 	 */
 	public boolean isEmpty()
 	{

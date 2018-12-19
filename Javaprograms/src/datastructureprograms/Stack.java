@@ -19,9 +19,11 @@ MyLinkedList<T> list = new MyLinkedList<T>();
 	 */
 	public T pop()
 	{
+		//T top=null;
+		//list.remove(top);
 		int index=list.size()-1;
 		T deleteData=list.get(index);
-		list.remove(index);
+		list.remove(deleteData);
 		return deleteData;
 	}
 	/**This method will return element from the top without deleting it.

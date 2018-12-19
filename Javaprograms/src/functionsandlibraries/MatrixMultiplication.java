@@ -11,6 +11,7 @@ import utility.Utility;
 public class MatrixMultiplication {
 public static void main(String[] args)
 {
+	
 	int i, j, rowFirst, rowSecond, columnFirst, columnSecond;
 	BLStdOut.print("Enter number of rows in first array..");
 	rowFirst=Utility.inputInteger();
@@ -54,7 +55,7 @@ public static void main(String[] args)
 		{
 			BLStdOut.print(b[i][j]+" ");
 		}
-		BLStdOut.print("\n");
+		BLStdOut.println(" ");
 	}
 	Utility.multiplyArray(a, b, rowFirst, columnFirst, rowSecond, columnSecond);
 }

@@ -1,7 +1,14 @@
+/**purpose: To perform operations on ordered singly linked list.
+ * author: Shalini
+ * date: 12/12/2018
+ * version: 1.0
+ */
 package datastructureprograms;
 
 import standardlibrary.BLStdOut;
 import utility.Utility;
+
+import java.io.File;
 import java.util.Scanner;
 public class OrderedList {
 	static	MyLinkedList <Integer> list=new MyLinkedList<Integer>();
@@ -10,28 +17,29 @@ public class OrderedList {
 	{
 		String file_name="/home/hp/JavaPrograms/Javaprograms/src/datastructureprograms/demo";
 		String readFile=Utility.readFromFile(file_name);
-		//String[] splitArray=readFile.split(" ");
-		
+		String[] splitArray=readFile.split(" ", readFile.length());
 		int count=0;
-		//int[] p = new int[splitArray.length];
-		sc=new Scanner(readFile);
+		System.out.println(readFile);
+		sc=new Scanner(new File(file_name));
+		
 		while(sc.hasNextInt())
 		{
 			count++;
+			// System.out.println(count);
 			int s=sc.nextInt();
+			//System.out.println(s);
 		}
-		sc = new Scanner(readFile);
+		sc = new Scanner(new File(file_name));
 		int[] arr=new int[count];
-		BLStdOut.print("Elements are: ");
+		BLStdOut.print("\nElements are: ");
 		for(int i=0; i<count; i++)
 		{
-			System.out.print(arr[i]+ " ");
+			arr[i]=Integer.parseInt(splitArray[i]);
 			list.add(arr[i]);
-			
 		}
 		
 		
-		BLStdOut.print("The sorted list is: ");
+		BLStdOut.print("\nThe sorted list is: \n");
 		int[] sort=Utility.bubSort(arr);
 		
 		for(int i=0; i<count; i++)
@@ -42,21 +50,24 @@ public class OrderedList {
 		{
 			Utility.orderedList(arr[i], list);
 		}*/
-		BLStdOut.print("\nLinked list elements are:");
-		list.display();
-	    BLStdOut.print("\n");
-		BLStdOut.print("Enter a number you want to search in the list: ");
+		//BLStdOut.print("\nLinked list elements are: ");
+		//list.display();
+	    
+		BLStdOut.print("\nEnter a number you want to search in the list: ");
 		Integer searchNo=Utility.inputInteger();
-		if(list.search(searchNo))
+		if(! list.search(searchNo))
 		{
-			int deletenumber = list.index(searchNo);
-			list.pop(deletenumber);
+			BLStdOut.print("The element is not in the list..so add it.");
+			list.insertinSortedList(searchNo);			
 		}
 		else
 		{
-			Utility.orderedList(searchNo, list);
+			BLStdOut.print("The element is in the list...so delete it.");
+			int deletenumber = list.index(searchNo);
+			list.pop(deletenumber);
+			
 		}
-		BLStdOut.println("Linked List Numbers are :");
+		BLStdOut.println("Linked list elements are: ");
 	    list.display();
 	}
 }

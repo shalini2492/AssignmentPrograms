@@ -1,4 +1,4 @@
-/**purpose: To find whether the given expression is balanced or not.
+/**purpose: To perform operations on queue.
  * author: Shalini
  * date: 12/12/2018
  * version: 1.0
@@ -49,11 +49,6 @@ public static void main(String[] args)
 		queue.dequeue();
 		queue.show();
 	}
-	/*if(queue.dequeue()==0)
-	{
-		System.out.println("Queue is empty...i.e. arithmetic expression is balanced.");
-	}
-	else
-		System.out.println("The arithmetic expression is not balanced.");*/
+
 }
 }

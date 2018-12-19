@@ -1,3 +1,8 @@
+/**purpose: To define methods for generic circular singly linked list.
+ * author: Shalini
+ * date: 13/12/2018
+ * version: 1.0
+ */
 package datastructureprograms;
 
 import standardlibrary.BLStdOut;

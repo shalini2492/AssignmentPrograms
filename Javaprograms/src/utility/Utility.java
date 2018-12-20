@@ -1939,21 +1939,6 @@ public static <T extends Comparable<T>> void orderedList(T data,MyLinkedList<T> 
 	}
 	mylinkedlist.add(data);
 }
-/************************Check prime numbers which are also anagram********************/
-
-public static void primeAnagram(int number)
-{
-	
-	
-}
-
-
-
-
-
-
-
-
 
 /**This method is used to find the numbers from prime numbers returned by above method which are anagram and palindrome
  * @param a array of size 1000
@@ -2920,7 +2905,34 @@ public static boolean isBalanced(String exp)
     return true;
 }
 
+public static <T> boolean numAnagramCheck(T number1, T number2) 
+{
+	String tempNumber1=number1+"";
+	String tempNumber2=number2+"";
+	return (Utility.stringBubbleSortByLetter(tempNumber1).equals(Utility.stringBubbleSortByLetter(tempNumber2)));
+	
+}
 
+
+	public static String stringBubbleSortByLetter(String string) 
+	{
+		char[] array=string.toCharArray();
+		char temporary=' ';
+		for(int i=0;i<string.length()-1;i++)
+		{
+			for(int j=0;j<string.length()-1-i;j++)
+			{
+				if(array[j]>array[j+1])
+				{
+					temporary=array[j];
+					array[j]=array[j+1];
+					array[j+1]=temporary;
+				}
+			}
+		}
+		string=new String(array);
+		return string;
+	}
 }
 
 

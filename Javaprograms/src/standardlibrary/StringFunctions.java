@@ -56,6 +56,7 @@ public class StringFunctions {
 	 */
 	public static void perString(String str)
 	{
+	
 		char[] temp = str.toCharArray();
 	    // Step 1. Sort the string
 	    Arrays.sort(temp);

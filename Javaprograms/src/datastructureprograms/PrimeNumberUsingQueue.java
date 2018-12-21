@@ -64,7 +64,7 @@ public class PrimeNumberUsingQueue {
 			}
 			System.out.println();
 			System.out.println("Array elements are:");
-			System.out.println("first row shows anagram numbers and second row shows non anagram numbers but which are primenumbers");
+			System.out.println("first row shows anagram numbers and second row shows non anagram numbers but which are prime numbers");
 			//Print the list in 2D array form
 			Utility.print2DArray(array);
 	 	}

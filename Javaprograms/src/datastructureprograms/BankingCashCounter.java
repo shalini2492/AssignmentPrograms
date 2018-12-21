@@ -4,9 +4,9 @@
  * version: 1.0
  */
 package datastructureprograms;
-
 import standardlibrary.BLStdOut;
 import utility.Utility;
+
 
 public class BankingCashCounter {
 public static void main(String[] args)
@@ -22,6 +22,8 @@ public static void main(String[] args)
 		queue.enqueue(i);
 	}
 	
+	for(int i=0; i<number; i++)
+	{
 	BLStdOut.print("\nEnter 0 to deposit cash or 1 to withdraw cash.");
 	flag=Utility.inputInteger();
 	if(flag==0)
@@ -46,9 +48,11 @@ public static void main(String[] args)
 		}
 		withdrawCash=totalCash-withdrawCash;
 		BLStdOut.print("\nYour balance is: "+withdrawCash);
-		queue.dequeue();
+		//queue.dequeue();
 		queue.show();
 	}
-
+	}
+	queue.dequeue();
+queue.show();
 }
 }

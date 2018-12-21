@@ -39,6 +39,7 @@ public static void main(String[] args)
     	myList.add(k, array[i]);
     	//myList.display();
     }
+    
     BLStdOut.print("Enter the element to search: ");
     int search=Utility.inputInteger();
     if(list.search(search))

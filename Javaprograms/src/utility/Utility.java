@@ -378,6 +378,10 @@ public static void powertwo(int number)
     }
 }
 
+/**This method is used to calculate harmonic nseries of number
+ * @param num
+ * @return
+ */
 public static double harmonicNumber(int num)
 {
 	double number=0;
@@ -2611,6 +2615,9 @@ public static void printArray(int array[])
     System.out.println(); 
 } 
 
+/**This method is used to print String array
+ * @param array input string array
+ */
 public static void printStrArray(String[] array) 
 { 
     int number = array.length; 
@@ -2621,6 +2628,9 @@ public static void printStrArray(String[] array)
 
 /***********************Vending MAchine change return*****************/
 
+/**This method is used to return minimum number of notes as change
+ * @param amount total amount to return
+ */
 public static void changeReturn(int amount)
 {
 	int[] notes= {1000,500,100,50,10,5,2,1};
@@ -2643,6 +2653,12 @@ public static void changeReturn(int amount)
 
 /**************************Calculate day*****************************/
 
+/**This method is used to calculate day of the week using Gregorian calender formula
+ * @param m input month
+ * @param d input day
+ * @param y input year
+ * @return day
+ */
 public static int calDay(int m, int d, int y)
 {
 	if(d < 0 || m < 0 || y < 0)
@@ -2665,6 +2681,10 @@ public static int calDay(int m, int d, int y)
 
 /*********************Temperature Conversion***********************/
 
+/**This method is used to convert temperature from celsius to fahreinheit and from fahreinheit to celsius
+ * @param cel
+ * @param fa
+ */
 public static void temperaturConversion(double cel, double fa)
 {
 	double ctof=0, ftoc;
@@ -2731,6 +2751,10 @@ public static void sqroot(int c)
     }
 }*/
 
+/**This method is used to convert decimal number to binary
+ * @param decimal input decimal number
+ * @return binary representation of decimal number
+ */
 public static String binary(int decimal) 
 {
 	String binaryNo="";
@@ -2755,6 +2779,9 @@ public static String binary(int decimal)
 
 /***********************Expansion to binary**************************/
 
+/**This method will swap the nibbles of binary string
+ * @param x input biinary number
+ */
 public static void toBinary(int x)
 {
 	/*int[] bin = new int[100];
@@ -2800,6 +2827,11 @@ public static void displayList(String[] task, String[] deadline, int[] minutes)
 
 /**********************Unordered linked list********************/
 
+/**This method is used to read contents of text file specified by file variable
+ * @param file text file
+ * @return contents of file
+ * @throws Exception IOException, FileNotFoundException
+ */
 public static String readFromFile(String file) throws Exception
 {
 	    String l=null;
@@ -2824,6 +2856,10 @@ public static String readFromFile(String file) throws Exception
 	    return readFile;
 }
 
+/**This method will write contents added during runtime to file
+ * @param fileName name of file
+ * @param data data added to file
+ */
 public static void writeToFile(String fileName, String data)
 {
 	try
@@ -2845,6 +2881,10 @@ public static void writeToFile(String fileName, String data)
 
 /******************************Balanced Parantheses********************************/
 
+/**This method will check if parathesis is balanced or not
+ * @param exp user input
+ * @return boolean result
+ */
 public static boolean isBalanced(String exp) 
 {
 	Stack<Character> stack = new Stack<Character>();
@@ -2905,6 +2945,11 @@ public static boolean isBalanced(String exp)
     return true;
 }
 
+/**This method will check if the numbers are anagram or not
+ * @param number1 first input number
+ * @param number2 second input number
+ * @return boolean result
+ */
 public static <T> boolean numAnagramCheck(T number1, T number2) 
 {
 	String tempNumber1=number1+"";
@@ -2914,13 +2959,17 @@ public static <T> boolean numAnagramCheck(T number1, T number2)
 }
 
 
+	/**This method will sort integer array by using bubble sort.
+	 * @param string input integer array 
+	 * @return sorted array
+	 */
 	public static String stringBubbleSortByLetter(String string) 
 	{
 		char[] array=string.toCharArray();
 		char temporary=' ';
 		for(int i=0;i<string.length()-1;i++)
 		{
-			for(int j=0;j<string.length()-1-i;j++)
+			for(int j=0;j<string.length()-i-1;j++)
 			{
 				if(array[j]>array[j+1])
 				{

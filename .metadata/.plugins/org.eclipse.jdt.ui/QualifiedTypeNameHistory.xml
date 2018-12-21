@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="DataStructureprograms.LinkLIst"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
@@ -52,7 +50,6 @@
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="datastructureprograms.Deque"/>
 <fullyQualifiedTypeName name="utility.Deque1"/>
-<fullyQualifiedTypeName name="utility.Utility"/>
 <fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
 <fullyQualifiedTypeName name="datastructureprograms.HashingTableWithChaining"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="datastructureprograms.MyLinkedList"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="utility.Utility"/>
 </qualifiedTypeNameHistroy>

@@ -20,7 +20,7 @@ public class Deque1 <E> {
 		}
 		else  //if element in list
 		{
-			Deque<E>tNode=null;
+			Deque<E> tNode=new Deque<E>(c);
 			tNode.data=c;
 			tNode.next=front;
 			front.prev=tNode;
@@ -47,6 +47,7 @@ public class Deque1 <E> {
 		}
 		counter++;
 	}
+
 	
 
 	/**
@@ -109,5 +110,13 @@ public class Deque1 <E> {
 	public int size()
 	{
 		return counter;
+	}
+	public void display()
+	{
+		for(Deque<E> temp=front;temp == null; temp=temp.next)
+		{
+			System.out.println(temp.data+" ");
+		}
+		
 	}
 }

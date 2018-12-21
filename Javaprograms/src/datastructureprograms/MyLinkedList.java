@@ -213,6 +213,7 @@ public class MyLinkedList <T>
     	count--;
     }
     
+    
     public T pop()
     {
     	Node<T> currentNode=first;

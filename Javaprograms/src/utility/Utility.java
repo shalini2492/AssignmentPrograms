@@ -239,7 +239,7 @@ public static void reversePrint(String firstName, String secondName, String thir
 
 public static int initial(String name) {
     int n = 9;
-    int count = 5;
+   
     int flag = 1;
      if(name.charAt(0) == 'K') {
         
@@ -259,6 +259,9 @@ public static int initial(String name) {
 
 
 //****************************************************************
+/**This method is used to print star pattern of letter K
+ * @param count to count white spaces
+ */
 public static void kPattern(int count) {
 
 	int i,j,k;
@@ -315,6 +318,9 @@ public static void kPattern(int count) {
        }*/
 }     
 //********************************************************     
+/**This method is used to print star pattern of letter D.
+ * @param n count number of white spaces
+ */
 public static void dpattern(int n) {     
     
   
@@ -341,6 +347,9 @@ public static void dpattern(int n) {
 }           
 //*******************************************************
 
+/**This method is used to print star pattern of letter W
+ * @param n number of white spaces
+ */
 public static void wpattern(int n) {
         // loop for rows
     for(int i = 0; i < 9; i++) {

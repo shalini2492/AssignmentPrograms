@@ -23,7 +23,7 @@ MyLinkedList<T> list = new MyLinkedList<T>();
 		//list.remove(top);
 		int index=list.size()-1;
 		T deleteData=list.get(index);
-		list.remove(deleteData);
+		list.removeAtFirst(deleteData);
 		return deleteData;
 	}
 	/**This method will return element from the top without deleting it.

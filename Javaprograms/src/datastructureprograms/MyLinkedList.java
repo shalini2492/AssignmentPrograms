@@ -1,5 +1,4 @@
 package datastructureprograms;
-
 public class MyLinkedList <T> 
 {
     private Node<T> first;
@@ -28,36 +27,30 @@ public class MyLinkedList <T>
     	return;
     }
     
-    /**This method is used to delete data from the linked list.
+    /**This method is used to delete data from head of the linked list.
      * @param data data to be deleted.
      */
-    public void remove(T data)
+    public void removeAtFirst(T data)
     {
-    	Node<T> temp=first;
-    	Node<T> pre=null;
-    	if(first.data == null)
+    	Node<T> temp = first;
+    	first=first.next;
+    	temp.next=null;
+    	count--;
+    }
+    /**This method is used to delete last node from linked list
+     * @param data data to be deleted
+     */
+    public void removeAtLast(T data)
+    {
+    	Node<T> last=first;
+    	Node<T> previous=null;
+    	while(last.next != null)
     	{
-    		first=first.next;
-    		count--;
-    		return;
+    		previous=last;
+    		last=last.next;
     	}
-    	while(temp != null)
-    	{
-    		if(temp.data == data)
-    		{
-    		    pre.next=temp.next;
-    		    temp.next.pre=temp.pre.next;
-    		    count--;
-    		    return;
-    		}
-    		pre=temp;
-    		temp=temp.next;
-    		if(temp.next == null)
-    		{
-    			pre.next=null;
-    			count--;
-    		}
-    	}
+    	previous=last;
+    	previous.next=null;
     }
     
     /**This method is used to return the total number of elements in linked list.
@@ -111,6 +104,10 @@ public class MyLinkedList <T>
     	return -1;
     }
     
+    /**This method is used to insert user input in after sorting in list
+     * @param data user input
+     * @return node
+     */
     public Node<T> insertinSortedList(T data)
     {
     	Node<T> newNode=new Node<T>(data);
@@ -120,7 +117,7 @@ public class MyLinkedList <T>
     	}
     	Node<T> current=first;
     	Node<T> temp=null;
-    	while(current != null && current.data.toString().compareTo( (String) newNode.data) < 0)
+    	while(current != null && current.data.toString().compareTo((String) newNode.data) < 0)
     	{
     		temp=current;
     		current=current.next;
@@ -174,23 +171,29 @@ public class MyLinkedList <T>
 	 */
 	public void insert(int position, T data)
     {
-    	
-    	if(position == 0)
+    	if(position>size() || position<1)
     	{
-    		first=new Node<T>(data, first);
+    		System.out.println("Invalid position.");
+    	}
+    	Node<T> newNode=new Node<T>(data);
+    	Node<T> previous=first;
+    	if(position == 1)
+    	{
+    		
+    		first=newNode;
     		count++;
     		return;
     	}
-    	Node<T> currentNode=first;
+    	
     	for(int i=1; i<=position; i++)
     	{
-    		currentNode=currentNode.next;
+    		previous=previous.next;
     	}
-    	   Node<T> newNode=new Node<T>(data, currentNode.next);
-    	   currentNode.next=newNode;
-    		//currentNode.next=new Node<T>(data, currentNode.next);
-    		count++;
-    		
+    	Node<T> currentNode=previous.next;
+    	newNode.next=currentNode;
+    	previous.next=newNode;
+    	count++;
+    	return;
     }
     
     /**This method will delete the data from a specified location in list
@@ -214,6 +217,9 @@ public class MyLinkedList <T>
     }
     
     
+    /**This method is used to pop data from last index in list
+     * @return node
+     */
     public T pop()
     {
     	Node<T> currentNode=first;
@@ -229,6 +235,10 @@ public class MyLinkedList <T>
     	return lastData;
     }
     
+    /**This method is used to pop data using index as input
+     * @param index user input 
+     * @return node
+     */
     public T pop(int index)
     {
     	if(index==0)
@@ -248,6 +258,9 @@ public class MyLinkedList <T>
     	return dataOfIndex;
     }
     
+    /**This method is used to display linked list
+     * 
+     */
     public void display()
     {
     	Node<T> currentNode=first;

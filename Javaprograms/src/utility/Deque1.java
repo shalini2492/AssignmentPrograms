@@ -9,6 +9,9 @@ public class Deque1 <E> {
 	}
 	
 	//add front
+	/**This method is used to add input element to front
+	 * @param c element to be added
+	 */
 	@SuppressWarnings("null")
 	public void addToFront(E c)
 	{
@@ -30,6 +33,9 @@ public class Deque1 <E> {
 	}
 	
 	//add the element in the rear 
+	/**This method is used to add input element in rear.
+	 * @param c element to be added
+	 */
 	public void addToRear(E c)
 	{
 		if(front==null) //if no element in list
@@ -111,6 +117,9 @@ public class Deque1 <E> {
 	{
 		return counter;
 	}
+	/**This method is used to display deque
+	 * 
+	 */
 	public void display()
 	{
 		for(Deque<E> temp=front;temp == null; temp=temp.next)

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="DataStructureprograms.LinkLIst"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
-<fullyQualifiedTypeName name="java.util.InputMismatchException"/>
 <fullyQualifiedTypeName name="Utility.Utility"/>
 <fullyQualifiedTypeName name="functionalprograms.Permutation"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
@@ -17,7 +14,6 @@
 <fullyQualifiedTypeName name="lib.BLStdIn"/>
 <fullyQualifiedTypeName name="java.lang.Error"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 <fullyQualifiedTypeName name="functionsandlibraries.BLStdOut"/>
@@ -52,7 +48,6 @@
 <fullyQualifiedTypeName name="utility.Deque1"/>
 <fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
 <fullyQualifiedTypeName name="datastructureprograms.HashingTableWithChaining"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="datastructureprograms.MyLinkedList"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="utility.Utility"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.json.JSONWriter"/>
 </qualifiedTypeNameHistroy>

@@ -1,4 +1,5 @@
 package standardlibrary;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StringFunctions {
@@ -11,6 +12,8 @@ public class StringFunctions {
 
 	public static void checkAnagram(String str1, String str2)
 	{
+		ArrayList<Integer> array=new ArrayList<Integer>();
+		array.add(10);
 		 int len, len1, len2, i, j, found=0, not_found=0;
 		 len1 = str1.length();
 	        len2 = str2.length();
@@ -120,56 +123,21 @@ public class StringFunctions {
 
 	/**
 	 * Method used for swapping the char
-	 * @param str
-	 * @param i
-	 * @param j
+	 * @param str String of which characters are swapped
+	 * @param i first index
+	 * @param j second index
 	 */
 	private static void swap(char[] str, int i, int j){
 	    char temp = str[i];
 	    str[i] = str[j];
 	    str[j] = temp;
 	}
-		
-		
-		
-	    /* char[] a = s.toCharArray();
-	      int n = s.length();
-	      char[] st = new char[n];
-	      int i=1;
-	      while(i<n)
-	      {
-		      if(st[1] < i)
-		      {
-			       int j = ((i % 2) == 0) ? 0 : st[i];
-			       swap(s, i, j);
-			       System.out.println(join(s));
-			       st[i]++;
-			       i = 1;
-		      }
-		      else
-		      {
-		    	  st[i]=0;
-		    	  i++;
-		      }
-	      }
-	}
-	public static String join(char[] s)
-	{
-		StringBuilder sb = new StringBuilder();
-		sb.append(s);
-		return sb.toString();
-	}
-
-	public static void swap(char[] a, int i, int j)
-	{
-		String temp="";
-		temp = a[i];
-		a[i] = a[j];
-		a[j] = temp;
-	}*/
 	
 	/**************************************String Permutation using recursion****************************/
 
+	/**This method will return all the permutations of string using recursive method
+	 * @param inputString user input string
+	 */
 	public static void permutation(String inputString) 
 	{
 		String permuteString="";
@@ -177,6 +145,10 @@ public class StringFunctions {
 	   
 	}
 
+	/**This method will return all the permutations of string
+	 * @param permuteString permutation of string
+	 * @param inputString user input string
+	 */
 	public static void permuteString(String permuteString, String inputString) 
 	{
 		if (inputString.length() == 0) 
@@ -194,6 +166,9 @@ public class StringFunctions {
 	
 	/*********************************Check given string is palindrome****************************/
 
+	/**This method will check if given string is palindrome or not.
+	 * @param str user input string
+	 */
 	public static void chkPalindrome(String str)
 	{
 		String reverseString = "";
@@ -214,6 +189,11 @@ public class StringFunctions {
 
 	/**************************************Strings are equal**********************************/
 
+	/**This method will return true if given two strings are equal
+	 * @param string1 first input string
+	 * @param string2 second input string
+	 * @return boolean value
+	 */
 	public static boolean areEqual(String string1, String string2)
 	{
 		return(string1.length() == string2.length()) &&

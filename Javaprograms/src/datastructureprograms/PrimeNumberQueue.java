@@ -14,7 +14,7 @@ public static void main(String[] args)
     		list.add(i);
     	}
     }
-    //list.display();
+    list.display();
     for(int i=0; i<anagram.size()-1; i++)
     {
     	for(int j=1; j<anagram.size(); j++)
@@ -25,6 +25,7 @@ public static void main(String[] args)
     			{
     				anagram.enqueue(list.get(i));
     			}
+    			
     			if(anagram.search(list.get(j))==false)
     			{
     				anagram.enqueue(list.get(j));
@@ -39,6 +40,8 @@ public static void main(String[] args)
     			}
     		}
     	}
+    	anagram.show();
+    	nonanagram.show();
     }
     Integer[][] anagramArray=new Integer[2][nonanagram.size()];
     int anagramQueueSize=anagram.size();
@@ -53,8 +56,8 @@ public static void main(String[] args)
    {
 	   anagramArray[1][j] = nonanagram.dequeue();
    }
-   nonanagram.show();
-   System.out.println("The first row of array displays prime numbers which are also anagram..");
+   
+   System.out.println("\nThe first row of array displays prime numbers which are also anagram..");
    System.out.println("The second row of array displays prime numbers which are not anagram..");
    Utility.print2DArray(anagramArray);
 }

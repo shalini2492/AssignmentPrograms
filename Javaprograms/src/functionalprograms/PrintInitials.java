@@ -41,12 +41,26 @@ public class PrintInitials
 					String kPattern;
 					while((kPattern=br.readLine()) != null)
 					{
-						Utility.showPatterns("/home/hp/JavaPrograms/Javaprograms/wpattern", 1, 11);
+						Utility.showPatterns("/home/hp/JavaPrograms/Javaprograms/initials", 1, 11);
 						
 					}
-					
+					break;
 		case 'd':
+			String dPattern;
+			while((dPattern=br.readLine()) != null)
+			{
+				Utility.showPatterns("/home/hp/JavaPrograms/Javaprograms/initials", 13, 23);
+				
+			}
+			break;
 		case 'w':
+			String wPattern;
+			while((wPattern=br.readLine()) != null)
+			{
+				Utility.showPatterns("/home/hp/JavaPrograms/Javaprograms/initials", 25, 34);
+				
+			}
+			break;
 		}
 	}while(inputInitial=='k' && inputInitial=='d' && inputInitial=='w');
 	

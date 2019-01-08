@@ -17,6 +17,7 @@ public static void main(String[] args)
     	sb.append(chars[random % chars.length]);
     	random /= chars.length;
     }
+    
     String couponcode = sb.toString();
     System.out.println("Coupon code: " +couponcode);
 }

@@ -4,10 +4,9 @@
  * version: 1.0
  */
 package datastructureprograms;
+
 import standardlibrary.BLStdOut;
 import utility.Utility;
-
-
 public class BankingCashCounter {
 public static void main(String[] args)
 {

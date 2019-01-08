@@ -47,14 +47,16 @@ public class Utility
 	 */
     public static String inputString()
     {
-    	return sc.nextLine();
+    	String s = sc.nextLine();
+    	return s;
     }
     /*This method will read and accept input of type integer and can be called
      * using object of class.
      */
     public static int inputInteger()
     {
-    	return sc.nextInt();
+    	int s = sc.nextInt();
+    	return s;
     }
     
     /***********************2D array*****************************************/
@@ -62,17 +64,28 @@ public class Utility
 
     public static boolean InputBoolean()
     {
-    	return sc.nextBoolean();
+    	boolean s = sc.nextBoolean();
+    	return s;
     }
 
     /*This method will return input of type double and pass it to the method where it is called.*/
 
     public static double InputDouble()
     {
-    	return sc.nextDouble(); /*Scans the next token of the input as a double. This 
+    	double s = sc.nextDouble();
+    	return s; /*Scans the next token of the input as a double. This 
     	method will throw InputMismatchException if the next token cannot be 
     	translated into a valid double value.Scans the next token of the input as
     	 a double. */ 
+    }
+     
+    /**This method will read only character type of input and return character
+     * @return character
+     */
+    public static char inputChar()
+    {
+    	char s = sc.next().charAt(0);
+    	return s;
     }
     /****This method will accept input string i.e. a line and will replace a particular name with user name.
      * 
@@ -81,7 +94,7 @@ public class Utility
      * @return string with user input name
      */
     
-    public static String replaceString(String template, String username)
+    public static void replaceString(String template, String username)
     {
     	
     	if(username.length() < 3)
@@ -90,23 +103,24 @@ public class Utility
     	}
     	else
     	{
-    		String str = template.replace("<<username>>", username);
-    	    return str;
+    		System.out.println("String after replace: "+template.replace("<<username>>", username));
+    		// String str = template.replace("<<username>>", username);
+    	    //return str;
     	}
-    	return template;
+    	
     }
 
 
-/****This method is used to calculate the percentage of heads vs tail.
+/****This method is used to calculate the percentage of heads versus tail.
  * 
  * @param n number of times coin is tossed
- * @return percentage of head vs tail
+ * @return percentage of head versus tail
  */
 
  //static Random random = new Random();
 public static int HeadorTail(int n)
 {
-	long headper=0, tailper=0;
+	double headper=0, tailper=0;
 	int headcount=0, tailcount=0;
 	//int heads, tail, n,i;
 	
@@ -129,12 +143,12 @@ public static int HeadorTail(int n)
 	            System.out.println("Random no. are " +rand);
                   if(rand < 0.5)
 	                    {
-	    	                 System.out.println("The occurrence of tail" +i);
+	    	                 System.out.println("The occurrence of tail "+i);
 	    	                 tailcount = tailcount + 1;
 	                    }
 	               else
-	    		             System.out.println("The occurrence of heads" +i);
- 			                 headcount = headcount +1;
+	    		             System.out.println("The occurrence of heads "+i);
+ 			                 headcount = headcount + 1;
 	    	
 	     }
 	
@@ -145,19 +159,22 @@ public static int HeadorTail(int n)
 	
 	                    System.out.println("Head count" +headcount);
 	                     System.out.println("tail count" +tailcount);
+	headper=(headcount/n);
 	
+	tailper=(tailcount/n);
+	System.out.println("Percentage of head versus tail: "+headper+":"+tailper);
 
 
 /***Here headcount and tailcount is computed so as to compare their count and display output.
 * 
 */
-	
-	            if(headcount>tailcount)
-	                 {
-		                    System.out.println("Headcount is greater");
-	                 }
-	           else
-		                    System.out.println("tailcount is greater");
+//	
+//	            if(headcount>tailcount)
+//	                 {
+//		                    System.out.println("Headcount is greater");
+//	                 }
+//	           else
+//		                    System.out.println("tailcount is greater");
     return n;
 }
  
@@ -378,7 +395,7 @@ public static void powertwo(int number)
     }
 }
 
-/**This method is used to calculate harmonic nseries of number
+/**This method is used to calculate harmonic series of number
  * @param num
  * @return
  */
@@ -655,6 +672,10 @@ public static int findDeterminant(int[][] matrix)
 
 /***********************Power of 2************************************/
 
+/**This method is used to calculate numbers upto 2 power number
+ * @param pow user input power
+ * @param base user input base=2
+ */
 public static void powerOf2(int pow, int base)
 {
 	base=2;
@@ -804,6 +825,10 @@ public static void permutation(String inputString)
    
 }
 
+/**This method is used to calculate all the permutations of string 
+ * @param permuteString string permutation
+ * @param inputString input original string
+ */
 public static void permuteString(String permuteString, String inputString) 
 {
 	if (inputString.length() == 0) 
@@ -997,6 +1022,13 @@ public static boolean springSeason(int day, int month)
 
 /**************************************Random number operations************************************/
 
+/**This method is used to calculate average, minimum and maximum values of 5 numbers of type double
+ * @param a first number
+ * @param b second number
+ * @param c third number
+ * @param d fourth number
+ * @param e fifth number
+ */
 public static void avg(double a, double b, double c, double d, double e)
 {
 	int i=5;
@@ -1225,9 +1257,10 @@ public static void findRepeatedNo(int[] data, int size)
 //return data;
 }
 
-/**********************Find second largest element in array
- * @return second largest element in array*********************/
 
+/**This method is used to fine second largest element in array
+ * @param input input array of integer numbers
+ */
 public static void findSecondLarge(int[] input)
 {
 	
@@ -1278,11 +1311,10 @@ public static void findSecondLarge(int[] input)
 
 }
 
-/*********This method is used to find second smallest element in array
- * 
- * @param in array
- */
 
+/**This method is used to find second smallest number in array
+ * @param in user input array
+ */
 public static void findSecondSmall(int[] in)
 {
 	int firstSmallest, secondSmallest;
@@ -1928,20 +1960,24 @@ public static <E> void print2DArray(E[][] input)
 }
  
 /*******************************Ordered linked list*******************************/
-public static <T extends Comparable<T>> void orderedList(T data,MyLinkedList<T> mylinkedlist)
+/**This method is used to sort elements in list using comparable interface
+ * @param data data in list
+ * @param mylinkedlist generic class linked list
+ */
+public static <T extends Comparable<T>> void orderedList(T data,MyLinkedList<T> myLinkedList)
 {
 	int count=0;
-	for(int i=0;i<mylinkedlist.size();i++)
+	for(int i=0;i<myLinkedList.size();i++)
 	{
-		if(data.compareTo(mylinkedlist.get(i))>0)
+		if(data.compareTo(myLinkedList.get(i))>0)
 		{
 			count++;  
 			continue;
 		}
-		mylinkedlist.insert(count, data);
+		myLinkedList.insert(count, data);
 		return;
 	}
-	mylinkedlist.add(data);
+	myLinkedList.add(data);
 }
 
 /**This method is used to find the numbers from prime numbers returned by above method which are anagram and palindrome
@@ -2187,6 +2223,10 @@ public static int[] bubsortint(int no, int[] arr)
 	
 	return arr;
 }
+/**This method is used to print sorted array
+ * @param no size of array
+ * @param arr array 
+ */
 public static void sortedArray(int no, int[] arr)
 {
 	System.out.println("Sorted elements are:");
@@ -2286,6 +2326,13 @@ public static void binSearch(String[] search, int first, int last)
 }	
 
 
+	/**This method is used to search index of user input word from a array
+	 * @param word word to search
+	 * @param words array of words
+	 * @param a starting index of array
+	 * @param b ending index of array
+	 * @return index
+	 */
 	public static int binarysearchWord(String word, String words[], int a, int b) 
 	{
 		if(b <= a)
@@ -2682,8 +2729,8 @@ public static int calDay(int m, int d, int y)
 /*********************Temperature Conversion***********************/
 
 /**This method is used to convert temperature from celsius to fahreinheit and from fahreinheit to celsius
- * @param cel
- * @param fa
+ * @param cel user input temperature in celsius
+ * @param fa user input in fahreinheit
  */
 public static void temperaturConversion(double cel, double fa)
 {
@@ -2706,6 +2753,11 @@ public static void temperaturConversion(double cel, double fa)
 
 /**********************Monthly Payment*****************************/
 
+/**This method is used to calculate amount need to pay daily to clear the loan
+ * @param p principal amount
+ * @param r rate of interest
+ * @param y number of year
+ */
 public static void monthlyPayment(int p, double r, int y)
 {
 	double pay;
@@ -2718,6 +2770,9 @@ public static void monthlyPayment(int p, double r, int y)
 
 /***************Square Root using Newton's method*******************/
 
+/**This method is used to calculate square root using Newton's method
+ * @param c user input number
+ */
 public static void sqroot(int c)
 {
 	double epsilon = 1e-15;  //relative error tolerance
@@ -2881,7 +2936,7 @@ public static void writeToFile(String fileName, String data)
 
 /******************************Balanced Parantheses********************************/
 
-/**This method will check if parathesis is balanced or not
+/**This method will check if paranthesis is balanced or not
  * @param exp user input
  * @return boolean result
  */
@@ -2982,6 +3037,7 @@ public static <T> boolean numAnagramCheck(T number1, T number2)
 		string=new String(array);
 		return string;
 	}
+	
 }
 
 

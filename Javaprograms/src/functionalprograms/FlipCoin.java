@@ -13,7 +13,7 @@ import utility.Utility;
 			
 			System.out.println("Enter no. of times to flip a coin");
 			int n = Utility.inputInteger();
-			System.out.println(n);
+			
 			Utility.HeadorTail(n);
 		}
 	}

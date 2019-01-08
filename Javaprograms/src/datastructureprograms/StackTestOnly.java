@@ -17,8 +17,15 @@ public static void main(String[] args)
 	list.add(53);
 	list.add(65);
 	list.add(76);
-	//list.insert(3, 77);
-	list.pop(5);
+	list.insert(6, 77);
+	list.removeAtFirst(12);
+	list.removeAtLast(76);
+	//st.push(9);
+	
+	list.insertinSortedList(45);
+	System.out.println(list.size());
+	System.out.println(list);
+	//list.pop(5);
 	list.display();
 }
 }

@@ -7,7 +7,7 @@
 package datastructureprograms;
 
 import utility.Utility;
-public class BalancedParentheses {
+public class BalancedParantheses {
 public static void main(String[] args)
 {
 	

@@ -8,14 +8,18 @@ package functionalprograms;
 import utility.Utility;
 
 public class PrimeFactors {
+	interface MyFunctionalInterface
+	{
+		public int factors(int a);
+	}
 public static void main(String[] args)
 {
-int n; //check output
+int n; 
 
 System.out.println("Enter the number for factorization");
 n= Utility.inputInteger();
 System.out.println("The factors of " +n+ " are: ");
-int x = Utility.factors(n);
-System.out.println(x);
+MyFunctionalInterface f=a-> Utility.factors(n);
+System.out.println(f.factors(n));
 }
 }

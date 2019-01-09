@@ -2,9 +2,13 @@ package algorithmprograms;
 
 import utility.Utility;
 public class MergeSortInt {
+	interface MyFunctionalInterface
+	{
+		public int[] sortArray(int a);
+	}
 public static void main(String[] args)
 {
-	Utility utility=new Utility();
+	
 	int[] num =new int[5];
 	System.out.println("Enter the numbers:");
 	for(int i=0;i<5;i++)
@@ -13,8 +17,12 @@ public static void main(String[] args)
 	}
 	System.out.println("The Given array is :");
 	Utility.printArray(num);
-	utility.sortInteger(num, 0, num.length-1);
+	MyFunctionalInterface f=arr->Utility.sortInteger(num, 0, num.length-1);
 	System.out.println("\nThe Sorted array is :"); 
-    Utility.printArray(num); 
+	for(int i=0; i<num.length; i++)
+	{
+	System.out.println(f.sortArray(num[i]));
+	}
+   // Utility.printArray(num); 
 }
 }

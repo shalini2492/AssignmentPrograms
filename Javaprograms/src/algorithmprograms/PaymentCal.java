@@ -2,6 +2,10 @@ package algorithmprograms;
 
 import utility.Utility;
 public class PaymentCal {
+	interface MyFunctionalInterface
+	{
+		public double pay(int a);
+	}
 public static void main(String[] args)
 {
 	int pr, y;
@@ -10,8 +14,8 @@ public static void main(String[] args)
 	y = Integer.parseInt(args[1]);
 	r = Double.parseDouble(args[2]);
 	
-	Utility.monthlyPayment(pr, r, y);
-	
+	MyFunctionalInterface f=a->Utility.monthlyPayment(pr, r, y);
+	System.out.println(f.pay(y));
 	
 }
 }

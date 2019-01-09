@@ -8,6 +8,11 @@ package functionalprograms;
 import utility.Utility;
 
 public class IntAdd {
+	interface MyFunctionalInterface
+	{
+		public int numTriplets(int[] array);
+	}
+
 public static void main(String[] args)
 {
 	
@@ -21,7 +26,8 @@ public static void main(String[] args)
 		array[i]=Utility.inputInteger();
 	}
 	
-     Utility.triplets(array, n);
+     MyFunctionalInterface f=a->Utility.triplets(array, n);
+     System.out.println(f.numTriplets(array));
     //System.out.println(m);
 }
 }

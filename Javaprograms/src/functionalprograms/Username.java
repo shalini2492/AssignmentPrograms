@@ -5,6 +5,7 @@
  */
 package functionalprograms;
 
+import utility.Utility;
 
 /*******************String replace*********************/
 
@@ -13,16 +14,19 @@ public class Username
 	interface MyFunctionalInterface {
 
 		//A method with single parameter
-	    public String replaceUsername(String username);
+	    public String replaceUsername(String user);
 	}
 	public static void main(String[] args)
 	   {
-		//String template = "Hello <<username>> ! How are you?";
-		
-		MyFunctionalInterface f = username -> username.replace("<<username>>", username);  
-		String username= "Sujata";
-		System.out.println(f.replaceUsername("Hello " +username+"! How are you?"));
-		
+		String template = "Hello <<username>> ! How are you?";
+		System.out.println("Original String is: "+template);
+		System.out.println("Enter username");
+		String username= Utility.inputString();
+		MyFunctionalInterface f = user -> Utility.replaceString(template, username);
+		System.out.println(f.replaceUsername(username));
+//		System.out.println("String after replacement: ");
+//		System.out.println(f.replaceUsername("Hello " +username+"! How are you?"));
+//		
 
        }
 }

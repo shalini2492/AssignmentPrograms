@@ -8,6 +8,10 @@ package functionalprograms;
 import utility.Utility;
 
 public class TwoDArray {
+	interface MyFunctionalInterface
+	{
+		public int twoDArray(int[][] arr);
+	}
 public static void main(String[] args)
 {
 		
@@ -17,7 +21,8 @@ public static void main(String[] args)
 	System.out.println("Enter the no of columns of array");
 	int column = Utility.inputInteger();
 	System.out.println("Enter elements" );
-	Utility.twodarr(row, column);
-
+	MyFunctionalInterface f=a->Utility.twodarr(row, column);
+    int[][] arr=new int[row][column];
+	System.out.println(f.twoDArray(arr));
 }
 }

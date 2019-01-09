@@ -8,6 +8,10 @@ package functionalprograms;
 import utility.Utility;
 
 public class WindChill {
+	interface MyFunctionalInterface
+	{
+		public double windChill(double n);
+	}
 public static void main(String[] args)
 {
 	double t, v;
@@ -17,7 +21,7 @@ public static void main(String[] args)
 	System.out.println("Enter the valid speed in miles per hour, should be between 3 and 120");
 	v = Utility.InputDouble();
 	
-	Utility.calTemp(t, v);
-	
+	MyFunctionalInterface f=n->Utility.calTemp(t, v);
+	System.out.println(f.windChill(v));
 }
 }

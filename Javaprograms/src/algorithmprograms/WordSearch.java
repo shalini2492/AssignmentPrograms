@@ -12,16 +12,20 @@ import java.util.Scanner;
 
 public class WordSearch 
 {
+	interface MyFunctionalInterface
+	{
+		public String[] findWord(String w);
+	}
 	public static void main(String[] args) throws Exception
 	{
 		int first=0;
 		int last=0;
 		String [] words = new String[100];
 		Scanner sc = new Scanner(System.in);
-		FileReader f = new FileReader("/home/hp/JavaPrograms/Javaprograms/bin/algorithmprograms/abcd.txt");
-		BufferedReader br = new BufferedReader(f);
+		FileReader filereader = new FileReader("/home/hp/JavaPrograms/Javaprograms/bin/algorithmprograms/abcd.txt");
+		BufferedReader br = new BufferedReader(filereader);
 		String file;
-		String[] splitArray = new String[100];
+		String[] splitArray = new String[words.length];
 		System.out.print("Enter word to search for: ");
 		String word = Utility.inputString();
         
@@ -31,7 +35,7 @@ public class WordSearch
 			
 			splitArray = file.split(",");
 			
-		}//change...
+		}
 	
 		for(int i=0; i<splitArray.length; i++)
 		{
@@ -54,9 +58,9 @@ public class WordSearch
 			words[i] = Utility.inputString();
 		}*/
 		
-		Utility.binSearch(splitArray, first, last);
+	//	MyFunctionalInterface f=w->Utility.binSearch(splitArray, first, last);
 		
-
+Utility.binSearch(splitArray, first, last);
 	
 	   
 		   

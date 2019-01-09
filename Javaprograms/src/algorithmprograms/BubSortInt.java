@@ -5,6 +5,10 @@ import java.util.Scanner;
 import utility.Utility;
 
 public class BubSortInt {
+	interface MyFunctionalInterface
+	{
+		public int[] sortbubble(int[] arr);
+	}
 public static void main(String[] args)
 {
 	int no;
@@ -24,11 +28,13 @@ public static void main(String[] args)
 	}
 	
 System.out.println("The sorted array is: ");
-	
+	MyFunctionalInterface f=a->Utility.bubsortint(no, arr1);
+	//System.out.println(f.sortbubble(arr1));
 	for(int i=0; i<no; i++)
 	{
-		Utility.bubsortint(no, arr1);
+	    //Utility.bubsortint(no, arr1);
 		System.out.println(arr1[i]);
+		
 	}
 	sc.close();
 }

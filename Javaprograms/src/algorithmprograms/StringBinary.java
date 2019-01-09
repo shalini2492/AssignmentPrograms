@@ -6,6 +6,10 @@ import java.util.Scanner;
 import utility.Utility;
 
 public class StringBinary {
+	interface MyFunctionalInterface
+	{
+		public String[] search(String w);
+	}
 public static void main(String[] args) 
 {
 	String search="";
@@ -25,7 +29,9 @@ public static void main(String[] args)
     }
     System.out.println("Enter string to be searched");
     search = Utility.inputString();
-    Utility.searchStr(st, x);
+    
+    MyFunctionalInterface f=w->Utility.searchStr(st, x);
+    System.out.println(f.search(search));
     scanner.close();
     //System.out.println(tr);
 }

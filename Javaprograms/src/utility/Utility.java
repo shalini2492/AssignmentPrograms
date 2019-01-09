@@ -94,20 +94,20 @@ public class Utility
      * @return string with user input name
      */
     
-    public static void replaceString(String template, String username)
+    public static String replaceString(String template, String username)
     {
-    	
+    	String str="";
     	if(username.length() < 3)
     	{
     		System.out.println("Please enter string of more than 3 characters");
     	}
     	else
     	{
-    		System.out.println("String after replace: "+template.replace("<<username>>", username));
-    		// String str = template.replace("<<username>>", username);
-    	    //return str;
+    		//System.out.println("String after replace: "+template.replace("<<username>>", username));
+    		 str = template.replace("<<username>>", username);
+    	    
     	}
-    	
+    	return str;
     }
 
 
@@ -143,12 +143,14 @@ public static int HeadorTail(int n)
 	            System.out.println("Random no. are " +rand);
                   if(rand < 0.5)
 	                    {
-	    	                 System.out.println("The occurrence of tail "+i);
+	    	                 System.out.println("The occurrence of tail ");
 	    	                 tailcount = tailcount + 1;
+	    	                 System.out.print(tailcount);
 	                    }
 	               else
-	    		             System.out.println("The occurrence of heads "+i);
+	    		             System.out.println("The occurrence of heads");
  			                 headcount = headcount + 1;
+ 			                 System.out.print(headcount);
 	    	
 	     }
 	
@@ -393,15 +395,17 @@ public static void wpattern(int n) {
  * @return 2^1 to 2^number
  */
 
-public static void powertwo(int number)
+public static double powertwo(int number)
 {
 	System.out.println("Printing all till Power Value "+number);
 	   
-	   
+	   double result=0.0;
     for(int i=1;i<=number;i++)
     {
-     	System.out.println("Power of 2^"+i+" is: "+(Math.pow(2, i)));	
+    	result=(int) Math.pow(2, i);
+     	System.out.println("Power of 2^"+i+" is: "+result);	
     }
+    return result;
 }
 
 /**This method is used to calculate harmonic series of number
@@ -427,7 +431,7 @@ public static double harmonicNumber(int num)
  * @param number user input
  */
 
-public static void harmonicNo(int number)
+public static double harmonicNo(double number)
 {
 	System.out.println("The Harmonic series is :");
 	double result =0.0;
@@ -439,6 +443,7 @@ public static void harmonicNo(int number)
 	}
 	System.out.println(" ");
 	System.out.println(result);
+	return result;
 }
 
 /*****This method is used to calculate prime factors of given number
@@ -468,7 +473,7 @@ public static int factors(int n)
  * @param target user input goal
  */
 
-public static void gambler(int stake, int trials, int target)
+public static int gambler(int stake, int trials, int target)
 {	
 	/*for loop to iterate till the no. of trials */
 	int win = 0;
@@ -495,6 +500,7 @@ public static void gambler(int stake, int trials, int target)
 	System.out.println("the player lost " + loss + " times.");
 	System.out.println("percentage of win is " + percentWin + "%");
 	System.out.println("percentage of loss is " + percentLoss + "%");
+	return stake;
 }
 
 public static int gambling(int stake, int trials, int target, int times)
@@ -725,7 +731,7 @@ public static int dist_coupon(int n)
  * @param column number of columns
  */
 
-public static void twodarr(int row, int column)
+public static int twodarr(int row, int column)
 {
 	        int[][] a= new int[row][column];
 	        for(int i=0; i<row; i++)
@@ -743,7 +749,7 @@ public static void twodarr(int row, int column)
 		                     }
 	                              System.out.println(" ");
 	             }
-	
+	return row;
 }
 
 /*****This method is used to find sum of three integers in such a way that its result is 0.
@@ -811,7 +817,7 @@ public static void twodarr(int row, int column)
  * @param j second coordinate
  */
 
-public static void dist(int i, int j)
+public static double dist(int i, int j)
 {
 	int x = 0, y=0;
 	
@@ -819,7 +825,8 @@ public static void dist(int i, int j)
   double d = Math.pow(y, 2);  //Returns y*y.
   double dn = c + d;         
   double diff = (c-i) * (d-j);
-  System.out.println("The distance from (" +x+ "," +y+ ") to (0,0) is " +diff);
+  return diff;
+ // System.out.println("The distance from (" +x+ "," +y+ ") to (0,0) is " +diff);
 }
 
 /*****This method is used for displaying permutations of given string
@@ -827,11 +834,11 @@ public static void dist(int i, int j)
  * @param inputString user input
  */
 
-public static void permutation(String inputString) 
+public static String permutation(String inputString) 
 {
 	String permuteString="";
 	permuteString(permuteString,inputString);
-   
+    return permuteString;
 }
 
 /**This method is used to calculate all the permutations of string 
@@ -931,15 +938,17 @@ public static void stopWatch(long startTime, long stopTime)
  */
 
 //static double k, root1, root2;
-public static void quad(int a, int b, int c)
+public static int quad(int a, int b, int c)
 {
+	
 	if(a==0)
 	{
 		System.out.println("Invaild");
-		return;
+		return 0;
 	}
 	
 	int d = b*b - 4*a*c;  
+	System.out.println("Result of equation: "+d);
 	double sqrt_val = sqrt(d);
 	if(d > 0)
 	{
@@ -953,6 +962,42 @@ public static void quad(int a, int b, int c)
         System.out.println( -(double)b / ( 2 * a ) +"+i"+sqrt_val +"\n"+
         					-(double)b / ( 2 * a ) +"-i"+sqrt_val);
 	}
+	return d;
+}
+
+
+
+public static double stopwatch(int input)
+{
+	double startTime=0.0, stopTime=0.0;
+	int flag=0;
+	while(flag==0)
+	{
+		switch(input)
+		{
+		case 1:
+			startTime=System.nanoTime();
+			System.out.println("enter 0 to stop the stopwatch");
+			input=Utility.inputInteger();
+			break;
+		case 0:
+			stopTime=System.nanoTime();
+			flag=1;
+			break;
+		default:
+			System.out.println("enter a valid option");
+		}
+	}
+	double elapsedTime=(stopTime-startTime)/Math.pow(10, 9);
+	System.out.println("startTime= "+startTime);
+	System.out.println("stopTime= "+stopTime);
+	if(startTime!=0)
+	{
+		System.out.println("elapsedTime= "+elapsedTime+" seconds");
+	}
+	else
+		System.out.println("To start the stopwatch you should have pressed 0 only");
+	return elapsedTime;
 }
 
 /****This method is used to calculate windchill
@@ -961,7 +1006,7 @@ public static void quad(int a, int b, int c)
  * @param speed user input speed
  */
 
-public static void calTemp(double temp, double speed)
+public static double calTemp(double temp, double speed)
 {
 	           double cal=0;
 	           if(temp > 50 || speed <3 || speed > 120)
@@ -972,8 +1017,8 @@ public static void calTemp(double temp, double speed)
 	               calTemp(temp, speed);
 	           }
 		          cal = 35.74 + 0.6215 * temp + (0.4275 * temp - 35.75) * Math.pow(speed, 0.16);
-	           System.out.println("Windchill: " +cal);
-	           //  return cal;
+	           System.out.println("Windchill: ");
+	             return cal;
 }
 
 /****This method is used to calculate different operations of integer
@@ -1040,7 +1085,7 @@ public static boolean springSeason(int day, int month)
  */
 public static void avg(double a, double b, double c, double d, double e)
 {
-	int i=5;
+	
 	int angle=90;
 	a= Math.random(); //5 random numbers from 0 10 1 are generated and taken in variables.
 	b=Math.random();
@@ -1261,7 +1306,7 @@ public static void findRepeatedNo(int[] data, int size)
 			{
 				System.out.println(data[i]+ " ");
 			}
-		}//check for multiple copies of element...
+		}
 	}
 //return data;
 }
@@ -1387,7 +1432,7 @@ public static void trigOperations(double angle)
  * @param str1 user input first string
  * @param str2 user input second string
  */
-public static void checkAnagram(String str1, String str2)
+public static String checkAnagram(String str1, String str2)
 {
 	/*if(s1.replaceAll(" ", "").length() == s2.replaceAll(" ", "").length())
 	  {
@@ -1433,17 +1478,17 @@ public static void checkAnagram(String str1, String str2)
             }
                 if(not_found == 1)
                 {
-                	System.out.print("Given strings are not Anagram");
+                	return "Given strings are not Anagram";
                 }
                 else
                 {
-                	System.out.print("Given strings are Anagram");
+                	return "Given strings are Anagram";
                 }
         }
-        else
-        {
-            System.out.print("Both strings must of equal length to be an anagram");
-        }
+        
+        
+            return "Both strings must of equal length to be an anagram";
+        
 }
 
 /*********************************String Permutation in iterative way***************************/
@@ -2256,9 +2301,9 @@ static String tem;
 public static String[] bubsortString(String[] str, int no)
 {
 	int i, j;
-    for(i=0; i<no-1; i++)
+    for(i=1; i<no-1; i++)
 	{
-		for(j=1; j<no-i-1; j++)
+		for(j=i-1; j<no-i-1; j++)
 		{
 			if(str[i].compareToIgnoreCase(str[j])<0)
 			{
@@ -2310,7 +2355,7 @@ public static int guessNo(int low, int high)
  * @param last last element in array
  * @return 
  */
-public static void binSearch(String[] search, int first, int last)
+public static String[] binSearch(String[] search, int first, int last)
 {
 	String searchWord="";
     int len = search.length;
@@ -2331,7 +2376,7 @@ public static void binSearch(String[] search, int first, int last)
 			binSearch(search, mid, last);
 		}
 	}
-	
+	return search;
 }	
 
 
@@ -2481,7 +2526,7 @@ public static void merge(int array[], int First, int mid, int last)
 } 
 
 
-public static void mergeString(String array[], int First, int mid, int last) 
+public static String[] mergeString(String array[], int First, int mid, int last) 
 { 
      
     int n1 = mid - First + 1; 
@@ -2521,6 +2566,7 @@ public static void mergeString(String array[], int First, int mid, int last)
         j++; 
         k++; 
     } 
+    return array;
 } 
 
 
@@ -2533,7 +2579,7 @@ public static void mergeString(String array[], int First, int mid, int last)
  * @param First integer the number is first element form array
  * @param Last integer the number is last element from array
  */
-public static void sortInteger(int array[], int First, int last) 
+public static int[] sortInteger(int array[], int First, int last) 
 { 
     if (First < last) 
     { 
@@ -2542,6 +2588,7 @@ public static void sortInteger(int array[], int First, int last)
         sortInteger(array , mid+1, last); 
         merge(array, First, mid, last); 
     } 
+    return array;
 } 
 
 
@@ -2687,7 +2734,7 @@ public static void printStrArray(String[] array)
 /**This method is used to return minimum number of notes as change
  * @param amount total amount to return
  */
-public static void changeReturn(int amount)
+public static int changeReturn(int amount)
 {
 	int[] notes= {1000,500,100,50,10,5,2,1};
 	int i=0;
@@ -2704,7 +2751,8 @@ public static void changeReturn(int amount)
 		}		
 		i++;
 	}
-	System.out.println("The minimum change you can get is: "+count);
+	System.out.print("The minimum change you can get is: ");
+	return count;
 }
 
 /**************************Calculate day*****************************/
@@ -2741,7 +2789,7 @@ public static int calDay(int m, int d, int y)
  * @param cel user input temperature in celsius
  * @param fa user input in fahreinheit
  */
-public static void temperaturConversion(double cel, double fa)
+public static double temperaturConversion(double cel, double fa)
 {
 	double ctof=0, ftoc;
  
@@ -2755,9 +2803,11 @@ public static void temperaturConversion(double cel, double fa)
 	  
    ctof = (cel * 9/5) + 32;
    System.out.println("Converting temperature from celsius to fahreinheit:" +ctof);
+ 
   
    ftoc = (fa - 32) * 5/9;
-   System.out.println("Converting temperature from fahreinheit to celsius:" +ftoc);
+   System.out.println("Converting temperature from fahreinheit to celsius:");
+   return ftoc;
 }
 
 /**********************Monthly Payment*****************************/
@@ -2767,14 +2817,15 @@ public static void temperaturConversion(double cel, double fa)
  * @param r rate of interest
  * @param y number of year
  */
-public static void monthlyPayment(int p, double r, int y)
+public static double monthlyPayment(int p, double r, int y)
 {
 	double pay;
 	int n = 12 * y;
 	double R = r / (12*100);
 	System.out.println("Calculating payment...");
 	pay = p * R / (1 -  Math.pow((1 + R), -n));
-	System.out.println("Monthly payment: "+pay);
+	System.out.println("Monthly payment: ");
+	return pay;
 }
 
 /***************Square Root using Newton's method*******************/
@@ -2782,7 +2833,7 @@ public static void monthlyPayment(int p, double r, int y)
 /**This method is used to calculate square root using Newton's method
  * @param c user input number
  */
-public static void sqroot(int c)
+public static double sqroot(int c)
 {
 	double epsilon = 1e-15;  //relative error tolerance
 	double t=c;  //assume square root of c
@@ -2791,8 +2842,8 @@ public static void sqroot(int c)
 	{
 		t = (t+ (c/t))/2.0;
 	}
-	System.out.println("Square root of " +c+ " is:" +t);
-		
+	System.out.print("Square root of " +c+ " is: ");
+	return t;
 }
 
 /***************Conversion of decimal to binary********************/

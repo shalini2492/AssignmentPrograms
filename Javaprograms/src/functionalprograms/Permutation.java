@@ -9,12 +9,18 @@ package functionalprograms;
 import utility.Utility;
 
 public class Permutation {
+	interface MyFunctionalInterface
+	{
+		public String permute(String s);
+	}
 static int count=0;
 	public static void main(String[] args)
  {
 	
 		System.out.println("Enter the string: ");
 		String inputString = Utility.inputString();
-		Utility.permutation(inputString);
+		MyFunctionalInterface f=s->Utility.permutation(inputString);
+		System.out.println("Permutations: ");
+		System.out.println(f.permute(inputString));
  }
 }

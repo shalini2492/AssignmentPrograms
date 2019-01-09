@@ -8,17 +8,17 @@ package functionalprograms;
 import utility.Utility;
 
 public class Power_two {
+	interface MyFunctionalInterface
+	{
+		public double power(int no);
+	}
 public static void main(String[] args)
 {
 	
-    int number = Integer.parseInt(args[0]);
-    if(number<0)
-    {
-    	System.out.println("Invalid input....Please enter a valid number");
-    	number=Utility.inputInteger();
-    }
-    System.out.println("Power of 2^"+number+" is: "+(Math.pow(2, number)));
-    Utility.powertwo(number);
-    
+    int num = Integer.parseInt(args[0]);
+   
+    //System.out.println("Power of 2^"+num+" is: "+(Math.pow(2, num)));
+    MyFunctionalInterface f=no->Utility.powertwo(num);
+    System.out.println(f.power(num));
 }
 }

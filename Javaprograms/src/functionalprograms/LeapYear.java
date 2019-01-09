@@ -9,6 +9,10 @@ import utility.Utility;
 
 public class LeapYear 
 {
+	interface MyFunctionalInterface
+	{
+		public String checkLeap(int y);
+	}
 	public static void main(String[] args)
 		{
 
@@ -16,8 +20,8 @@ public class LeapYear
 		// Initializing variables
 		System.out.println("Enter a leap year:");
 		int year=Utility.inputInteger();
-		boolean result =Utility.LeapYear(year);
-//	
+		MyFunctionalInterface f = y->Utility.checkLeapYear(year);
+		System.out.println(f.checkLeap(year));
 //		if(result)
 //		{
 //			System.out.println(year + " is a leap year");
@@ -26,6 +30,6 @@ public class LeapYear
 //		{
 //			System.out.println(year + " is not a leap year or year should be more than 1582");
 //		}
-//	    	
+	    	
 	}
 }

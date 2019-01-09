@@ -9,6 +9,10 @@ package functionalprograms;
 import utility.Utility;
 
 public class PlayAGame {
+	interface MyFunctionalInterface
+	{
+		public int winOrloss(int number);
+	}
 public static void main(String[] args)
 {
 	int stake, target, trials;
@@ -19,6 +23,7 @@ public static void main(String[] args)
 	System.out.println("Enter the number of trials user wish");
 	trials = Utility.inputInteger();
 	
-	Utility.gambler(stake, trials, target);
+	MyFunctionalInterface f = number->Utility.gambler(stake, trials, target);
+	System.out.println(f.winOrloss(stake));
 }
 }

@@ -4,17 +4,27 @@ import utility.Utility;
 public class MergeSortStr {
 public static void main(String[] args)
 {
-	Utility utility=new Utility();
-	int[] num =new int[5];
-	System.out.println("Enter the numbers:");
-	for(int i=0;i<5;i++)
+	System.out.println("Enter the size of string array");
+	int size=Utility.inputInteger();
+	String[] arr=new String[size];
+//	int First=0;
+//	int last=size-1;
+//	int mid=(First+last)/2;
+	System.out.println("Enter elements..");
+	for(int i=0; i<size; i++)
 	{
-		num[i]=Utility.inputInteger();
+		
+		arr[i]=Utility.inputString();
 	}
-	System.out.println("The Given array is :");
-	Utility.printArray(num);
-	utility.sortInteger(num, 0, num.length-1);
-	System.out.println("\nThe Sorted array is :"); 
-    Utility.printArray(num); 
+	System.out.println("String array: ");
+	for(int i=0; i<size; i++)
+	{
+		System.out.println(arr[i]);
+	}
+	String[] array=Utility.mergeSort(arr);
+	for(int i=0; i<size; i++)
+	{
+		System.out.println(array[i]); 
+	}
 }
 }

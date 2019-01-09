@@ -8,6 +8,10 @@ package functionalprograms;
 import utility.Utility;
 
 public class Distance {
+	interface MyFunctionalInterface
+	{
+		public double findDist(int a);
+	}
 public static void main(String[] args)
 {
 	
@@ -15,6 +19,7 @@ public static void main(String[] args)
 	
 	int i = Utility.inputInteger();
 	int j = Utility.inputInteger();
-	Utility.dist(i, j);
+	MyFunctionalInterface f=d->Utility.dist(i, j);
+	System.out.println("The distance: "+f.findDist(i));
 }
 }

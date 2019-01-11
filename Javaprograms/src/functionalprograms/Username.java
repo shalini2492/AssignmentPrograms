@@ -24,9 +24,8 @@ public class Username
 		String username= Utility.inputString();
 		MyFunctionalInterface f = user -> Utility.replaceString(template, username);
 		System.out.println(f.replaceUsername(username));
-//		System.out.println("String after replacement: ");
-//		System.out.println(f.replaceUsername("Hello " +username+"! How are you?"));
-//		
+
+		
 
        }
 }

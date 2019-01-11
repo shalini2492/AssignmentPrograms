@@ -32,11 +32,25 @@ import static java.lang.Math.sqrt;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+//import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.impl.DefaultPrettyPrinter;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.ObjectWriter;
+import com.fasterxml.jackson.core.type.TypeReference;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import objectorientedprograms.Inventory;
+import objectorientedprograms.Products;
 public class Utility 
 {
 	
@@ -3098,6 +3112,51 @@ public static <T> boolean numAnagramCheck(T number1, T number2)
 		return string;
 	}
 	
+//	public static <T> void convertJavaToJSON(T obj, String filePath)
+//	{
+//		ObjectMapper objMapper = new ObjectMapper();
+//		ObjectWriter objWriter = objMapper.writer(new DefaultPrettyPrinter());
+//		try
+//		{
+//			objWriter.writeValue(new File(filePath), obj);
+//		}
+//		catch(JsonGenerationException e)
+//		{
+//			e.printStackTrace();
+//		}
+//		catch(JsonMappingException e)
+//		{
+//			e.printStackTrace();
+//		}
+//		catch(IOException e)
+//		{
+//			e.printStackTrace();
+//		}
+//		System.out.println("JSON copied to file..");
+//	}
+	public static ObjectMapper mapper;
+	static {
+		mapper = new ObjectMapper();
+	}
+	public static String convertJavaToJSON(Object obj, String filePath)
+	{
+		String jsonResponse="";
+		try {
+			jsonResponse = mapper.writeValueAsString(obj);
+		} 
+//		catch (JsonGenerationException e) {
+//			System.out.println("Exception occured while converting java to json object "+e.getMessage());
+//		} catch (JsonMappingException e) {
+//			System.out.println("Exception occured while converting java to json object "+e.getMessage());
+//		} 
+			catch (IOException e) {
+			System.out.println("Exception occured while converting java to json object "+e.getMessage());
+		}
+		
+		return jsonResponse;
+		}
+	
+   
 }
 
 

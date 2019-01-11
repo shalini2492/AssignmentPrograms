@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-<fullyQualifiedTypeName name="functionalprograms.LeapYear"/>
-<fullyQualifiedTypeName name="functionsandlibraries.StringFunctions"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="functionsandlibrariesmain.MathFunctionMain"/>
-<fullyQualifiedTypeName name="lib.BLRandom"/>
-<fullyQualifiedTypeName name="functionsandlibraries.MathFunction"/>
-<fullyQualifiedTypeName name="lib.BLStdIn"/>
-<fullyQualifiedTypeName name="java.lang.Error"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-<fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
-<fullyQualifiedTypeName name="functionsandlibraries.BLStdOut"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
-<fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="functionsandlibraries.BLStdIn"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
@@ -45,7 +30,6 @@
 <fullyQualifiedTypeName name="utility.Deque1"/>
 <fullyQualifiedTypeName name="standardlibrary.BLStdOut"/>
 <fullyQualifiedTypeName name="datastructureprograms.HashingTableWithChaining"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="datastructureprograms.MyLinkedList"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -53,11 +37,27 @@
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.JSONWriter"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.function.BiFunction"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectWriter"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.impl.DefaultPrettyPrinter"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.JsonGenerationException"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.map.JsonMappingException"/>
 <fullyQualifiedTypeName name="utility.Utility"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.core.type.TypeReference"/>
+<fullyQualifiedTypeName name="objectorientedprograms.Inventory"/>
+<fullyQualifiedTypeName name="objectorientedprograms.Products"/>
+<fullyQualifiedTypeName name="java.nio.file.Files"/>
+<fullyQualifiedTypeName name="java.nio.file.Paths"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,18 @@
+[{
+"name" : "Basmati",
+"weight" : "10kg",
+"price" : "100"
+},
+
+{
+"name" : "Indrayani",
+"weight" : "12kg",
+"price" : "120"
+},
+
+{
+"name" : "kolam",
+"weight" : "15kg",
+"price" : "200"
+}
+]

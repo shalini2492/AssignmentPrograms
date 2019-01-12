@@ -3,8 +3,7 @@
  * date: 5/12/2018
  * version: 1.0
  */
-package functionsandlibraries;
-
+package objectorientedprograms;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -22,9 +21,7 @@ public static void main(String[] args)
 	LocalDate d = LocalDate.now();
 	DateFormat df = new SimpleDateFormat("dd/mm/yyyy");
 	String datetostring = df.format(d);
-	String template="Hello <<user>>,we have your full name as <<fullname>> in our system. your contact number is "
-			+ "91-xxxxxxxxxx. Please let us know in any case of clarification Thank you Bridgelabz <<date>>.";
-	
+		
 	System.out.println("Enter user name");
 	name=Utility.inputString();
 	System.out.println("User name: "+name);

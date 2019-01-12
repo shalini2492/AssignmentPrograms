@@ -7,8 +7,8 @@ import utility.Utility;
 
 public class Products {
 	private String name;
-	private int price;
-	private int weight;
+	private long price;
+	private long weight;
 
 	
 	public String getName()
@@ -19,19 +19,19 @@ public class Products {
 	{
 		this.name=name;
 	}
-	public int getPrice()
+	public long getPrice()
 	{
 		return price;
 	}
-	public void setPrice(int price)
+	public void setPrice(long price)
 	{
 		this.price = price;
 	}
-	public int getWeight()
+	public long getWeight()
 	{
 		return weight;
 	}
-	public void setWeight(int weight)
+	public void setWeight(long weight)
 	{
 		this.weight = weight;
 	}
@@ -44,10 +44,10 @@ public class Products {
 		String n=Utility.inputString();
 		rice.setName(n);
 		System.out.println("Enter the price");
-		int price = Utility.inputInteger();
+		long price = Utility.inputLong();
 		rice.setPrice(price);
 		System.out.println("Enter the weight");
-		int weight = Utility.inputInteger();
+		long weight = Utility.inputLong();
 		rice.setWeight(weight);
 		return rice;
 	}

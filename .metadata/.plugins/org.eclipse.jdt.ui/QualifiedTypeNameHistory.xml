@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.Double"/>
-<fullyQualifiedTypeName name="functionsandlibraries.BLStdIn"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.w3c.dom.css.Counter"/>
@@ -32,7 +30,6 @@
 <fullyQualifiedTypeName name="datastructureprograms.HashingTableWithChaining"/>
 <fullyQualifiedTypeName name="datastructureprograms.MyLinkedList"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
@@ -44,13 +41,11 @@
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectWriter"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.impl.DefaultPrettyPrinter"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.JsonGenerationException"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.map.JsonMappingException"/>
-<fullyQualifiedTypeName name="utility.Utility"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.core.type.TypeReference"/>
 <fullyQualifiedTypeName name="objectorientedprograms.Inventory"/>
@@ -59,5 +54,10 @@
 <fullyQualifiedTypeName name="java.nio.file.Paths"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.SerializationFeature"/>
+<fullyQualifiedTypeName name="java.io.StringWriter"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="utility.Utility"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 </qualifiedTypeNameHistroy>

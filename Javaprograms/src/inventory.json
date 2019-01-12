@@ -1,18 +1,66 @@
-[{
-"name" : "Basmati",
+{
+"RiceDetails" : [
+{
+"name" : "Type1",
 "weight" : "10kg",
 "price" : "100"
 },
 
 {
-"name" : "Indrayani",
+"name" : "Type2",
 "weight" : "12kg",
 "price" : "120"
 },
 
 {
-"name" : "kolam",
+"name" : "Type3",
 "weight" : "15kg",
 "price" : "200"
 }
 ]
+},
+
+{
+"WheatDetails" : [
+{
+"name" : "Type1",
+"weight" : "10kg",
+"price" : "100"
+},
+
+{
+"name" : "Type2",
+"weight" : "12kg",
+"price" : "120"
+},
+
+{
+"name" : "Type3",
+"weight" : "15kg",
+"price" : "200"
+}
+]
+},
+
+{
+"PulsesDetails" : [
+{
+"name" : "Type1",
+"weight" : "10kg",
+"price" : "100"
+},
+
+{
+"name" : "Type2",
+"weight" : "12kg",
+"price" : "120"
+},
+
+{
+"name" : "Type3",
+"weight" : "15kg",
+"price" : "200"
+}
+]
+}
+

@@ -73,6 +73,10 @@ public class Utility
     	return s;
     }
     
+    public static long inputLong()
+    {
+    	return sc.nextLong();
+    }
     /***********************2D array*****************************************/
     /*This method will return input of type boolean and pass it to the method where it is called */
 
@@ -1762,9 +1766,7 @@ public static String replaceString(String n, String full_name, String contactNo,
 	Pattern patt=Pattern.compile("<<date>>");
 	Matcher matt = patt.matcher(template);
 	template = matt.replaceFirst(dateString);
-	
-	
-	
+		
 	System.out.println(template);
 	return n;
 	
@@ -3138,24 +3140,38 @@ public static <T> boolean numAnagramCheck(T number1, T number2)
 	static {
 		mapper = new ObjectMapper();
 	}
-	public static String convertJavaToJSON(Object obj, String filePath)
+	public static String convertJavaToJSON(String filePath)
 	{
-		String jsonResponse="";
-		try {
-			jsonResponse = mapper.writeValueAsString(obj);
-		} 
-//		catch (JsonGenerationException e) {
-//			System.out.println("Exception occured while converting java to json object "+e.getMessage());
-//		} catch (JsonMappingException e) {
-//			System.out.println("Exception occured while converting java to json object "+e.getMessage());
+//		String jsonResponse="";
+//		try {
+//			jsonResponse = mapper.writeValueAsString(obj);
 //		} 
-			catch (IOException e) {
-			System.out.println("Exception occured while converting java to json object "+e.getMessage());
-		}
-		
-		return jsonResponse;
-		}
-	
+////		catch (JsonGenerationException e) {
+////			System.out.println("Exception occured while converting java to json object "+e.getMessage());
+////		} catch (JsonMappingException e) {
+////			System.out.println("Exception occured while converting java to json object "+e.getMessage());
+////		} 
+//			catch (IOException e) {
+//			System.out.println("Exception occured while converting java to json object "+e.getMessage());
+//		}
+//		
+//		return jsonResponse;
+//		}
+		String result = "";
+	    try {
+	        BufferedReader br = new BufferedReader(new FileReader(filePath));
+	        StringBuilder sb = new StringBuilder();
+	        String line = br.readLine();
+	        while (line != null) {
+	            sb.append(line);
+	            line = br.readLine();
+	        }
+	        result = sb.toString();
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	    }
+	    return result;
+	}
    
 }
 
